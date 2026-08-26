@@ -7,29 +7,188 @@ import {
   ChevronDown,
   ShieldCheck,
   Dna,
+  HeartPulse,
   Sparkles,
   Activity,
+  Award,
 } from 'lucide-react';
 import { DIAGNOSTIC_PROGRAMS } from '@/lib/constants/programsData';
+import { DME_PRODUCTS } from '@/lib/constants/dmeData';
 import { cn } from '@/lib/utils/cn';
 
 export function SecondaryNav() {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  // Show this secondary navbar only within the Immunodeficiency / Genomics section
+  // Immunodeficiency / Genomics section
   const isImmunodeficiencySection =
     pathname.startsWith('/immunodeficiency') ||
     pathname.startsWith('/programs') ||
     pathname.startsWith('/track-kit') ||
     pathname === '/resources/sample-reports';
 
-  if (!isImmunodeficiencySection) {
+  // DME section
+  const isDmeSection = pathname.startsWith('/dme');
+
+  if (!isImmunodeficiencySection && !isDmeSection) {
     return null;
   }
 
+  // ── DME SECONDARY NAVBAR ──
+  if (isDmeSection) {
+    return (
+      <div className="bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[57px] sm:top-[65px]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          {/* Section Identifier */}
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
+              <HeartPulse className="w-3.5 h-3.5 text-amber-600" />
+              <span className="hidden sm:inline">Section:</span> DME &amp; Orthopedic Bracing
+            </span>
+          </div>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs font-medium text-slate-800">
+            {/* Link: Overview */}
+            <a
+              href="#what-is-dme"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              What is DME
+            </a>
+
+            {/* Dropdown: Orthopedic Braces */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('dme-braces')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <a
+                href="#products"
+                className="flex items-center gap-1 py-1 hover:text-[#0D9488] transition-colors font-medium cursor-pointer"
+              >
+                <span>DME Braces</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </a>
+
+              {activeDropdown === 'dme-braces' && (
+                <div className="absolute top-full left-0 mt-1 w-[560px] bg-white rounded-3xl shadow-xl border border-slate-200/90 p-5 grid grid-cols-2 gap-2.5 animate-fade-in z-50">
+                  <div className="col-span-2 pb-2 border-b border-slate-100 flex items-center justify-between">
+                    <div>
+                      <h4 className="font-serif-heading font-bold text-sm text-[#0D1B2A]">
+                        5 Physician-Prescribed Orthopedic Braces
+                      </h4>
+                      <p className="text-[11px] text-slate-500">
+                        Covered under Medicare Part B for qualifying medical conditions.
+                      </p>
+                    </div>
+                    <a
+                      href="#products"
+                      className="text-xs font-bold text-[#0D9488] hover:underline whitespace-nowrap"
+                    >
+                      View All 5 &rarr;
+                    </a>
+                  </div>
+
+                  {DME_PRODUCTS.map((prod) => (
+                    <a
+                      key={prod.id}
+                      href={`#${prod.anchorId}`}
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-start gap-2.5 p-2 rounded-2xl hover:bg-[#FDFCF7] border border-transparent hover:border-slate-200/80 transition-all group"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#0D9488] group-hover:text-white transition-colors">
+                        <Activity className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <span className="font-semibold text-xs text-[#0D1B2A] group-hover:text-[#0D9488] block">
+                          {prod.name}
+                        </span>
+                        <span className="text-[10px] text-slate-500 line-clamp-1">
+                          {prod.badge}
+                        </span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Direct Brace Anchor Links */}
+            
+            <a
+              href="#back-braces"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              Back Braces
+            </a>
+            
+
+            {/* How It Works */}
+            <a
+              href="#how-it-works"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              How It Works
+            </a>
+
+            {/* Medicare Coverage */}
+            <a
+              href="#medicare-coverage"
+              className="flex items-center gap-1.5 py-1 hover:text-[#0D9488] transition-colors"
+            >
+              <span>Medicare Coverage</span>
+              <span className="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                <Sparkles className="w-2.5 h-2.5 text-amber-600" />
+                $0 Copay Check
+              </span>
+            </a>
+
+            {/* FAQs */}
+            <a
+              href="#faq"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              FAQs
+            </a>
+          </nav>
+
+          {/* Right CTA */}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/eligibility-checker"
+              className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
+              <span>Check $0 Eligibility</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile quick scroll anchors */}
+        <div className="flex lg:hidden items-center gap-2 overflow-x-auto pt-1.5 pb-0.5 no-scrollbar text-[11px] font-semibold text-slate-700">
+          <a href="#what-is-dme" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+            Overview
+          </a>
+          
+          <a href="#back-braces" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+            Back
+          </a>
+          
+          <a href="#how-it-works" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+            How It Works
+          </a>
+          <a href="#medicare-coverage" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap text-[#0D9488]">
+            Medicare $0 Check
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  // ── IMMUNODEFICIENCY SECONDARY NAVBAR ──
   return (
-    <div className="bg-[#F7F4E7]/90 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all">
+    <div className="bg-[#F7F4E7]/90 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[57px] sm:top-[65px]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Section Identifier */}
         <div className="flex items-center gap-2 shrink-0">

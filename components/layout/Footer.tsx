@@ -68,12 +68,18 @@ export function Footer() {
           {/* Col 1: Brand & Contact */}
           <div className="lg:col-span-2 space-y-5">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-300 shadow-md">
-                <Dna className="w-5 h-5 text-teal-300" />
+              <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-[#0D1B2A] border border-[#EAE5D8]/20 flex items-center justify-center text-teal-300 shadow-md overflow-hidden">
+                <img
+                  src="/logo.png"
+                  alt="Aegis Genomics logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <span className="font-serif-heading font-bold text-2xl text-white tracking-tight">
-                Aegis<span className="text-[#0D9488]">Genomics</span>
-              </span>
+              <img
+                src="/Name.png"
+                alt="Aegis Genomics name"
+                className="h-9 sm:h-10 w-auto object-contain"
+              />
             </div>
 
             <p className="font-sans-body text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">

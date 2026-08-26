@@ -138,7 +138,7 @@ export function GlobalHeader() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 flex items-center justify-between">
           {/* Main Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#EAE5D8] overflow-hidden">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#EAE5D8] overflow-hidden">
               <img
                 src="/logo.png"
                 alt="Aegis Genomics logo"
@@ -149,7 +149,7 @@ export function GlobalHeader() {
               <img
                 src="/Name.png"
                 alt="Aegis Genomics name"
-                className="h-7 sm:h-8 w-auto object-contain"
+                className="h-10 sm:h-11 w-auto object-contain"
               />
             </div>
           </Link>
