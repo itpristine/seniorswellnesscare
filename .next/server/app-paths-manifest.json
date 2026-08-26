@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/immunodeficiency/page": "app/immunodeficiency/page.js",
+  "/medicare-eligibility/page": "app/medicare-eligibility/page.js",
+  "/providers/page": "app/providers/page.js"
 }

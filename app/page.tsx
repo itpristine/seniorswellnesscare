@@ -1,22 +1,432 @@
 import React from 'react';
-import { HeroSection } from '@/components/sections/HeroSection';
-import { TrustMarquee } from '@/components/sections/TrustMarquee';
-import { ProcessStepsGrid } from '@/components/sections/ProcessStepsGrid';
-import { ProgramCardDeck } from '@/components/sections/ProgramCardDeck';
-import { CoverageMatrix } from '@/components/sections/CoverageMatrix';
-import { FaqAccordionSection } from '@/components/sections/FaqAccordionSection';
-import { ConversionCTA } from '@/components/sections/ConversionCTA';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import {
+  ShieldCheck,
+  Dna,
+  HeartPulse,
+  Radio,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Lock,
+  Phone,
+  Truck,
+  Activity,
+  Award,
+  Stethoscope,
+  Clock,
+} from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { Badge } from '@/components/ui/Badge';
+import { Card } from '@/components/ui/Card';
+import { UnifiedLeadForm } from '@/components/forms/UnifiedLeadForm';
+import { SITE_CONFIG } from '@/lib/constants/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'AegisGenomics | Precision Genomics, DME Equipment & Medical Alert Systems',
+  description:
+    'AegisGenomics provides Medicare-covered preventive genetic screening, Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems for seniors.',
+};
 
 export default function HomePage() {
+  const coreServices = [
+    {
+      id: 'immunodeficiency',
+      title: 'Immunodeficiency & Genetic Testing',
+      tagline: '100% Medicare Part B Covered ($0 Copay)',
+      description:
+        'Physician-ordered preventive genetic testing across 9 specialized clinical panels including Hereditary Cancer (CGx), Pharmacogenomics (PGx), Primary Immunodeficiency, and Neurocognitive health. Painless 5-minute at-home buccal swab processed in CLIA-certified labs.',
+      href: '/immunodeficiency',
+      icon: <Dna className="w-8 h-8 text-[#0D9488]" />,
+      badge: '100% Covered ($0)',
+      badgeVariant: 'emerald' as const,
+      features: [
+        '9 Comprehensive Diagnostic Panels',
+        'Painless 5-Minute At-Home Cheek Swab',
+        'Next-Generation DNA Sequencing (NGS)',
+        'State-Licensed Physician Review & Consult',
+      ],
+      ctaText: 'Explore Immunodeficiency Testing',
+    },
+    {
+      id: 'dme',
+      title: 'Durable Medical Equipment (DME)',
+      tagline: 'Medicare Part B Approved Medical Supplies',
+      description:
+        'Physician-prescribed mobility aids, orthopedic back and knee braces, respiratory care devices (CPAP/BiPAP), and Continuous Glucose Monitors (CGM) delivered directly to your home with full Medicare billing assistance.',
+      href: '/dme',
+      icon: <HeartPulse className="w-8 h-8 text-amber-600" />,
+      badge: 'Medicare Part B',
+      badgeVariant: 'amber' as const,
+      features: [
+        'Orthopedic Bracing (Back, Knee & Shoulder)',
+        'Mobility Assistance (Wheelchairs & Rollators)',
+        'Continuous Glucose Monitors (CGM)',
+        'Free White-Glove Home Delivery & Fit Guide',
+      ],
+      ctaText: 'Explore DME Equipment',
+    },
+    {
+      id: 'medical-alert',
+      title: '24/7 Medical Alert Systems',
+      tagline: 'Instant Senior Safety & Fall Detection',
+      description:
+        'State-of-the-art emergency response devices featuring automatic fall detection, nationwide mobile GPS tracking, and 24/7 direct connection to certified emergency dispatchers. No landline required.',
+      href: '/medical-alert',
+      icon: <Radio className="w-8 h-8 text-rose-500" />,
+      badge: '24/7 US Monitoring',
+      badgeVariant: 'rose' as const,
+      features: [
+        'Automatic Built-In Fall Detection',
+        'Nationwide Mobile 4G LTE GPS Pendants',
+        'Waterproof SOS Smartwatches & In-Home Units',
+        'Instant Family Notification & EMT Dispatch',
+      ],
+      ctaText: 'Explore Medical Alert Systems',
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
-      <HeroSection />
-      <TrustMarquee />
-      <ProcessStepsGrid />
-      <ProgramCardDeck />
-      <CoverageMatrix />
-      <FaqAccordionSection />
-      <ConversionCTA />
+      {/* ── HERO SECTION ── */}
+      <section className="relative overflow-hidden pt-10 sm:pt-16 pb-16 sm:pb-20 px-4 sm:px-6 md:px-12 lg:px-16 bg-gradient-to-b from-[#FDFCF7] via-[#F7F4E7]/60 to-[#FDFCF7] border-b border-[#EAE5D8]">
+        {/* Soft Ambient Blurs */}
+        <div className="absolute top-10 right-10 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-100/40 rounded-full blur-3xl -z-10 pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-72 h-72 sm:w-96 sm:h-96 bg-amber-100/30 rounded-full blur-3xl -z-10 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Hero Column */}
+          <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="inline-flex max-w-full items-center gap-2 bg-emerald-50 border border-emerald-200/80 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#0D9488] shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+              <span>Medicare Part B Partner • Precision Senior Healthcare Platform</span>
+            </div>
+
+            <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
+              Integrated Senior Health:{' '}
+              <span className="highlight-accent text-[#0D9488]">Precision Diagnostics</span>, DME Supplies &amp; Medical Alert.
+            </h1>
+
+            <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
+              AegisGenomics combines physician-ordered preventive genetic testing, Medicare-approved durable medical equipment, and 24/7 emergency response alert systems to deliver proactive, life-saving care directly to your home.
+            </p>
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <Button
+                href="/eligibility-checker"
+                size="lg"
+                variant="primary"
+                className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/20"
+                icon={<ArrowRight className="w-4 h-4" />}
+              >
+                Check My Medicare Eligibility ($0 Cost)
+              </Button>
+
+              <Button
+                href="/immunodeficiency"
+                size="lg"
+                variant="light"
+                className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 py-4 rounded-full"
+              >
+                Explore Immunodeficiency Test &rarr;
+              </Button>
+            </div>
+
+            {/* Trust Checks */}
+            <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-medium text-slate-600 border-t border-slate-200/80">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
+                <span>CAP &amp; CLIA Certified</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
+                <span>$0 Out-of-Pocket for Qualifying Seniors</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
+                <span>24/7 Emergency Support</span>
+              </span>
+            </div>
+          </div>
+
+          {/* Right Hero Column: 3 Pillar Fast Selector Card */}
+          <div className="lg:col-span-5 flex justify-center w-full">
+            <Card className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-xl space-y-4">
+              <div className="border-b border-slate-100 pb-3">
+                <Badge variant="teal" size="sm">
+                  Our 3 Primary Healthcare Services
+                </Badge>
+                <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A] mt-1.5">
+                  Select a Service to Learn More
+                </h3>
+              </div>
+
+              <div className="space-y-2.5">
+                {coreServices.map((srv) => (
+                  <Link
+                    key={srv.id}
+                    href={srv.href}
+                    className="flex items-start gap-3 p-3 rounded-2xl border border-slate-200 hover:border-[#0D9488] hover:bg-[#FDFCF7] transition-all group"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                      {srv.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <h4 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A] group-hover:text-[#0D9488] transition-colors">
+                          {srv.title}
+                        </h4>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0D9488] group-hover:translate-x-0.5 transition-all" />
+                      </div>
+                      <span className="text-[10px] font-bold text-[#0D9488] block">
+                        {srv.tagline}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                href="/eligibility-checker"
+                className="flex items-center justify-center gap-2 w-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full shadow-md transition-all mt-2"
+              >
+                <ShieldCheck className="w-4 h-4 text-emerald-200" />
+                Check $0 Eligibility for All Services &rarr;
+              </Link>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3 PRIMARY SERVICES SHOWCASE ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <Badge variant="teal" size="md">
+              AegisGenomics Service Portfolio
+            </Badge>
+            <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
+              Three Essential Healthcare Pillars for Seniors
+            </h2>
+            <p className="font-sans-body text-sm sm:text-base text-slate-600">
+              Each service is fully integrated with licensed physician networks, accredited laboratory sequencing, and Medicare benefit verification.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {coreServices.map((srv) => (
+              <Card
+                key={srv.id}
+                className="p-7 sm:p-8 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical flex flex-col justify-between hover:shadow-xl hover:bg-white transition-all duration-200"
+              >
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between">
+                    <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
+                      {srv.icon}
+                    </div>
+                    <Badge variant={srv.badgeVariant} size="sm">
+                      {srv.badge}
+                    </Badge>
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif-heading font-bold text-xl text-[#0D1B2A]">
+                      {srv.title}
+                    </h3>
+                    <span className="text-xs font-bold text-[#0D9488] block mt-0.5">
+                      {srv.tagline}
+                    </span>
+                    <p className="font-sans-body text-xs sm:text-sm text-slate-600 leading-relaxed mt-2.5">
+                      {srv.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-2 border-t border-slate-200/80">
+                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+                      Key Highlights:
+                    </span>
+                    {srv.features.map((feat) => (
+                      <div key={feat} className="flex items-center gap-2 text-xs text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-slate-200/80">
+                  <Button
+                    href={srv.href}
+                    variant="primary"
+                    size="md"
+                    className="w-full justify-center text-xs font-semibold rounded-full shadow-xs"
+                  >
+                    {srv.ctaText} &rarr;
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MEDICARE & INSURANCE MATRIX ── */}
+      <section className="py-16 sm:py-20 bg-[#FDFCF7] border-b border-[#EAE5D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <Badge variant="emerald" size="md" dot>
+              Medicare Coverage Matrix
+            </Badge>
+            <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
+              Understand Your Medicare &amp; Insurance Benefits
+            </h2>
+            <p className="font-sans-body text-sm sm:text-base text-slate-600">
+              AegisGenomics verifies your benefits upfront with zero surprise billing.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+                  <th className="p-4 sm:p-5">Service Category</th>
+                  <th className="p-4 sm:p-5 bg-teal-50/50 text-[#0D9488]">
+                    Medicare Part B (Original)
+                  </th>
+                  <th className="p-4 sm:p-5">Medicare Advantage (Part C)</th>
+                  <th className="p-4 sm:p-5">Supplemental / Medigap</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr className="hover:bg-slate-50/50">
+                  <td className="p-4 sm:p-5 font-bold text-[#0D1B2A]">
+                    <div className="flex items-center gap-2">
+                      <Dna className="w-4 h-4 text-[#0D9488]" />
+                      <span>Immunodeficiency &amp; Genetic Tests</span>
+                    </div>
+                    <span className="text-xs text-slate-500 font-normal block mt-0.5">
+                      9 CLIA diagnostic panels (CGx, PGx, Neuro, Cardio)
+                    </span>
+                  </td>
+                  <td className="p-4 sm:p-5 font-bold text-[#0D9488] bg-teal-50/30">
+                    100% Covered ($0 Out-of-Pocket)
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700">
+                    Covered benefit with pre-authorization
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700">
+                    Covers any secondary coinsurance if applicable
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-slate-50/50">
+                  <td className="p-4 sm:p-5 font-bold text-[#0D1B2A]">
+                    <div className="flex items-center gap-2">
+                      <HeartPulse className="w-4 h-4 text-amber-600" />
+                      <span>DME (Durable Medical Equipment)</span>
+                    </div>
+                    <span className="text-xs text-slate-500 font-normal block mt-0.5">
+                      Bracing, mobility rollators, respiratory, CGMs
+                    </span>
+                  </td>
+                  <td className="p-4 sm:p-5 font-bold text-[#0D9488] bg-teal-50/30">
+                    80% Covered by Medicare Part B
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700">
+                    Plan in-network co-pay apply
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700 font-semibold text-emerald-700">
+                    Picks up remaining 20% ($0 Total Cost)
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-slate-50/50">
+                  <td className="p-4 sm:p-5 font-bold text-[#0D1B2A]">
+                    <div className="flex items-center gap-2">
+                      <Radio className="w-4 h-4 text-rose-500" />
+                      <span>24/7 Medical Alert Systems</span>
+                    </div>
+                    <span className="text-xs text-slate-500 font-normal block mt-0.5">
+                      GPS emergency mobile pendants &amp; fall detection
+                    </span>
+                  </td>
+                  <td className="p-4 sm:p-5 font-bold text-[#0D9488] bg-teal-50/30">
+                    HSA/FSA Eligible + Advantage Reimbursement
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700">
+                    Many Part C plans include safety device allowance
+                  </td>
+                  <td className="p-4 sm:p-5 text-slate-700">
+                    Direct discounts &amp; monthly subsidies
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── UNIFIED LEAD FORM SECTION ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="text-center space-y-3">
+            <Badge variant="teal" size="md">
+              Universal Pre-Qualification
+            </Badge>
+            <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
+              Check Your Eligibility for AegisGenomics Services
+            </h2>
+            <p className="font-sans-body text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+              Complete the unified form below. A licensed physician and care coordinator will review your information within 24 hours.
+            </p>
+          </div>
+
+          <Card className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-xl">
+            <UnifiedLeadForm
+              heading="Check Your Medicare Coverage"
+              subheading="Select your insurance plan and submit your details. Zero upfront payment required."
+            />
+          </Card>
+        </div>
+      </section>
+
+      {/* ── BOTTOM CONVERSION CTA ── */}
+      <section className="py-16 sm:py-20 bg-[#0D1B2A] text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <Badge variant="emerald" size="md" dot>
+            Proactive Senior Healthcare
+          </Badge>
+
+          <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight max-w-3xl mx-auto">
+            Ready to Experience Precision Diagnostics &amp; Senior Wellness?
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust AegisGenomics for proactive healthcare.
+          </p>
+
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              href="/eligibility-checker"
+              size="lg"
+              variant="primary"
+              className="w-full sm:w-auto font-semibold px-8 py-4 rounded-full shadow-lg shadow-teal-700/30"
+            >
+              Start 2-Minute Pre-Qualification &rarr;
+            </Button>
+
+            <a
+              href={`tel:${SITE_CONFIG.phoneFormatted}`}
+              className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-300 hover:text-white px-6 py-4 rounded-full border border-slate-700 hover:border-slate-500 transition-colors"
+            >
+              <Phone className="w-4 h-4 text-amber-400" />
+              <span>Call Toll-Free: {SITE_CONFIG.phone}</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
