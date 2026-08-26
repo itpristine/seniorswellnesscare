@@ -49,10 +49,17 @@
   }
 
   .highlight-accent {
-    white-space: nowrap;
-    display: inline-block;
+    white-space: normal;
+    display: inline;
     position: relative;
     color: #0D9488;
+  }
+
+  @media (min-width: 640px) {
+    .highlight-accent {
+      white-space: nowrap;
+      display: inline-block;
+    }
   }
 
   .highlight-accent:after {
