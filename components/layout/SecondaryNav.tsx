@@ -417,28 +417,6 @@ export function SecondaryNav() {
             For Patients
           </Link>
 
-          {/* Link: Sample Reports */}
-          <Link
-            href="/resources/sample-reports"
-            className={cn(
-              'py-1 hover:text-[#0D9488] transition-colors',
-              pathname === '/resources/sample-reports' ? 'text-[#0D9488] font-bold' : 'text-slate-800'
-            )}
-          >
-            Sample Reports
-          </Link>
-
-          {/* Link: Track Kit */}
-          <Link
-            href="/track-kit"
-            className={cn(
-              'py-1 hover:text-[#0D9488] transition-colors',
-              pathname === '/track-kit' ? 'text-[#0D9488] font-bold' : 'text-slate-800'
-            )}
-          >
-            Track Kit
-          </Link>
-
           {/* Link: FAQs */}
           <Link
             href="/resources/faq"
@@ -482,18 +460,6 @@ export function SecondaryNav() {
           className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
         >
           For Patients
-        </Link>
-        <Link
-          href="/resources/sample-reports"
-          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
-        >
-          Sample Reports
-        </Link>
-        <Link
-          href="/track-kit"
-          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
-        >
-          Track Kit
         </Link>
         <Link
           href="/eligibility-checker"

@@ -389,13 +389,19 @@ export function GlobalHeader() {
             <div className="space-y-6">
               {/* Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-teal-50 text-[#0D9488] flex items-center justify-center">
-                    <Dna className="w-4 h-4" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md border border-[#EAE5D8] overflow-hidden">
+                    <img
+                      src="/logo.png"
+                      alt="Aegis Genomics logo"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <span className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
-                    Aegis<span className="text-[#0D9488]">Genomics</span>
-                  </span>
+                  <img
+                    src="/Name.png"
+                    alt="Aegis Genomics name"
+                    className="h-8 w-auto object-contain"
+                  />
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -418,9 +424,6 @@ export function GlobalHeader() {
                   <span className="flex items-center gap-2">
                     <Dna className="w-4 h-4 text-[#0D9488]" />
                     Immunodeficiency
-                  </span>
-                  <span className="text-[10px] font-bold text-[#0D9488] bg-teal-50 px-2 py-0.5 rounded-full">
-                    $0
                   </span>
                 </Link>
 
@@ -469,16 +472,7 @@ export function GlobalHeader() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="pt-6 border-t border-slate-100 space-y-3">
-              <Link
-                href="/eligibility-checker"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full bg-[#0D9488] text-white text-xs sm:text-sm font-semibold py-3 rounded-full shadow-md"
-              >
-                <ShieldCheck className="w-4 h-4 text-emerald-200" />
-                <span>Check Eligibility ($0 Cost)</span>
-              </Link>
-
+            <div className="pt-6 border-t border-slate-100">
               <a
                 href={`tel:${SITE_CONFIG.phoneFormatted}`}
                 className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-700 hover:text-[#0D9488] p-2"

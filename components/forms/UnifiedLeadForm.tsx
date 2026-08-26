@@ -27,8 +27,8 @@ interface UnifiedLeadFormProps {
 }
 
 export function UnifiedLeadForm({
-  heading = 'Check Your $0 Medicare Eligibility',
-  subheading = 'Complete the form below. A licensed physician will review your profile within 24 hours.',
+  heading = 'Check Your Genetic Testing Eligibility',
+  subheading = 'Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate testing.',
 }: UnifiedLeadFormProps) {
   /* ── Field state ── */
   const [firstName, setFirstName] = useState('');

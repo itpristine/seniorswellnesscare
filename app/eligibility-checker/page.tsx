@@ -7,9 +7,9 @@ import { Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Check Your Medicare Eligibility ($0 Cost)',
+  title: 'Check Your Genetic Testing Eligibility',
   description:
-    'Complete our quick pre-qualification form to see if you qualify for physician-ordered at-home genetic screening covered 100% by Medicare Part B.',
+    'Complete our quick pre-qualification form to review your insurance coverage and see whether physician-ordered at-home genetic screening may be appropriate for your situation.',
 };
 
 export default function EligibilityCheckerPage() {
@@ -26,8 +26,8 @@ export default function EligibilityCheckerPage() {
           </h1>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
             Fill in your details below. A licensed physician in your state will review your profile
-            and confirm if you qualify for $0 out-of-pocket genomic diagnostics covered by Medicare
-            Part B.
+            and help determine whether insurance coverage may be available for appropriate genomic
+            testing.
           </p>
         </div>
 
@@ -35,8 +35,8 @@ export default function EligibilityCheckerPage() {
         <div className="max-w-3xl mx-auto">
           <Card className="bg-white border border-slate-200/90 shadow-xl rounded-3xl p-6 sm:p-10">
             <UnifiedLeadForm
-              heading="Check Your $0 Medicare Eligibility"
-              subheading="Complete the form below. A licensed physician will review your profile within 24 hours and reach out to confirm your eligibility."
+              heading="Check Your Genetic Testing Eligibility"
+              subheading="Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate testing."
             />
           </Card>
         </div>
@@ -45,7 +45,7 @@ export default function EligibilityCheckerPage() {
         <div className="max-w-3xl mx-auto mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { icon: <ShieldCheck className="w-4 h-4 text-[#0D9488]" />, text: 'CAP & CLIA Accredited Labs' },
-            { icon: <CheckCircle2 className="w-4 h-4 text-[#0D9488]" />, text: '$0 Out-of-Pocket for Qualifying Seniors' },
+            { icon: <CheckCircle2 className="w-4 h-4 text-[#0D9488]" />, text: 'Insurance Coverage Review' },
             { icon: <CheckCircle2 className="w-4 h-4 text-[#0D9488]" />, text: 'Physician-Reviewed Every Order' },
           ].map((item, i) => (
             <div
