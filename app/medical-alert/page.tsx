@@ -78,7 +78,7 @@ export default function MedicalAlertPage() {
     {
       question: 'Do I need a landline telephone?',
       answer:
-        'No. All AegisGenomics medical alert devices operate on dedicated built-in 4G LTE cellular networks. You do not need a landline or home Wi-Fi to use our systems.',
+        'No. All senior wellness care medical alert devices operate on dedicated built-in 4G LTE cellular networks. You do not need a landline or home Wi-Fi to use our systems.',
     },
     {
       question: 'What happens when the SOS button is pressed?',

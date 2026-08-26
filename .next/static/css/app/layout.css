@@ -866,6 +866,9 @@ h1, h2, h3, h4 {
 .w-\[680px\]{
   width: 680px;
 }
+.w-auto{
+  width: auto;
+}
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -1061,6 +1064,11 @@ h1, h2, h3, h4 {
   --tw-space-y-reverse: 0;
   margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+.space-y-14 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3.5rem * var(--tw-space-y-reverse));
 }
 .space-y-16 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
@@ -1490,6 +1498,14 @@ h1, h2, h3, h4 {
 }
 .stroke-\[3\]{
   stroke-width: 3;
+}
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-1{
   padding: 0.25rem;
@@ -2341,6 +2357,11 @@ h1, h2, h3, h4 {
 .hover\:text-\[\#0D9488\]:hover{
   --tw-text-opacity: 1;
   color: rgb(13 148 136 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-\[\#0F766E\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(15 118 110 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-emerald-300:hover{

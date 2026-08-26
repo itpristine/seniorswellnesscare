@@ -25,9 +25,9 @@ import { UnifiedLeadForm } from '@/components/forms/UnifiedLeadForm';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'AegisGenomics | Precision Healthcare, DME Equipment & Medical Alert Systems',
+  title: 'senior wellness care | Precision Healthcare, DME Equipment & Medical Alert Systems',
   description:
-    'AegisGenomics is an all-in-one senior healthcare platform offering Medicare-covered Immunodeficiency DNA screening, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems.',
+    'senior wellness care is an all-in-one senior healthcare platform offering Medicare-covered Immunodeficiency DNA screening, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems.',
 };
 
 export default function HomePage() {
@@ -110,7 +110,7 @@ export default function HomePage() {
             </h1>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-              AegisGenomics empowers seniors and families with three essential health solutions under one roof: physician-ordered immunodeficiency DNA screening, Medicare-covered durable medical equipment (DME), and 24/7 medical alert fall protection—delivered to your doorstep with $0 or low out-of-pocket costs.
+              senior wellness care empowers seniors and families with three essential health solutions under one roof: physician-ordered immunodeficiency DNA screening, Medicare-covered durable medical equipment (DME), and 24/7 medical alert fall protection—delivered to your doorstep with $0 or low out-of-pocket costs.
             </p>
 
             {/* CTA */}
@@ -149,7 +149,7 @@ export default function HomePage() {
               <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
                 <div>
                   <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
-                    AegisGenomics Services
+                    senior wellness care Services
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">Select a service to get started</p>
                 </div>
@@ -238,7 +238,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <Badge variant="teal" size="md">
-              AegisGenomics Service Portfolio
+              senior wellness care Service Portfolio
             </Badge>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
               Three Essential Healthcare Pillars for Seniors
@@ -316,7 +316,7 @@ export default function HomePage() {
               Understand Your Medicare &amp; Insurance Benefits
             </h2>
             <p className="font-sans-body text-sm sm:text-base text-slate-600">
-              AegisGenomics verifies your benefits upfront with zero surprise billing.
+              senior wellness care verifies your benefits upfront with zero surprise billing.
             </p>
           </div>
 
@@ -401,27 +401,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── UNIFIED LEAD FORM SECTION ── */}
+      {/* ── 4-STEP HEALTHCARE JOURNEY & CARE MODEL ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="text-center space-y-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <Badge variant="teal" size="md">
-              Universal Pre-Qualification
+              Simple 4-Step Care Journey
             </Badge>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-              Check Your Eligibility for AegisGenomics Services
+              How We Delivers Seamless Senior Care
             </h2>
-            <p className="font-sans-body text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-              Complete the unified form below. A licensed physician and care coordinator will review your information within 24 hours.
+            <p className="font-sans-body text-sm sm:text-base text-slate-600">
+              From benefit verification to doorstep delivery and ongoing monitoring, our clinical team manages every detail.
             </p>
           </div>
 
-          <Card className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-xl">
-            <UnifiedLeadForm
-              heading="Check Your Medicare Coverage"
-              subheading="Select your insurance plan and submit your details. Zero upfront payment required."
-            />
-          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                step: '01',
+                title: 'Quick Benefit Check',
+                desc: 'Answer a few quick questions online or over the phone to verify your Medicare Part B and secondary insurance coverage with $0 out-of-pocket obligation.',
+                icon: <ShieldCheck className="w-6 h-6 text-[#0D9488]" />,
+              },
+              {
+                step: '02',
+                title: 'Physician Review',
+                desc: 'A licensed healthcare provider in your state reviews your medical necessity and writes the digital prescription for testing, DME, or safety equipment.',
+                icon: <Stethoscope className="w-6 h-6 text-amber-600" />,
+              },
+              {
+                step: '03',
+                title: 'Doorstep Delivery',
+                desc: 'Your painless DNA cheek swab, custom orthopedic brace, mobility aid, or pre-activated medical alert device is shipped free via discrete USPS Priority Mail.',
+                icon: <Truck className="w-6 h-6 text-[#0D9488]" />,
+              },
+              {
+                step: '04',
+                title: 'Care & Monitoring',
+                desc: 'Receive comprehensive CLIA diagnostic reports, personal fitting guidance, and 24/7 round-the-clock emergency safety monitoring for total peace of mind.',
+                icon: <Activity className="w-6 h-6 text-rose-500" />,
+              },
+            ].map((card) => (
+              <Card
+                key={card.step}
+                className="p-7 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical hover:shadow-xl hover:bg-white transition-all duration-200 flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
+                      {card.icon}
+                    </div>
+                    <span className="font-mono font-bold text-2xl text-slate-300">
+                      {card.step}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
+                    {card.title}
+                  </h3>
+
+                  <p className="font-sans-body text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-200/60 flex items-center gap-1.5 text-xs font-semibold text-[#0D9488]">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>100% Coordinated for You</span>
+                </div>
+              </Card>
+            ))}
+          </div>
+
         </div>
       </section>
 
@@ -437,17 +489,17 @@ export default function HomePage() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust AegisGenomics for precision diagnostics, medical equipment, and 24/7 emergency response.
+            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust senior wellness care for precision diagnostics, medical equipment, and 24/7 emergency response.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              href="/eligibility-checker"
+              href="#services"
               size="lg"
               variant="primary"
               className="w-full sm:w-auto font-semibold px-8 py-4 rounded-full shadow-lg shadow-teal-700/30"
             >
-              Start 2-Minute Pre-Qualification &rarr;
+              Explore Core Services &rarr;
             </Button>
 
             <a

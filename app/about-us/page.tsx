@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -11,31 +12,39 @@ import {
   HeartPulse,
   Sparkles,
   ArrowRight,
+  Stethoscope,
+  Radio,
+  Dna,
+  Phone,
+  CheckCircle2,
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About Aegis Genomics | Mission, Medical Advisory & Laboratory Network',
+  title: 'About AegisGenomics | Mission, Clinical Governance & Senior Care',
   description:
-    'Learn about Aegis Genomics—our mission to democratize preventive medicine, our board-certified medical advisory leadership, and our national CLIA/CAP laboratory network.',
+    'Learn about AegisGenomics—our mission to provide proactive senior healthcare through physician-ordered preventive genomics, Medicare-covered DME, and 24/7 medical alert systems.',
 };
 
 export default function AboutUsPage() {
-  const leadership = [
+  const platformPillars = [
     {
-      name: 'Dr. Arthur Vance, MD, PhD, FACMG',
-      title: 'Chief Medical Officer & Board-Certified Clinical Geneticist',
-      bio: 'Over 22 years leading clinical genomics initiatives and preventive screening programs at top-tier academic medical centers.',
+      title: 'Precision Genomics & Diagnostics',
+      icon: <Dna className="w-6 h-6 text-[#0D9488]" />,
+      badge: 'CLIA & CAP Accredited',
+      desc: 'Partnering with certified high-complexity laboratory networks and genetic specialists to deliver accurate, non-invasive biomarker sequencing covered 100% by Medicare Part B.',
     },
     {
-      name: 'Dr. Evelyn Chen, PharmD, BCPS',
-      title: 'Director of Pharmacogenomics & Clinical Pharmacology',
-      bio: 'Specialist in CPIC guidelines, drug-gene interactions, and reducing adverse drug hospitalizations in geriatric populations.',
+      title: 'Durable Medical Equipment (DME)',
+      icon: <HeartPulse className="w-6 h-6 text-amber-600" />,
+      badge: 'Physician-Prescribed',
+      desc: 'Working directly with licensed orthotists, mobility manufacturers, and Medicare Part B billing coordinators to deliver essential assistive supplies straight to seniors’ homes.',
     },
     {
-      name: 'Marcus Reynolds, MS, CGC',
-      title: 'Head of Clinical Genetic Counseling',
-      bio: 'Licensed Genetic Counselor passionate about translating complex genomic variant science into actionable lifestyle plans for families.',
+      title: '24/7 Senior Emergency Response',
+      icon: <Radio className="w-6 h-6 text-rose-500" />,
+      badge: '24/7 US Monitoring',
+      desc: 'Deploying certified emergency response dispatchers and state-of-the-art automatic fall detection technology to maintain independent, protected living.',
     },
   ];
 
@@ -49,11 +58,11 @@ export default function AboutUsPage() {
           </Badge>
 
           <h1 className="font-serif-heading font-bold text-3xl sm:text-5xl text-[#0D1B2A] tracking-tight leading-tight max-w-3xl">
-            Democratizing Preventive Genomics for Every American
+            Empowering Seniors with Integrated Healthcare Solutions
           </h1>
 
           <p className="font-sans-body text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl">
-            We believe that early genomic insights should not be restricted to specialized research hospitals. By connecting patients with licensed physicians, CLIA-certified labs, and Medicare Part B coverage, we make preventive precision medicine accessible nationwide.
+            We believe comprehensive healthcare should be accessible, proactive, and coordinated from home. By integrating physician-ordered preventive diagnostics, Medicare-covered medical equipment, and 24/7 emergency safety response, AegisGenomics provides complete peace of mind for seniors and their families nationwide.
           </p>
         </div>
 
@@ -63,88 +72,107 @@ export default function AboutUsPage() {
             <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A]">
               12,500+
             </span>
-            <p className="text-xs text-slate-500 font-semibold">Patients Screened</p>
+            <p className="text-xs text-slate-500 font-semibold">Seniors Supported</p>
           </Card>
 
           <Card className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical text-center space-y-1">
             <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D9488]">
               190+
             </span>
-            <p className="text-xs text-slate-500 font-semibold">CLIA Partner Labs</p>
+            <p className="text-xs text-slate-500 font-semibold">CLIA Partner Labs &amp; Suppliers</p>
           </Card>
 
           <Card className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical text-center space-y-1">
             <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-amber-600">
               48 States
             </span>
-            <p className="text-xs text-slate-500 font-semibold">Physician Coverage</p>
+            <p className="text-xs text-slate-500 font-semibold">Physician Network</p>
           </Card>
 
           <Card className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical text-center space-y-1">
             <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-emerald-600">
               $0.00
             </span>
-            <p className="text-xs text-slate-500 font-semibold">Medicare Part B Copay</p>
+            <p className="text-xs text-slate-500 font-semibold">Medicare Part B Copay Tier</p>
           </Card>
         </div>
 
-        {/* Medical Advisory Leadership */}
+        {/* Replaced Clinical Governance Section -> Integrated Healthcare Model */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <Badge variant="teal" size="sm">
-              Clinical Leadership
+              Integrated Senior Care
             </Badge>
             <h2 className="font-serif-heading font-bold text-2xl sm:text-3xl text-[#0D1B2A]">
-              Medical Advisory &amp; Clinical Governance
+              Our Three Standards of Clinical Excellence
             </h2>
             <p className="text-sm text-slate-600">
-              Our clinical protocol is governed by leading board-certified physicians, clinical geneticists, and pharmacogenomic specialists.
+              Every service on the AegisGenomics platform is supported by licensed clinical oversight, accredited laboratory processing, and certified emergency protocols.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {leadership.map((leader) => (
+            {platformPillars.map((pillar) => (
               <Card
-                key={leader.name}
+                key={pillar.title}
                 className="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-clinical space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0D9488] font-bold text-lg font-serif-heading">
-                    {leader.name.charAt(3)}
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center">
+                      {pillar.icon}
+                    </div>
+                    <Badge variant="teal" size="sm">
+                      {pillar.badge}
+                    </Badge>
                   </div>
                   <div>
                     <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
-                      {leader.name}
+                      {pillar.title}
                     </h3>
-                    <h4 className="text-xs font-semibold text-[#0D9488] mt-0.5">
-                      {leader.title}
-                    </h4>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {leader.bio}
+                    {pillar.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-400">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>Licensed Medical Governance</span>
+                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#0D9488]">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Medicare Coordinated Care</span>
                 </div>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            href="/eligibility-checker"
-            size="lg"
-            variant="primary"
-            className="shadow-md shadow-teal-700/20 font-semibold rounded-full"
-            icon={<ArrowRight className="w-4 h-4" />}
-          >
-            Check Your Eligibility in Under 2 Minutes &rarr;
-          </Button>
+        {/* Replaced form button with navigation and contact */}
+        <div className="text-center space-y-4 pt-4">
+          <div className="max-w-xl mx-auto p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical space-y-4">
+            <h3 className="font-serif-heading font-bold text-xl text-[#0D1B2A]">
+              Connect With Our Care Team
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Have questions about our physician network, laboratory accreditation, or Medicare coverage? Our team is here to assist.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                href="/contact"
+                size="lg"
+                variant="primary"
+                className="w-full sm:w-auto shadow-md text-xs sm:text-sm font-semibold rounded-full"
+                icon={<ArrowRight className="w-4 h-4" />}
+              >
+                Contact Patient Concierge &rarr;
+              </Button>
+              <a
+                href={`tel:${SITE_CONFIG.phoneFormatted}`}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full border border-slate-300 hover:bg-slate-50 text-[#0D1B2A]"
+              >
+                <Phone className="w-4 h-4 text-amber-500" />
+                <span>Call {SITE_CONFIG.phone}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

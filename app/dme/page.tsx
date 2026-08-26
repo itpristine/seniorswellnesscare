@@ -85,7 +85,7 @@ export default function DMEPage() {
     {
       question: 'How do I get a prescription for a back brace or mobility walker?',
       answer:
-        'AegisGenomics coordinates directly with your existing primary care physician or matches you with a state-licensed telehealth clinician who can evaluate your medical indications and write the required digital prescription.',
+        'senior wellness care coordinates directly with your existing primary care physician or matches you with a state-licensed telehealth clinician who can evaluate your medical indications and write the required digital prescription.',
     },
     {
       question: 'Is shipping and delivery free?',

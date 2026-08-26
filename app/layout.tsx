@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description:
-    'AegisGenomics provides physician-ordered preventive genetic testing, Medicare-covered Durable Medical Equipment (DME), and 24/7 Medical Alert senior emergency response systems.',
+    'senior wellness care provides physician-ordered preventive genetic testing, Medicare-covered Durable Medical Equipment (DME), and 24/7 Medical Alert senior emergency response systems.',
   keywords: [
-    'AegisGenomics',
+    'senior wellness care',
     'Medicare genetic testing',
     'Immunodeficiency test',
     'Durable Medical Equipment DME',

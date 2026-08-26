@@ -138,16 +138,19 @@ export function GlobalHeader() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 flex items-center justify-between">
           {/* Main Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#0D1B2A] to-[#1A2E40] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-emerald-500/30">
-              <Dna className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#EAE5D8] overflow-hidden">
+              <img
+                src="/logo.png"
+                alt="Aegis Genomics logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif-heading font-bold text-lg sm:text-xl text-[#0D1B2A] tracking-tight flex items-center gap-1">
-                Aegis<span className="text-[#0D9488] font-sans font-extrabold text-xs sm:text-sm uppercase tracking-wider">Genomics</span>
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-slate-500 font-medium tracking-wide -mt-1 hidden xs:block">
-                Precision Health, DME &amp; Senior Care
-              </span>
+              <img
+                src="/Name.png"
+                alt="Aegis Genomics name"
+                className="h-7 sm:h-8 w-auto object-contain"
+              />
             </div>
           </Link>
 
@@ -218,43 +221,6 @@ export function GlobalHeader() {
               )}
             </div>
 
-            {/* Insurance & Eligibility */}
-            <Link
-              href="/medicare-eligibility"
-              className={cn(
-                'flex items-center gap-1.5 py-2 hover:text-[#0D9488] transition-colors',
-                pathname === '/medicare-eligibility' ? 'text-[#0D9488] font-bold' : 'text-slate-800'
-              )}
-            >
-              <span>Insurance &amp; Eligibility</span>
-              <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
-                <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                $0 Copay Check
-              </span>
-            </Link>
-
-            {/* How It Works */}
-            <Link
-              href="/how-it-works"
-              className={cn(
-                'py-2 hover:text-[#0D9488] transition-colors',
-                pathname === '/how-it-works' ? 'text-[#0D9488] font-bold' : 'text-slate-800'
-              )}
-            >
-              How It Works
-            </Link>
-
-            {/* For Providers */}
-            <Link
-              href="/providers"
-              className={cn(
-                'py-2 hover:text-[#0D9488] transition-colors',
-                pathname.startsWith('/providers') ? 'text-[#0D9488] font-bold' : 'text-slate-800'
-              )}
-            >
-              For Providers
-            </Link>
-
             {/* About Us */}
             <Link
               href="/about-us"
@@ -278,16 +244,7 @@ export function GlobalHeader() {
             </Link>
           </nav>
 
-          {/* Unified Action CTA Button */}
-          <div className="hidden sm:flex items-center">
-            <Link
-              href="/eligibility-checker"
-              className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold px-5 py-2.5 rounded-full transition-all shadow-xs hover:shadow-md flex items-center gap-1.5 whitespace-nowrap"
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-200" />
-              <span>Check My Eligibility</span>
-            </Link>
-          </div>
+
 
           {/* Mobile Menu & Search Buttons */}
           <div className="flex items-center gap-1 lg:hidden">
@@ -469,31 +426,6 @@ export function GlobalHeader() {
                 <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 pt-3 pb-1">
                   Navigation
                 </div>
-
-                <Link
-                  href="/medicare-eligibility"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl text-sm font-semibold text-emerald-700 bg-emerald-50/60"
-                >
-                  <span>Insurance &amp; Eligibility</span>
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                </Link>
-
-                <Link
-                  href="/how-it-works"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl text-sm font-semibold text-[#0D1B2A] hover:bg-[#FDFCF7] hover:text-[#0D9488]"
-                >
-                  <span>How It Works</span>
-                </Link>
-
-                <Link
-                  href="/providers"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl text-sm font-semibold text-[#0D1B2A] hover:bg-[#FDFCF7] hover:text-[#0D9488]"
-                >
-                  <span>For Providers</span>
-                </Link>
 
                 <Link
                   href="/about-us"

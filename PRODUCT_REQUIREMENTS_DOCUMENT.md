@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 # NextGen Preventive Genomics & Medicare Wellness Platform
-**Project Codename:** `AegisGenomics` / `VanguardHealth`  
+**Project Codename:** `senior wellness care` / `VanguardHealth`  
 **Target Architecture:** Next.js 14/15 (App Router), Tailwind CSS, TypeScript (Strict)  
 **Document Version:** 1.0.0 (Master Technical Specification)
 
