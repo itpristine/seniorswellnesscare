@@ -105,7 +105,7 @@ export function SecondaryNav() {
           <div className="flex items-center gap-2 shrink-0">
             <Link
               href="/medical-alert/quote"
-              className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+              className="hidden sm:flex bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-all shadow-xs items-center gap-1.5 whitespace-nowrap cursor-pointer"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
               <span>Get a Quote</span>
@@ -289,20 +289,30 @@ export function SecondaryNav() {
 
         {/* Mobile quick scroll anchors */}
         <div className="flex lg:hidden items-center gap-2 overflow-x-auto pt-1.5 pb-0.5 no-scrollbar text-[11px] font-semibold text-slate-700">
-          <a href="#what-is-dme" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+          <a href="#what-is-dme" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
             Overview
           </a>
-          
-          <a href="#back-braces" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+          <a href="#products" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+            Products
+          </a>
+          <a href="#back-braces" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
             Back
           </a>
-          
-          <a href="#how-it-works" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap">
+          <a href="#how-it-works" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
             How It Works
           </a>
-          <a href="#medicare-coverage" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap text-[#0D9488]">
+          <a href="#medicare-coverage" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs text-[#0D9488]">
             Medicare Coverage
           </a>
+          <a href="#faq" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+            FAQs
+          </a>
+          <Link
+            href="/eligibility-checker"
+            className="px-3 py-0.5 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+          >
+            Check Eligibility
+          </Link>
         </div>
       </div>
     );
@@ -442,15 +452,55 @@ export function SecondaryNav() {
         </nav>
 
         {/* Right CTA */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <Link
             href="/eligibility-checker"
-            className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
+            className="hidden md:flex bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs items-center gap-1 whitespace-nowrap"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
             <span>Check Eligibility</span>
           </Link>
         </div>
+      </div>
+
+      {/* Mobile quick scroll anchors */}
+      <div className="flex md:hidden items-center gap-2 overflow-x-auto pt-2 pb-0.5 no-scrollbar text-xs font-semibold text-slate-700">
+        <Link
+          href="/programs"
+          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+        >
+          Tests &amp; Diagnostics
+        </Link>
+        <Link
+          href="/medicare-eligibility"
+          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+        >
+          Insurance
+        </Link>
+        <Link
+          href="/how-it-works"
+          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+        >
+          For Patients
+        </Link>
+        <Link
+          href="/resources/sample-reports"
+          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+        >
+          Sample Reports
+        </Link>
+        <Link
+          href="/track-kit"
+          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+        >
+          Track Kit
+        </Link>
+        <Link
+          href="/eligibility-checker"
+          className="px-3 py-1 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+        >
+          Check Eligibility
+        </Link>
       </div>
     </div>
   );

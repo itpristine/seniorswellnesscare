@@ -1,3 +1,6 @@
 {
-  "/immunodeficiency/page": "app/immunodeficiency/page.js"
+  "/immunodeficiency/page": "app/immunodeficiency/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/track-kit/page": "app/track-kit/page.js",
+  "/resources/sample-reports/page": "app/resources/sample-reports/page.js"
 }
