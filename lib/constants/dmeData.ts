@@ -216,7 +216,7 @@ export const DME_PROCESS_STEPS = [
     step: '01',
     title: 'Check Your Eligibility',
     subtitle: 'Fast 2-Minute Pre-Check',
-    desc: 'Submit your basic information and insurance details through our simple online eligibility form. There is zero upfront cost or commitment to check.',
+    desc: 'Submit your basic information and insurance details through our simple online eligibility form. We review your coverage and eligibility details before moving forward.',
     iconName: 'ClipboardCheck',
     badge: 'Step 1 • 2 Minutes',
   },
@@ -239,8 +239,8 @@ export const DME_PROCESS_STEPS = [
   {
     step: '04',
     title: 'Get Your DME',
-    subtitle: 'Free Direct-to-Home Delivery',
-    desc: 'If approved and covered, your physician-prescribed DME product is shipped directly to your doorstep with free delivery and comprehensive fitting instructions.',
+    subtitle: 'Direct-to-Home Delivery',
+    desc: 'If approved and covered, your physician-prescribed DME product is shipped directly to your doorstep with delivery and fit guidance included.',
     iconName: 'Truck',
     badge: 'Step 4 • Fast Delivery',
   },
@@ -248,10 +248,10 @@ export const DME_PROCESS_STEPS = [
 
 export const DME_COVERAGE_ROWS = [
   {
-    feature: 'Patient Out-of-Pocket Cost',
-    partB: '80% Covered by Medicare',
-    advantage: 'Covered per Plan Terms',
-    supplemental: 'Picks up 20% ($0 Out-of-Pocket)',
+    feature: 'Patient Cost Responsibility',
+    partB: 'Coverage varies by plan and authorization',
+    advantage: 'Coverage depends on plan terms',
+    supplemental: 'Additional plan coverage may apply',
     highlight: true,
   },
   {
@@ -269,10 +269,10 @@ export const DME_COVERAGE_ROWS = [
     highlight: false,
   },
   {
-    feature: 'Free Direct-to-Home Shipping',
-    partB: 'Yes (100% Free)',
-    advantage: 'Yes (100% Free)',
-    supplemental: 'Yes (100% Free)',
+    feature: 'Direct-to-Home Shipping',
+    partB: 'Yes (Delivery Included)',
+    advantage: 'Yes (Delivery Included)',
+    supplemental: 'Yes (Delivery Included)',
     highlight: false,
   },
   {
@@ -283,10 +283,10 @@ export const DME_COVERAGE_ROWS = [
     highlight: false,
   },
   {
-    feature: 'No-Surprise-Billing Patient Protection',
+    feature: 'Coverage Review Before Shipment',
     partB: 'Yes (Pre-Verified)',
     advantage: 'Yes (Pre-Verified)',
-    supplemental: 'Yes (Guaranteed $0)',
+    supplemental: 'Yes (Coverage Review)',
     highlight: true,
   },
 ];
@@ -296,21 +296,21 @@ export const DME_FAQS = [
     id: 'dme-faq-1',
     question: 'What is Durable Medical Equipment (DME) and does Medicare cover it?',
     answer:
-      'Durable Medical Equipment (DME) refers to medically necessary, reusable supportive equipment—such as orthopedic back, knee, shoulder, elbow, and wrist braces—prescribed by a licensed healthcare provider for therapeutic support and pain management. Under Medicare Part B, medically necessary DME is a covered benefit. Traditional Medicare typically covers 80% of the approved amount, and supplemental insurance or Medigap plans often cover the remaining 20%, resulting in little to no out-of-pocket cost for qualifying beneficiaries.',
+      'Durable Medical Equipment (DME) refers to medically necessary, reusable supportive equipment—such as orthopedic back, knee, shoulder, elbow, and wrist braces—prescribed by a licensed healthcare provider for therapeutic support and pain management. Under Medicare Part B, medically necessary DME may be eligible for coverage when medical necessity and plan requirements are met. Coverage can vary by Medicare plan, supplemental coverage, and individual eligibility.',
     badge: 'Medicare Coverage',
   },
   {
     id: 'dme-faq-2',
     question: 'Why are we providing these DME products?',
     answer:
-      'Our mission is to help eligible patients access medically necessary, high-grade orthopedic braces and supportive equipment through their available Medicare and insurance benefits. When a patient qualifies and the equipment meets medical necessity criteria, patients may receive the appropriate DME with little to no out-of-pocket cost. We handle the clinical review, physician prescription coordination, and benefit verification to make obtaining necessary equipment seamless.',
+      'Our mission is to help eligible patients access medically necessary, high-grade orthopedic braces and supportive equipment through their available Medicare and insurance benefits. When a patient qualifies and the equipment meets medical necessity criteria, patients may be able to receive the appropriate DME through coverage that depends on their eligibility and plan requirements. We handle the clinical review, physician prescription coordination, and benefit verification to make obtaining necessary equipment seamless.',
     badge: 'Our Mission',
   },
   {
     id: 'dme-faq-3',
     question: 'Will I have to pay anything out-of-pocket for my brace?',
     answer:
-      'If you have Original Medicare Part B along with a secondary or supplemental (Medigap) policy, and your equipment is approved as medically necessary, your out-of-pocket cost is frequently $0. If you are enrolled in Medicare Advantage (Part C), standard in-network plan copays or deductibles may apply. We always verify your benefits upfront before shipping so you know exactly what your coverage provides—with zero surprise billing.',
+      'Coverage depends on your specific Medicare plan, supplemental coverage, and medical necessity review. Your insurance may cover the full cost of eligible DME when eligibility and plan requirements are met, and we review those details upfront before any equipment is shipped.',
     badge: 'Costs & Billing',
   },
   {

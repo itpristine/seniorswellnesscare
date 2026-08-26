@@ -9,9 +9,9 @@ import { FaqAccordionSection } from '@/components/sections/FaqAccordionSection';
 import { ConversionCTA } from '@/components/sections/ConversionCTA';
 
 export const metadata: Metadata = {
-  title: 'Immunodeficiency & Preventive Genomics Testing | Medicare Part B ($0 Cost)',
+  title: 'Immunodeficiency & Preventive Genomics Testing | Insurance Coverage Review',
   description:
-    'Physician-ordered preventive genetic testing and 9 diagnostic panels covered 100% by Medicare Part B. Painless at-home 5-minute buccal cheek swab processed in CLIA/CAP-certified labs.',
+    'Physician-ordered preventive genetic testing and 9 diagnostic panels may be eligible for insurance coverage depending on eligibility, medical necessity, and plan requirements. Painless at-home 5-minute buccal cheek swab processed in CLIA/CAP-certified labs.',
 };
 
 export default function ImmunodeficiencyPage() {

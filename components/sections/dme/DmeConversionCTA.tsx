@@ -34,7 +34,7 @@ export function DmeConversionCTA() {
                 className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/30"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
-                Check My DME Eligibility ($0 Cost) &rarr;
+                Check My DME Eligibility &rarr;
               </Button>
 
               <a

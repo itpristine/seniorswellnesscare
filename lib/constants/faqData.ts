@@ -5,8 +5,8 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-med-1',
     category: 'medicare_billing',
-    question: 'How does Medicare Part B cover genetic testing at $0 out-of-pocket?',
-    answer: 'Under CMS federal guidelines, Medicare Part B covers 100% of the allowable cost for diagnostic and preventive genetic tests when they are determined to be medically appropriate and ordered by a licensed healthcare provider. When your coverage is verified and clinical necessity is established, the CLIA-certified laboratory bills Medicare directly. You will not receive a surprise bill.',
+    question: 'How does Medicare Part B cover genetic testing?',
+    answer: 'Under CMS federal guidelines, Medicare Part B may cover medically appropriate diagnostic and preventive genetic tests when they are ordered by a licensed healthcare provider and meet coverage requirements. When your insurance or plan eligibility is reviewed and clinical necessity is established, the CLIA-certified laboratory may bill insurance directly. Final coverage depends on your individual plan and eligibility.',
     badge: 'Medicare Part B',
   },
   {
@@ -20,7 +20,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-med-3',
     category: 'medicare_billing',
     question: 'Will I ever receive a surprise medical bill?',
-    answer: 'No. We adhere to a strict No-Surprise-Billing pledge. If insurance coverage cannot be verified or clinical criteria are not met, no test kit is shipped and no charges are billed to you.',
+    answer: 'Coverage review is completed before the test is sent when possible. If insurance coverage cannot be verified or clinical criteria are not met, we explain the next steps before any kit is dispatched.',
     badge: 'Patient Protection',
   },
   {
@@ -57,8 +57,8 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-test-4',
     category: 'testing_process',
     question: 'How do I return the kit after swabbing?',
-    answer: 'Simply place your sealed specimen tube inside the prepaid USPS Priority return envelope and drop it in any standard U.S. Postal Service mailbox or hand it to your mail carrier. Shipping is 100% free in both directions.',
-    badge: 'Free Return Shipping',
+    answer: 'Simply place your sealed specimen tube inside the prepaid USPS Priority return envelope and drop it in any standard U.S. Postal Service mailbox or hand it to your mail carrier. Return shipping is included as part of the collection process.',
+    badge: 'Return Shipping',
   },
 
   // Clinical Science

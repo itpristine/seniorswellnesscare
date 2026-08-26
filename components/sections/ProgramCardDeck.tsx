@@ -113,7 +113,7 @@ export function ProgramCardDeck() {
                     {getProgramIcon(program.iconName)}
                   </div>
                   <Badge variant="emerald" size="sm">
-                    $0 Part B Eligible
+                    Coverage Review
                   </Badge>
                 </div>
 
@@ -174,7 +174,7 @@ export function ProgramCardDeck() {
                   href={`/eligibility-checker?program=${program.slug}`}
                   className="py-2.5 px-4 rounded-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold transition-all shadow-xs flex items-center justify-center shrink-0"
                 >
-                  Check $0 Cost
+                  Review Eligibility
                 </Link>
               </div>
             </Card>

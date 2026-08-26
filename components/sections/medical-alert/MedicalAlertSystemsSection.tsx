@@ -3,68 +3,64 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Activity,
+  Home,
+  Radio,
+  Watch,
   ShieldCheck,
-  HeartPulse,
-  Sparkles,
-  ArrowRight,
   CheckCircle2,
-  Stethoscope,
   Info,
   Layers,
-  Award,
+  ArrowRight,
+  Sparkles,
+  Users,
 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { DME_PRODUCTS } from '@/lib/constants/dmeData';
+import { MEDICAL_ALERT_SYSTEMS } from '@/lib/constants/medicalAlertData';
 import { cn } from '@/lib/utils/cn';
 
-export function DmeProductsSection() {
+export function MedicalAlertSystemsSection() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
-    { id: 'all', label: 'All 5 Braces' },
-    { id: 'elbow-brace', label: 'Elbow Braces' },
-    { id: 'wrist-brace', label: 'Wrist Braces' },
-    { id: 'knee-brace', label: 'Knee Braces' },
-    { id: 'back-brace', label: 'Back Braces' },
-    { id: 'shoulder-brace', label: 'Shoulder Braces' },
+    { id: 'all', label: 'All 3 Systems' },
+    { id: 'home-system', label: 'Home System' },
+    { id: 'mobile-systems', label: 'Mobile Systems' },
+    { id: 'smartwatch', label: 'Smartwatch' },
   ];
 
-  const getProductIcon = (name: string) => {
+  const getSystemIcon = (name: string) => {
     switch (name) {
-      case 'Activity':
-        return <Activity className="w-5 h-5 text-[#0D9488]" />;
-      case 'ShieldCheck':
-        return <ShieldCheck className="w-5 h-5 text-amber-600" />;
-      case 'HeartPulse':
-        return <HeartPulse className="w-5 h-5 text-rose-500" />;
-      case 'Sparkles':
-        return <Sparkles className="w-5 h-5 text-teal-600" />;
+      case 'Home':
+        return <Home className="w-5 h-5 text-[#0D9488]" />;
+      case 'Radio':
+        return <Radio className="w-5 h-5 text-rose-500" />;
+      case 'Watch':
+        return <Watch className="w-5 h-5 text-teal-600" />;
       default:
-        return <Activity className="w-5 h-5 text-[#0D9488]" />;
+        return <Radio className="w-5 h-5 text-[#0D9488]" />;
     }
   };
 
-  const filteredProducts =
+  const filteredSystems =
     activeCategory === 'all'
-      ? DME_PRODUCTS
-      : DME_PRODUCTS.filter((p) => p.id === activeCategory);
+      ? MEDICAL_ALERT_SYSTEMS
+      : MEDICAL_ALERT_SYSTEMS.filter((s) => s.id === activeCategory);
 
   return (
-    <section id="products" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
+    <section id="systems" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="teal" size="md">
-            Orthopedic Braces &amp; Supports
+            Dedicated Safety Solutions
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            DME Products We Provide
+            Medical Alert Systems We Provide
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            Engineered to restore mobility, alleviate severe joint pain, and provide stabilization. Prescribed by state-licensed physicians and covered under Medicare Part B when medically necessary.
+            Choose from comprehensive in-home safety stations, on-the-go nationwide mobile GPS pendants, or modern SOS smartwatches tailored to your lifestyle.
           </p>
         </div>
 
@@ -86,12 +82,12 @@ export function DmeProductsSection() {
           ))}
         </div>
 
-        {/* Detailed Product Cards Grid */}
+        {/* Detailed System Cards Stack */}
         <div className="space-y-10">
-          {filteredProducts.map((product) => (
+          {filteredSystems.map((system) => (
             <div
-              key={product.id}
-              id={product.anchorId}
+              key={system.id}
+              id={system.anchorId}
               className="scroll-mt-24"
             >
               <Card className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical hover:shadow-xl transition-all duration-200 space-y-8">
@@ -99,41 +95,50 @@ export function DmeProductsSection() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
-                      {getProductIcon(product.iconName)}
+                      {getSystemIcon(system.iconName)}
                     </div>
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="text-[11px] font-bold text-[#0D9488] uppercase tracking-wider">
-                          DME Orthopedic Category
+                          Medical Alert Solution
                         </span>
-                        <Badge variant="emerald" size="sm">
-                          Insurance Review
+                        <Badge variant="rose" size="sm">
+                          {system.badge}
                         </Badge>
                       </div>
                       <h3 className="font-serif-heading font-bold text-2xl sm:text-3xl text-[#0D1B2A]">
-                        {product.name}
+                        {system.name}
                       </h3>
                       <p className="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">
-                        {product.tagline}
+                        {system.tagline}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3 self-start md:self-auto">
                     <Button
-                      href="/eligibility-checker"
+                      href="/medical-alert/quote"
                       variant="primary"
                       size="md"
                       className="text-xs sm:text-sm font-semibold rounded-full shadow-xs whitespace-nowrap"
                     >
-                      Check Eligibility &rarr;
+                      Get a Quote &rarr;
                     </Button>
                   </div>
                 </div>
 
+                {/* Device Image */}
+                <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-2 sm:p-3 shadow-xs">
+                  <img
+                    src={system.imageUrl}
+                    alt={system.name}
+                    className="w-full h-52 sm:h-60 object-contain rounded-xl bg-[#F7F4E7]/60"
+                  />
+                </div>
+
                 {/* 2-Column Deep Detail Breakdown */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Left Column: What It Is & How It Supports */}
+                  {/* Left Column: What It Is & How It Works */}
                   <div className="space-y-6">
                     {/* What It Is */}
                     <div className="space-y-2">
@@ -142,28 +147,28 @@ export function DmeProductsSection() {
                         <span>What It Is</span>
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans-body">
-                        {product.whatIsIt}
+                        {system.whatIsIt}
                       </p>
                     </div>
 
-                    {/* How It Provides Support & Stability */}
+                    {/* How It Operates & Accesses Assistance */}
                     <div className="space-y-2 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
                       <h4 className="font-serif-heading font-bold text-base sm:text-lg text-[#0D1B2A] flex items-center gap-2">
                         <ShieldCheck className="w-4 h-4 text-amber-600" />
-                        <span>Support &amp; Joint Stability</span>
+                        <span>How to Access Assistance</span>
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans-body">
-                        {product.supportAndStability}
+                        {system.howItWorks}
                       </p>
                     </div>
 
                     {/* Key Engineering Features */}
                     <div className="space-y-2.5">
                       <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
-                        Clinical &amp; Engineering Highlights:
+                        Hardware &amp; Connectivity Features:
                       </span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {product.keyFeatures.map((feat) => (
+                        {system.keyFeatures.map((feat) => (
                           <div
                             key={feat}
                             className="p-2.5 rounded-xl bg-white border border-slate-200/70 text-xs font-medium text-slate-700 flex items-center gap-2"
@@ -176,38 +181,45 @@ export function DmeProductsSection() {
                     </div>
                   </div>
 
-                  {/* Right Column: Medical Situations & Patient Benefits */}
+                  {/* Right Column: Key Benefits & Who May Benefit */}
                   <div className="space-y-6">
-                    {/* Product Image (public/) */}
-                    {product.imageSrc && (
-                      <div className="w-full h-44 sm:h-52 lg:h-60 rounded-2xl overflow-hidden bg-white border border-slate-200/70 flex items-center justify-center">
-                        <img
-                          src={`/${encodeURIComponent(product.imageSrc)}`}
-                          alt={product.name}
-                          className="w-full h-full object-contain object-center"
-                        />
-                      </div>
-                    )}
-                    {/* Common Medical Situations / Indications */}
+                    {/* Key Benefits */}
                     <div className="space-y-2.5">
                       <h4 className="font-serif-heading font-bold text-base sm:text-lg text-[#0D1B2A] flex items-center gap-2">
-                        <Stethoscope className="w-4 h-4 text-[#0D9488]" />
-                        <span>Common Medical Indications</span>
+                        <Sparkles className="w-4 h-4 text-[#0D9488]" />
+                        <span>Key Patient &amp; Family Benefits</span>
                       </h4>
                       <div className="space-y-2">
-                        {product.medicalIndications.map((indication) => (
+                        {system.keyBenefits.map((benefit) => (
                           <div
-                            key={indication}
+                            key={benefit}
                             className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 p-2.5 rounded-xl bg-white border border-slate-200/70"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] mt-2 shrink-0" />
-                            <span>{indication}</span>
+                            <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0 mt-0.5" />
+                            <span>{benefit}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* 'Potential Benefits for Patients' removed per request */}
+                    {/* Who May Benefit */}
+                    <div className="space-y-2.5 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
+                      <h4 className="font-serif-heading font-bold text-base sm:text-lg text-[#0D1B2A] flex items-center gap-2">
+                        <Users className="w-4 h-4 text-teal-600" />
+                        <span>Who May Benefit</span>
+                      </h4>
+                      <div className="space-y-2">
+                        {system.whoMayBenefit.map((person) => (
+                          <div
+                            key={person}
+                            className="flex items-start gap-2 text-xs sm:text-sm text-slate-600"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] mt-2 shrink-0" />
+                            <span>{person}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -215,17 +227,17 @@ export function DmeProductsSection() {
                 <div className="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-2 text-xs text-slate-500 text-center sm:text-left">
                     <ShieldCheck className="w-4 h-4 text-[#0D9488]" />
-                    <span>State-licensed physician review &amp; pre-qualification evaluation included.</span>
+                    <span>24/7 US emergency response coordination &amp; pre-activated setup included.</span>
                   </div>
 
                   <Button
-                    href="/eligibility-checker"
+                    href="/medical-alert/quote"
                     variant="primary"
                     size="md"
                     className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full shadow-xs"
                     icon={<ArrowRight className="w-4 h-4" />}
                   >
-                    Check Eligibility for {product.name.split(' ')[1] || 'Braces'}
+                    Get a Quote for {system.name}
                   </Button>
                 </div>
               </Card>
@@ -237,19 +249,19 @@ export function DmeProductsSection() {
         <div className="p-7 sm:p-8 rounded-3xl bg-[#F7F4E7]/80 border border-[#EAE5D8] text-[#0D1B2A] flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="font-serif-heading font-bold text-xl text-[#0D1B2A]">
-              Need help determining which brace matches your medical condition?
+              Need help deciding which system is best for you or a loved one?
             </h3>
             <p className="text-xs sm:text-sm text-slate-700">
-              Submit your information through our quick 2-minute pre-qualification form. A clinical coordinator and licensed doctor will assess your symptoms and verify Medicare coverage.
+              Submit your request through our quick 1-minute quote form. A dedicated senior safety specialist will walk you through each option and help you pick the best fit.
             </p>
           </div>
           <Button
-            href="/eligibility-checker"
+            href="/medical-alert/quote"
             size="md"
             variant="primary"
             className="shrink-0 text-xs sm:text-sm font-semibold rounded-full"
           >
-            Start Pre-Qualification &rarr;
+            Get a Free Quote &rarr;
           </Button>
         </div>
       </div>

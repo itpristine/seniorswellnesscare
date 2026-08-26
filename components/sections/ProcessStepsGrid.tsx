@@ -11,7 +11,7 @@ export function ProcessStepsGrid() {
       title: 'Check Eligibility (2 Mins)',
       subtitle: 'Fast Online Pre-Qualification',
       description:
-        'Answer simple questions about your Medicare Part B coverage and personal or family health history. Our smart system instantly checks if you qualify for $0 out-of-pocket testing.',
+        'Answer simple questions about your Medicare Part B coverage and personal or family health history. Our smart system reviews your eligibility and coverage details for possible insurance benefits.',
       icon: <ClipboardCheck className="w-6 h-6 text-[#0D9488]" />,
       badge: 'Step 1 • Instant',
     },
@@ -114,7 +114,7 @@ export function ProcessStepsGrid() {
             className="shadow-md shadow-teal-700/20 text-xs sm:text-sm font-semibold px-7 py-4 rounded-full"
             icon={<ArrowRight className="w-4 h-4" />}
           >
-            Check If You Qualify Under Medicare Part B ($0 Cost)
+            Check If You Qualify Under Medicare Part B
           </Button>
         </div>
       </div>

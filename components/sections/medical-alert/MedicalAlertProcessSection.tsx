@@ -1,30 +1,30 @@
 import React from 'react';
 import {
-  ClipboardCheck,
-  Stethoscope,
-  FileCheck,
+  ClipboardPen,
+  Headphones,
   Truck,
+  ShieldCheck,
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { DME_PROCESS_STEPS } from '@/lib/constants/dmeData';
+import { MEDICAL_ALERT_PROCESS_STEPS } from '@/lib/constants/medicalAlertData';
 
-export function DmeProcessSection() {
+export function MedicalAlertProcessSection() {
   const getStepIcon = (name: string) => {
     switch (name) {
-      case 'ClipboardCheck':
-        return <ClipboardCheck className="w-6 h-6 text-[#0D9488]" />;
-      case 'Stethoscope':
-        return <Stethoscope className="w-6 h-6 text-amber-600" />;
-      case 'FileCheck':
-        return <FileCheck className="w-6 h-6 text-[#0D9488]" />;
+      case 'ClipboardPen':
+        return <ClipboardPen className="w-6 h-6 text-[#0D9488]" />;
+      case 'Headphones':
+        return <Headphones className="w-6 h-6 text-rose-500" />;
       case 'Truck':
-        return <Truck className="w-6 h-6 text-emerald-600" />;
+        return <Truck className="w-6 h-6 text-amber-600" />;
+      case 'ShieldCheck':
+        return <ShieldCheck className="w-6 h-6 text-emerald-600" />;
       default:
-        return <ClipboardCheck className="w-6 h-6 text-[#0D9488]" />;
+        return <ClipboardPen className="w-6 h-6 text-[#0D9488]" />;
     }
   };
 
@@ -37,16 +37,16 @@ export function DmeProcessSection() {
             Simple 4-Step Process
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            How to Get Your Medicare-Covered DME
+            How It Works
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            From submitting your 2-minute pre-qualification check to doorstep delivery—our clinical care team coordinates the entire process for you.
+            From requesting your quick online quote to receiving your pre-activated safety system—we make setting up round-the-clock protection effortless.
           </p>
         </div>
 
         {/* 4 Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {DME_PROCESS_STEPS.map((step, idx) => (
+          {MEDICAL_ALERT_PROCESS_STEPS.map((step, idx) => (
             <Card
               key={step.step}
               className="p-6 sm:p-7 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical hover:shadow-xl hover:bg-white hover:border-teal-500/50 transition-all duration-200 flex flex-col justify-between group relative overflow-hidden"
@@ -92,13 +92,13 @@ export function DmeProcessSection() {
         {/* Bottom Action Prompt */}
         <div className="text-center pt-2">
           <Button
-            href="/eligibility-checker"
+            href="/medical-alert/quote"
             size="lg"
             variant="primary"
             className="shadow-md shadow-teal-700/20 text-xs sm:text-sm font-semibold px-7 py-4 rounded-full"
             icon={<ArrowRight className="w-4 h-4" />}
           >
-            Check Your DME Eligibility &rarr;
+            Get a Quote &rarr;
           </Button>
         </div>
       </div>

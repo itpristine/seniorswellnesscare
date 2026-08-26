@@ -10,10 +10,13 @@ import {
   HeartPulse,
   Sparkles,
   Activity,
-  Award,
+  Radio,
+  Home,
+  Watch,
 } from 'lucide-react';
 import { DIAGNOSTIC_PROGRAMS } from '@/lib/constants/programsData';
 import { DME_PRODUCTS } from '@/lib/constants/dmeData';
+import { MEDICAL_ALERT_SYSTEMS } from '@/lib/constants/medicalAlertData';
 import { cn } from '@/lib/utils/cn';
 
 export function SecondaryNav() {
@@ -30,14 +33,133 @@ export function SecondaryNav() {
   // DME section
   const isDmeSection = pathname.startsWith('/dme');
 
-  if (!isImmunodeficiencySection && !isDmeSection) {
+  // Medical Alert section
+  const isMedicalAlertSection = pathname.startsWith('/medical-alert');
+
+  if (!isImmunodeficiencySection && !isDmeSection && !isMedicalAlertSection) {
     return null;
+  }
+
+  // ── MEDICAL ALERT SECONDARY NAVBAR ──
+  if (isMedicalAlertSection) {
+    return (
+      <div className="w-full bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2.5 z-40 transition-all sticky top-[64px] sm:top-[72px] shadow-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          {/* Section Identifier */}
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              href="/medical-alert"
+              className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs hover:border-[#0D9488] transition-colors"
+            >
+              <Radio className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+              <span className="hidden sm:inline">Section:</span> Medical Alert
+            </Link>
+          </div>
+
+          {/* Desktop Navigation Links (Suggested: Medical Alert, Home System, Mobile Systems, Smartwatch, How It Works, FAQs, Get a Quote) */}
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-xs font-semibold text-slate-800">
+            <Link
+              href="/medical-alert#what-is-medical-alert"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              Medical Alert
+            </Link>
+
+            <Link
+              href="/medical-alert#home-system"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              Home System
+            </Link>
+
+            <Link
+              href="/medical-alert#mobile-systems"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              Mobile Systems
+            </Link>
+
+            <Link
+              href="/medical-alert#smartwatch"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              Smartwatch
+            </Link>
+
+            <Link
+              href="/medical-alert#how-it-works"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              How It Works
+            </Link>
+
+            <Link
+              href="/medical-alert#faq"
+              className="py-1 hover:text-[#0D9488] transition-colors"
+            >
+              FAQs
+            </Link>
+          </nav>
+
+          {/* Right CTA */}
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              href="/medical-alert/quote"
+              className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
+              <span>Get a Quote</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile quick scroll anchors */}
+        <div className="flex md:hidden items-center gap-2 overflow-x-auto pt-2 pb-0.5 no-scrollbar text-xs font-semibold text-slate-700">
+          <Link
+            href="/medical-alert#what-is-medical-alert"
+            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          >
+            Medical Alert
+          </Link>
+          <Link
+            href="/medical-alert#home-system"
+            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          >
+            Home System
+          </Link>
+          <Link
+            href="/medical-alert#mobile-systems"
+            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          >
+            Mobile Systems
+          </Link>
+          <Link
+            href="/medical-alert#smartwatch"
+            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          >
+            Smartwatch
+          </Link>
+          <Link
+            href="/medical-alert#how-it-works"
+            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          >
+            How It Works
+          </Link>
+          <Link
+            href="/medical-alert/quote"
+            className="px-3 py-1 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+          >
+            Get a Quote
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   // ── DME SECONDARY NAVBAR ──
   if (isDmeSection) {
     return (
-      <div className="bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[57px] sm:top-[65px]">
+      <div className="w-full bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[64px] sm:top-[72px]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Section Identifier */}
           <div className="flex items-center gap-2 shrink-0">
@@ -140,7 +262,7 @@ export function SecondaryNav() {
               <span>Medicare Coverage</span>
               <span className="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
                 <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                $0 Copay Check
+                Coverage Review
               </span>
             </a>
 
@@ -160,7 +282,7 @@ export function SecondaryNav() {
               className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
-              <span>Check $0 Eligibility</span>
+              <span>Check Eligibility</span>
             </Link>
           </div>
         </div>
@@ -179,7 +301,7 @@ export function SecondaryNav() {
             How It Works
           </a>
           <a href="#medicare-coverage" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap text-[#0D9488]">
-            Medicare $0 Check
+            Medicare Coverage
           </a>
         </div>
       </div>
@@ -188,7 +310,7 @@ export function SecondaryNav() {
 
   // ── IMMUNODEFICIENCY SECONDARY NAVBAR ──
   return (
-    <div className="bg-[#F7F4E7]/90 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[57px] sm:top-[65px]">
+    <div className="w-full bg-[#F7F4E7]/90 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[64px] sm:top-[72px]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Section Identifier */}
         <div className="flex items-center gap-2 shrink-0">
@@ -270,7 +392,7 @@ export function SecondaryNav() {
             <span>Insurance &amp; Eligibility</span>
             <span className="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
               <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-              $0 Copay Check
+              Coverage Review
             </span>
           </Link>
 
@@ -326,7 +448,7 @@ export function SecondaryNav() {
             className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
-            <span>Check $0 Eligibility</span>
+            <span>Check Eligibility</span>
           </Link>
         </div>
       </div>

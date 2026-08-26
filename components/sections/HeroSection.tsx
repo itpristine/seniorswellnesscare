@@ -38,9 +38,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-            Access comprehensive, physician-ordered genetic testing from the comfort of home. Covered
-            100% by Medicare Part B for qualifying individuals—painless 5-minute cheek swab,
-            CLIA-certified laboratory processing, and personalized medical guidance.
+            Access comprehensive, physician-ordered genetic testing from the comfort of home. Coverage may be available through insurance benefits for eligible individuals, depending on plan rules, medical necessity, and personal eligibility requirements.
           </p>
 
           {/* Buttons */}
@@ -52,7 +50,7 @@ export function HeroSection() {
               className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/20"
               icon={<ArrowRight className="w-4 h-4" />}
             >
-              Check My Eligibility ($0 Cost)
+              Check My Eligibility
             </Button>
 
             <Button
@@ -73,7 +71,7 @@ export function HeroSection() {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
-              <span>$0 Out-of-Pocket for Seniors</span>
+              <span>Insurance Coverage Review</span>
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
@@ -91,11 +89,11 @@ export function HeroSection() {
                   Check Medicare Coverage
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Takes under 2 minutes • No surprise billing guarantee
+                  Takes under 2 minutes • Coverage review
                 </p>
               </div>
               <Badge variant="emerald" size="sm" dot>
-                $0 Part B
+                Coverage Review
               </Badge>
             </div>
 
@@ -116,10 +114,10 @@ export function HeroSection() {
             <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/80 text-xs text-slate-700 space-y-0.5">
               <div className="flex items-center gap-1.5 font-bold text-[#0D9488]">
                 <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                <span>100% Covered Under Medicare Part B</span>
+                <span>Insurance Coverage May Apply</span>
               </div>
               <p className="text-[11px] text-slate-600">
-                Zero upfront payment, credit card, or financial commitment required.
+                Your insurance may cover the full cost of eligible services or products, depending on your coverage and eligibility.
               </p>
             </div>
 

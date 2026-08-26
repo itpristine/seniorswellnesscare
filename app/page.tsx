@@ -173,7 +173,7 @@ export default function HomePage() {
                         Immunodeficiency &amp; DNA
                       </h4>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                        $0 Copay
+                        Coverage Review
                       </span>
                     </div>
                     <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">

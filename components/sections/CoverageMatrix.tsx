@@ -7,10 +7,10 @@ import { Button } from '@/components/ui/Button';
 export function CoverageMatrix() {
   const comparisonRows = [
     {
-      feature: 'Patient Out-of-Pocket Cost',
-      partB: '$0.00 (100% Covered)',
-      advantage: '$0 or Plan Copay',
-      commercial: 'Varies ($0 - Copay)',
+      feature: 'Patient Cost Responsibility',
+      partB: 'Coverage may apply',
+      advantage: 'Plan-dependent',
+      commercial: 'Plan-dependent',
       selfPay: 'Transparent Flat Rate',
       highlight: true,
     },
@@ -40,10 +40,10 @@ export function CoverageMatrix() {
     },
     {
       feature: 'Prepaid 2-Way USPS Priority Shipping',
-      partB: 'Yes (Free)',
-      advantage: 'Yes (Free)',
-      commercial: 'Yes (Free)',
-      selfPay: 'Yes (Free)',
+      partB: 'Yes (Included)',
+      advantage: 'Yes (Included)',
+      commercial: 'Yes (Included)',
+      selfPay: 'Yes (Included)',
       highlight: false,
     },
     {
@@ -55,11 +55,11 @@ export function CoverageMatrix() {
       highlight: false,
     },
     {
-      feature: 'No Surprise Billing Guarantee',
-      partB: 'Yes (Guaranteed)',
+      feature: 'Coverage Review Before Shipment',
+      partB: 'Yes (Pre-Verified)',
       advantage: 'Yes (Pre-Verified)',
       commercial: 'Yes (Pre-Verified)',
-      selfPay: 'Yes (Upfront Fixed)',
+      selfPay: 'Yes (Reviewed)',
       highlight: true,
     },
   ];
@@ -70,7 +70,7 @@ export function CoverageMatrix() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="teal" size="md" dot>
-            Zero Out-of-Pocket Guarantee
+            Insurance Coverage Review
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
             Will Medicare or Insurance Cover Your Test?
@@ -140,10 +140,10 @@ export function CoverageMatrix() {
             </div>
             <div>
               <h4 className="font-serif-heading font-bold text-sm text-[#0D1B2A]">
-                Our &quot;No-Surprise-Billing&quot; Patient Pledge
+                Insurance Review Before Shipment
               </h4>
               <p className="text-xs text-slate-600 mt-0.5">
-                Every test is pre-verified by our insurance concierge before shipping. If Medicare or your plan does not cover the service, no test is sent and you owe nothing.
+                Every test is reviewed by our insurance concierge before shipping. If coverage requirements are not met or plan details need additional review, we explain the next steps before any product or kit is sent.
               </p>
             </div>
           </div>

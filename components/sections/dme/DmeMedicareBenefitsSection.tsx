@@ -47,7 +47,7 @@ export function DmeMedicareBenefitsSection() {
                 Our primary goal is to help eligible patients gain seamless access to medically necessary durable medical equipment through their available insurance and Medicare benefits. Navigating healthcare supplies, medical necessity documentation, and doctor prescriptions can be overwhelming for seniors and caregivers. We bridge that gap by handling benefit verification and clinical coordination on your behalf.
               </p>
               <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-sans-body">
-                When a patient qualifies and the equipment is covered by their insurance or Medicare plan, the patient may be able to receive the appropriate DME <strong>with little to no out-of-pocket cost</strong>, depending on their specific coverage, eligibility, and plan requirements.
+                When a patient qualifies and the equipment is eligible under their insurance or Medicare plan, the patient may have access to the appropriate DME through coverage that depends on their specific eligibility, benefits, and plan requirements.
               </p>
             </div>
           </div>
@@ -57,10 +57,10 @@ export function DmeMedicareBenefitsSection() {
             <div className="p-4 rounded-2xl bg-[#FDFCF7] border border-slate-200/80 space-y-1.5">
               <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-[#0D9488]" />
-                <span>You May Qualify for $0 Out-of-Pocket</span>
+                <span>Insurance May Cover Eligible Costs</span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                If approved and covered by Medicare Part B along with a qualifying secondary or Medigap plan, your out-of-pocket cost may be $0.
+                Depending on your individual plan, eligibility, and coverage rules, your insurance may cover the full cost of eligible DME services or products.
               </p>
             </div>
 
@@ -105,7 +105,7 @@ export function DmeMedicareBenefitsSection() {
                   </th>
                   <th className="p-5 text-xs sm:text-sm font-extrabold text-emerald-800 bg-emerald-50/40 text-center w-1/5">
                     <span className="block text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-                      Ideal ($0)
+                      Ideal Coverage
                     </span>
                     Part B + Supplemental
                   </th>
@@ -150,10 +150,10 @@ export function DmeMedicareBenefitsSection() {
             </div>
             <div>
               <h4 className="font-serif-heading font-bold text-sm sm:text-base text-[#0D1B2A]">
-                Our &quot;No-Surprise-Billing&quot; Patient Assurance
+                Insurance Review Before Product Shipment
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 mt-0.5 max-w-2xl leading-relaxed">
-                Before any equipment is shipped, our insurance concierge team verifies your coverage and explains your exact eligibility details. If your Medicare plan does not cover the equipment or if you choose not to proceed, no product is dispatched and you owe nothing.
+                Before any equipment is shipped, our insurance concierge team reviews your coverage and confirms your eligibility details. If coverage requirements are not met or additional plan review is needed, the next step is explained before any product is dispatched.
               </p>
             </div>
           </div>

@@ -10,9 +10,9 @@ import { DmeFaqSection } from '@/components/sections/dme/DmeFaqSection';
 import { DmeConversionCTA } from '@/components/sections/dme/DmeConversionCTA';
 
 export const metadata: Metadata = {
-  title: 'Durable Medical Equipment (DME) & Orthopedic Braces | Medicare Part B Covered',
+  title: 'Durable Medical Equipment (DME) & Orthopedic Braces | Insurance Coverage Review',
   description:
-    'Physician-prescribed orthopedic braces for back, knee, shoulder, wrist, and elbow. Covered 80% to 100% by Medicare Part B with physician review and free doorstep delivery.',
+    'Physician-prescribed orthopedic braces for back, knee, shoulder, wrist, and elbow. Coverage may be available through insurance benefits, subject to eligibility and plan requirements.',
 };
 
 export default function DMEPage() {

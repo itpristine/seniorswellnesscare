@@ -1,32 +1,32 @@
 import React from 'react';
-import { ShieldCheck, Award, Lock, FileCheck2, Truck } from 'lucide-react';
+import { ShieldCheck, Award, Lock, Radio, Droplets, Truck, Headphones } from 'lucide-react';
 
-export function DmeTrustMarquee() {
+export function MedicalAlertTrustMarquee() {
   const credentials = [
     {
-      icon: <Award className="w-5 h-5 text-[#0D9488]" />,
-      title: 'FDA-Registered Devices',
-      subtitle: 'Medical-grade orthopedic engineering',
+      icon: <Headphones className="w-5 h-5 text-[#0D9488]" />,
+      title: '24/7 US Dispatch',
+      subtitle: 'Certified live emergency operators',
     },
     {
-      icon: <ShieldCheck className="w-5 h-5 text-[#0D9488]" />,
-      title: 'Medicare Part B Partner',
-      subtitle: 'Direct billing with insurer coordination',
+      icon: <Radio className="w-5 h-5 text-rose-500" />,
+      title: 'Nationwide 4G LTE',
+      subtitle: 'Built-in cellular & GPS tracking',
     },
     {
-      icon: <FileCheck2 className="w-5 h-5 text-amber-600" />,
-      title: 'Physician-Prescribed',
-      subtitle: 'Licensed state clinical Rx review',
+      icon: <Droplets className="w-5 h-5 text-teal-600" />,
+      title: '100% Shower-Safe',
+      subtitle: 'Waterproof emergency wearables',
     },
     {
-      icon: <Truck className="w-5 h-5 text-emerald-600" />,
-      title: 'Home Delivery',
-      subtitle: 'Fast priority shipping & fit guides',
+      icon: <Truck className="w-5 h-5 text-amber-600" />,
+      title: 'Pre-Activated Delivery',
+      subtitle: 'Fast shipping, ready out of box',
     },
     {
       icon: <Lock className="w-5 h-5 text-[#0D9488]" />,
-      title: 'HIPAA Compliant',
-      subtitle: '256-bit encrypted patient data',
+      title: '100% Confidential',
+      subtitle: 'Encrypted personal data & profiles',
     },
   ];
 

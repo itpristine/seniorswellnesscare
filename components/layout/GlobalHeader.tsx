@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -26,6 +26,7 @@ import { cn } from '@/lib/utils/cn';
 
 export function GlobalHeader() {
   const pathname = usePathname();
+  const servicesDropdownRef = useRef<HTMLDivElement | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
@@ -40,11 +41,30 @@ export function GlobalHeader() {
       }
       if (e.key === 'Escape') {
         setSearchModalOpen(false);
+        setServicesDropdownOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(event.target as Node)
+      ) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    setServicesDropdownOpen(false);
+  }, [pathname]);
 
   const coreServices = [
     {
@@ -158,12 +178,15 @@ export function GlobalHeader() {
           <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-slate-800">
             {/* Primary Core Services Dropdown */}
             <div
+              ref={servicesDropdownRef}
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
               <button
                 type="button"
+                aria-expanded={servicesDropdownOpen}
+                onClick={() => setServicesDropdownOpen((prev) => !prev)}
                 className={cn(
                   'flex items-center gap-1.5 py-2 hover:text-[#0D9488] transition-colors font-semibold cursor-pointer',
                   isCoreServiceActive ? 'text-[#0D9488]' : 'text-slate-800'
@@ -174,7 +197,7 @@ export function GlobalHeader() {
               </button>
 
               {servicesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-1 w-[520px] bg-white rounded-3xl shadow-2xl border border-slate-200/90 p-5 space-y-3 animate-fade-in z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[min(520px,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] bg-white rounded-3xl shadow-2xl border border-slate-200/90 p-5 space-y-3 animate-fade-in z-50">
                   <div className="border-b border-slate-100 pb-2 flex items-center justify-between">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
                       Core Services
