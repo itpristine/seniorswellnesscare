@@ -159,7 +159,7 @@ export function DmeMedicareBenefitsSection() {
           </div>
 
           <Button
-            href="/eligibility-checker"
+            href="/eligibility-checker?source=dme"
             variant="primary"
             size="md"
             className="shrink-0 text-xs sm:text-sm font-semibold rounded-full shadow-xs whitespace-nowrap"

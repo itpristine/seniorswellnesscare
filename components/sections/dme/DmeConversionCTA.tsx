@@ -28,7 +28,7 @@ export function DmeConversionCTA() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2">
               <Button
-                href="/eligibility-checker"
+                href="/eligibility-checker?source=dme"
                 size="lg"
                 variant="primary"
                 className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/30"

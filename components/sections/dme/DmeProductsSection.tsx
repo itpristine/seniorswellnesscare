@@ -121,7 +121,7 @@ export function DmeProductsSection() {
 
                   <div className="flex items-center gap-3 self-start md:self-auto">
                     <Button
-                      href="/eligibility-checker"
+                      href="/eligibility-checker?source=dme"
                       variant="primary"
                       size="md"
                       className="text-xs sm:text-sm font-semibold rounded-full shadow-xs whitespace-nowrap"
@@ -219,7 +219,7 @@ export function DmeProductsSection() {
                   </div>
 
                   <Button
-                    href="/eligibility-checker"
+                    href="/eligibility-checker?source=dme"
                     variant="primary"
                     size="md"
                     className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full shadow-xs"
@@ -244,7 +244,7 @@ export function DmeProductsSection() {
             </p>
           </div>
           <Button
-            href="/eligibility-checker"
+            href="/eligibility-checker?source=dme"
             size="md"
             variant="primary"
             className="shrink-0 text-xs sm:text-sm font-semibold rounded-full"

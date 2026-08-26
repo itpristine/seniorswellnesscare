@@ -40,7 +40,7 @@ export function DmeFaqSection() {
         {/* Action Prompt */}
         <div className="text-center pt-2">
           <Button
-            href="/eligibility-checker"
+            href="/eligibility-checker?source=dme"
             variant="primary"
             size="lg"
             className="text-xs sm:text-sm font-semibold rounded-full shadow-md"

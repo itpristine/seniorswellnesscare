@@ -278,7 +278,7 @@ export function SecondaryNav() {
           {/* Right CTA */}
           <div className="flex items-center gap-2">
             <Link
-              href="/eligibility-checker"
+              href="/eligibility-checker?source=dme"
               className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-200" />
@@ -308,7 +308,7 @@ export function SecondaryNav() {
             FAQs
           </a>
           <Link
-            href="/eligibility-checker"
+            href="/eligibility-checker?source=dme"
             className="px-3 py-0.5 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
           >
             Check Eligibility

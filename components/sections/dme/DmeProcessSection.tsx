@@ -92,7 +92,7 @@ export function DmeProcessSection() {
         {/* Bottom Action Prompt */}
         <div className="text-center pt-2">
           <Button
-            href="/eligibility-checker"
+            href="/eligibility-checker?source=dme"
             size="lg"
             variant="primary"
             className="shadow-md shadow-teal-700/20 text-xs sm:text-sm font-semibold px-7 py-4 rounded-full"

@@ -12,7 +12,23 @@ export const metadata: Metadata = {
     'Complete our quick pre-qualification form to review your insurance coverage and see whether physician-ordered at-home genetic screening may be appropriate for your situation.',
 };
 
-export default function EligibilityCheckerPage() {
+export default function EligibilityCheckerPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
+  const sourceParam = typeof searchParams?.source === 'string' ? searchParams.source.toLowerCase() : '';
+  const programParam = typeof searchParams?.program === 'string' ? searchParams.program.toLowerCase() : '';
+  const isDmeFlow = sourceParam === 'dme' || programParam === 'dme' || programParam === 'durable-medical-equipment';
+
+  const formHeading = isDmeFlow
+    ? 'Check Your DME Eligibility'
+    : 'Check Your Genetic Testing Eligibility';
+
+  const formSubheading = isDmeFlow
+    ? 'Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate DME eligibility and coverage review.'
+    : 'Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate testing.';
+
   return (
     <div className="min-h-screen bg-[#FDFCF7] py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,12 +38,12 @@ export default function EligibilityCheckerPage() {
             Medicare Part B Pre-Qualification
           </Badge>
           <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            Check Your Genetic Testing Eligibility
+            {formHeading}
           </h1>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            Fill in your details below. A licensed physician in your state will review your profile
-            and help determine whether insurance coverage may be available for appropriate genomic
-            testing.
+            {isDmeFlow
+              ? 'Fill in your details below. A licensed physician in your state will review your profile and determine whether insurance coverage may support appropriate durable medical equipment.'
+              : 'Fill in your details below. A licensed physician in your state will review your profile and help determine whether insurance coverage may be available for appropriate genomic testing.'}
           </p>
         </div>
 
@@ -35,8 +51,8 @@ export default function EligibilityCheckerPage() {
         <div className="max-w-3xl mx-auto">
           <Card className="bg-white border border-slate-200/90 shadow-xl rounded-3xl p-6 sm:p-10">
             <UnifiedLeadForm
-              heading="Check Your Genetic Testing Eligibility"
-              subheading="Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate testing."
+              heading={formHeading}
+              subheading={formSubheading}
             />
           </Card>
         </div>

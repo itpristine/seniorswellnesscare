@@ -287,10 +287,11 @@ export function UnifiedLeadForm({
           size="lg"
           variant="primary"
           isLoading={isSubmitting}
-          className="w-full justify-center text-sm font-semibold rounded-full shadow-md"
+          icon={<ShieldCheck className="w-4 h-4" />}
+          iconPosition="left"
+          className="w-full justify-center text-sm font-bold rounded-2xl shadow-lg shadow-teal-700/20 bg-gradient-to-r from-[#0D9488] via-[#0F9D8D] to-[#0F766E] hover:shadow-xl hover:shadow-teal-700/30 transition-all duration-200"
         >
-          <ShieldCheck className="w-4 h-4 mr-1.5" />
-          {isSubmitting ? 'Submitting…' : 'Submit →'}
+          {isSubmitting ? 'Submitting Your Information…' : 'Submit Eligibility Form'}
         </Button>
 
         {/* Trust footer */}

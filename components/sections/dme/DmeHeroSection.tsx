@@ -47,7 +47,7 @@ export function DmeHeroSection() {
           {/* Buttons */}
           <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <Button
-              href="/eligibility-checker"
+              href="/eligibility-checker?source=dme"
               size="lg"
               variant="primary"
               className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/20"
@@ -125,7 +125,7 @@ export function DmeHeroSection() {
             </div>
 
             <Link
-              href="/eligibility-checker"
+              href="/eligibility-checker?source=dme"
               className="flex items-center justify-center gap-2 w-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full shadow-md transition-all"
             >
               <ShieldCheck className="w-4 h-4 text-emerald-200" />

@@ -111,7 +111,7 @@ export function DmeOverviewSection() {
               </div>
 
               <Button
-                href="/eligibility-checker"
+                href="/eligibility-checker?source=dme"
                 variant="primary"
                 size="md"
                 className="w-full justify-center text-xs font-semibold rounded-full shadow-xs"
