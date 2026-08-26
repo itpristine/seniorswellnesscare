@@ -1,0 +1,277 @@
+import React from 'react';
+import Link from 'next/link';
+import {
+  Dna,
+  Phone,
+  Mail,
+  MapPin,
+  ShieldCheck,
+  Lock,
+  Award,
+  CheckCircle2,
+} from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/constants/siteConfig';
+
+export function Footer() {
+  return (
+    <footer className="bg-[#0D1B2A] text-white border-t border-slate-800">
+      {/* Top Credentials Strip (Clean White / Warm Sand surface) */}
+      <div className="border-b border-[#EAE5D8] bg-white text-[#0D1B2A] py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center sm:text-left">
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+            <div className="w-10 h-10 rounded-2xl bg-teal-50 border border-teal-200/80 flex items-center justify-center text-[#0D9488] shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">CLIA &amp; CAP Certified</h5>
+              <p className="text-[11px] text-slate-500">High-complexity genomic labs</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+            <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-600 shrink-0">
+              <Award className="w-5 h-5" />
+            </div>
+            <div>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">100% Physician-Ordered</h5>
+              <p className="text-[11px] text-slate-500">Board-certified clinical network</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+            <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
+              <Lock className="w-5 h-5" />
+            </div>
+            <div>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">HIPAA 256-Bit Encrypted</h5>
+              <p className="text-[11px] text-slate-500">Strict patient privacy standards</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+            <div className="w-10 h-10 rounded-2xl bg-teal-50 border border-teal-200/80 flex items-center justify-center text-[#0D9488] shrink-0">
+              <CheckCircle2 className="w-5 h-5" />
+            </div>
+            <div>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">$0 Medicare Part B</h5>
+              <p className="text-[11px] text-slate-500">For qualifying beneficiaries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Links */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Col 1: Brand & Contact */}
+          <div className="lg:col-span-2 space-y-5">
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-300 shadow-md">
+                <Dna className="w-5 h-5 text-teal-300" />
+              </div>
+              <span className="font-serif-heading font-bold text-2xl text-white tracking-tight">
+                Aegis<span className="text-[#0D9488]">Genomics</span>
+              </span>
+            </div>
+
+            <p className="font-sans-body text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
+              Empowering individuals, families, and healthcare providers with clinical-grade, physician-ordered preventive genomics and Medicare Part B covered diagnostic screening.
+            </p>
+
+            <div className="space-y-3 pt-2 text-xs sm:text-sm text-slate-300">
+              <a
+                href={`tel:${SITE_CONFIG.phoneFormatted}`}
+                className="flex items-center gap-2.5 hover:text-teal-300 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <span className="font-semibold text-white">{SITE_CONFIG.phone}</span>
+                <span className="text-xs text-slate-400">({SITE_CONFIG.supportHours})</span>
+              </a>
+
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="flex items-center gap-2.5 hover:text-teal-300 transition-colors"
+              >
+                <Mail className="w-4 h-4 text-teal-400 shrink-0" />
+                <span>{SITE_CONFIG.email}</span>
+              </a>
+
+              <div className="flex items-start gap-2.5 text-slate-400 text-xs">
+                <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                <span>{SITE_CONFIG.address}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Col 2: Diagnostic Programs */}
+          <div>
+            <h4 className="font-serif-heading font-bold text-sm text-white uppercase tracking-wider mb-4 border-l-2 border-[#0D9488] pl-2.5">
+              Clinical Programs
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              {SITE_CONFIG.megaMenu.programs.slice(0, 6).map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-slate-300 hover:text-teal-300 transition-colors"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/programs"
+                  className="text-xs font-bold text-teal-400 hover:text-teal-300 block pt-1"
+                >
+                  View All 9 Panels &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Patients & Coverage */}
+          <div>
+            <h4 className="font-serif-heading font-bold text-sm text-white uppercase tracking-wider mb-4 border-l-2 border-emerald-500 pl-2.5">
+              Patients &amp; Coverage
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link
+                  href="/eligibility-checker"
+                  className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>Check Eligibility ($0 Cost)</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-it-works"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  How It Works (4 Steps)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/medicare-eligibility"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Medicare Part B Guidelines
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/track-kit"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Track Swab Kit Status
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/sample-reports"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Sample Genetic Reports
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/faq"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Frequently Asked Questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Providers & Corporate */}
+          <div>
+            <h4 className="font-serif-heading font-bold text-sm text-white uppercase tracking-wider mb-4 border-l-2 border-amber-500 pl-2.5">
+              Providers &amp; About
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link
+                  href="/providers"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Physician Network Portal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/providers/referral"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Digital Requisition Form
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/quality-accreditation"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  CLIA &amp; CAP Standards
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about-us"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  About Aegis Genomics
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/articles"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Educational Articles
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-slate-300 hover:text-teal-300 transition-colors"
+                >
+                  Contact &amp; Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Legal Disclaimer Box */}
+        <div className="mt-12 p-6 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400 leading-relaxed space-y-2">
+          <p className="font-semibold text-slate-300">Important Medical &amp; Regulatory Disclaimer:</p>
+          <p>{SITE_CONFIG.legalDisclaimer}</p>
+          <p>
+            Federal Genetic Information Nondiscrimination Act (GINA) Notice: Genetic testing information is strictly confidential and protected by federal law from health insurance and employment discrimination.
+          </p>
+        </div>
+
+        {/* Bottom Copyright & Legal Links */}
+        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <p>
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.legalName}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy-policy" className="hover:text-slate-200 transition-colors">
+              Privacy Policy (HIPAA)
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-slate-200 transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/quality-accreditation" className="hover:text-slate-200 transition-colors">
+              Accreditations
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
