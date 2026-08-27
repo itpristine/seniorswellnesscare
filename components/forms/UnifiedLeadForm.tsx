@@ -20,6 +20,62 @@ const labelClass =
   'block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5';
 
 const MEDICARE_MBI_PATTERN = /^[1-9][AC-HJKMNP-RT-Y][0-9AC-HJKMNP-RT-Y][0-9][AC-HJKMNP-RT-Y][0-9AC-HJKMNP-RT-Y][0-9][AC-HJKMNP-RT-Y]{2}[0-9]{2}$/;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const getMedicareMbiError = (value: string) => {
+  if (value.length !== 11) {
+    return 'Medicare number must be exactly 11 characters.';
+  }
+  if (/\s/.test(value)) {
+    return 'Medicare number cannot contain spaces.';
+  }
+  if (/-/.test(value)) {
+    return 'Medicare number cannot contain hyphens.';
+  }
+  if (!/^[A-Z0-9]+$/.test(value)) {
+    return 'Medicare number can contain only uppercase letters and numbers.';
+  }
+  if (/\d{3}/.test(value)) {
+    return 'Medicare number cannot contain more than 2 consecutive numbers.';
+  }
+  if (/[A-Z]{3}/.test(value)) {
+    return 'Medicare number cannot contain more than 2 consecutive letters.';
+  }
+  if (!/^[1-9]$/.test(value[0])) {
+    return 'Medicare number position 1 must be a number from 1 to 9.';
+  }
+  if (!/^[AC-HJKMNP-RT-Y]$/.test(value[1])) {
+    return 'Medicare number position 2 must be an allowed letter. S, L, O, I, B, and Z are not allowed.';
+  }
+  if (!/^[0-9AC-HJKMNP-RT-Y]$/.test(value[2])) {
+    return 'Medicare number position 3 must be a number or an allowed letter.';
+  }
+  if (!/^\d$/.test(value[3])) {
+    return 'Medicare number position 4 must be a number.';
+  }
+  if (!/^[AC-HJKMNP-RT-Y]$/.test(value[4])) {
+    return 'Medicare number position 5 must be an allowed letter. S, L, O, I, B, and Z are not allowed.';
+  }
+  if (!/^[0-9AC-HJKMNP-RT-Y]$/.test(value[5])) {
+    return 'Medicare number position 6 must be a number or an allowed letter.';
+  }
+  if (!/^\d$/.test(value[6])) {
+    return 'Medicare number position 7 must be a number.';
+  }
+  if (!/^[AC-HJKMNP-RT-Y]$/.test(value[7])) {
+    return 'Medicare number position 8 must be an allowed letter. S, L, O, I, B, and Z are not allowed.';
+  }
+  if (!/^[AC-HJKMNP-RT-Y]$/.test(value[8])) {
+    return 'Medicare number position 9 must be an allowed letter. S, L, O, I, B, and Z are not allowed.';
+  }
+  if (!/^\d$/.test(value[9])) {
+    return 'Medicare number position 10 must be a number.';
+  }
+  if (!/^\d$/.test(value[10])) {
+    return 'Medicare number position 11 must be a number.';
+  }
+  return '';
+};
 
 interface UnifiedLeadFormProps {
   /** Optional heading override. Defaults to "Check Your Eligibility". */
@@ -42,6 +98,7 @@ export function UnifiedLeadForm({
   const [primaryInsuranceType, setPrimaryInsuranceType] = useState('');
   const [primaryInsuranceNumber, setPrimaryInsuranceNumber] = useState('');
   const [hasEditedPrimaryInsuranceNumber, setHasEditedPrimaryInsuranceNumber] = useState(false);
+  const [hasEditedEmail, setHasEditedEmail] = useState(false);
   const [consent, setConsent] = useState(false);
 
   /* ── UI state ── */
@@ -56,14 +113,18 @@ export function UnifiedLeadForm({
 
     if (!firstName.trim()) { setErrorMsg('First Name is required.'); return; }
     if (!lastName.trim()) { setErrorMsg('Last Name is required.'); return; }
-    if (!email.trim()) { setErrorMsg('Email is required.'); return; }
     if (!phone.trim()) { setErrorMsg('Phone is required.'); return; }
+    if (!/^\d{10}$/.test(phone)) { setErrorMsg('Phone must contain exactly 10 numeric digits (0-9).'); return; }
+    if (email.trim() && !EMAIL_PATTERN.test(email.trim())) { setErrorMsg('Please enter a valid email address or leave the email field blank.'); return; }
     if (!selectedState) { setErrorMsg('Please select your state.'); return; }
     if (!dateOfBirth) { setErrorMsg('Date of Birth is required.'); return; }
     if (!primaryInsuranceType) { setErrorMsg('Please select your Primary Insurance.'); return; }
     if (!primaryInsuranceNumber.trim()) { setErrorMsg('Primary Insurance Number is required.'); return; }
-    if (primaryInsuranceType === 'medicare_part_b' && !MEDICARE_MBI_PATTERN.test(primaryInsuranceNumber)) {
-      setErrorMsg('Please enter a valid Medicare number with exactly 11 uppercase letters and numbers.');
+    const medicareMbiError = primaryInsuranceType === 'medicare_part_b'
+      ? getMedicareMbiError(primaryInsuranceNumber)
+      : '';
+    if (medicareMbiError) {
+      setErrorMsg(medicareMbiError);
       return;
     }
     if (!consent) { setErrorMsg('Please provide consent by checking the consent box below.'); return; }
@@ -143,7 +204,11 @@ export function UnifiedLeadForm({
   const medicareNumberError = primaryInsuranceType === 'medicare_part_b'
     && hasEditedPrimaryInsuranceNumber
     && primaryInsuranceNumber.length > 0
-    && !MEDICARE_MBI_PATTERN.test(primaryInsuranceNumber);
+    ? getMedicareMbiError(primaryInsuranceNumber)
+    : '';
+  const emailError = hasEditedEmail && email.length > 0 && !EMAIL_PATTERN.test(email.trim())
+    ? 'Please enter a valid email address or leave this optional field blank.'
+    : '';
 
   /* ── Form ── */
   return (
@@ -188,16 +253,25 @@ export function UnifiedLeadForm({
         {/* Row 2: Email / Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className={labelClass}>Email *</label>
+            <label className={labelClass}>Email (Optional)</label>
             <input
               type="email"
               placeholder="harold@example.com"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setHasEditedEmail(true);
+              }}
               className={inputClass}
               autoComplete="email"
-              required
+              aria-invalid={Boolean(emailError)}
+              aria-describedby={emailError ? 'email-error' : undefined}
             />
+            {emailError && (
+              <p id="email-error" className="mt-1.5 text-xs font-semibold text-rose-600">
+                {emailError}
+              </p>
+            )}
           </div>
           <div>
             <label className={labelClass}>Phone *</label>
@@ -205,10 +279,13 @@ export function UnifiedLeadForm({
               type="tel"
               placeholder="(555) 000-0000"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
               className={inputClass}
               autoComplete="tel"
               required
+              inputMode="numeric"
+              maxLength={10}
+              pattern="[0-9]{10}"
             />
           </div>
         </div>
@@ -277,12 +354,12 @@ export function UnifiedLeadForm({
               maxLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
               minLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
               pattern={primaryInsuranceType === 'medicare_part_b' ? MEDICARE_MBI_PATTERN.source : undefined}
-              aria-invalid={medicareNumberError}
+              aria-invalid={Boolean(medicareNumberError)}
               aria-describedby={medicareNumberError ? 'medicare-number-error' : undefined}
             />
             {medicareNumberError && (
               <p id="medicare-number-error" className="mt-1.5 text-xs font-semibold text-rose-600">
-                Please enter a valid Medicare number with exactly 11 uppercase letters and numbers.
+                {medicareNumberError}
               </p>
             )}
           </div>
