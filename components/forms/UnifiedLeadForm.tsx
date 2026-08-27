@@ -19,6 +19,8 @@ const inputClass =
 const labelClass =
   'block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5';
 
+const MEDICARE_MBI_PATTERN = /^[1-9][AC-HJKMNP-RT-Y][0-9AC-HJKMNP-RT-Y][0-9][AC-HJKMNP-RT-Y][0-9AC-HJKMNP-RT-Y][0-9][AC-HJKMNP-RT-Y]{2}[0-9]{2}$/;
+
 interface UnifiedLeadFormProps {
   /** Optional heading override. Defaults to "Check Your Eligibility". */
   heading?: string;
@@ -59,6 +61,10 @@ export function UnifiedLeadForm({
     if (!dateOfBirth) { setErrorMsg('Date of Birth is required.'); return; }
     if (!primaryInsuranceType) { setErrorMsg('Please select your Primary Insurance.'); return; }
     if (!primaryInsuranceNumber.trim()) { setErrorMsg('Primary Insurance Number is required.'); return; }
+    if (primaryInsuranceType === 'medicare_part_b' && !MEDICARE_MBI_PATTERN.test(primaryInsuranceNumber)) {
+      setErrorMsg('Please enter a valid Medicare number with exactly 11 uppercase letters and numbers.');
+      return;
+    }
     if (!consent) { setErrorMsg('Please provide consent by checking the consent box below.'); return; }
 
     setIsSubmitting(true);
@@ -259,6 +265,9 @@ export function UnifiedLeadForm({
               autoComplete="off"
               disabled={!primaryInsuranceType}
               required
+              maxLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
+              minLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
+              pattern={primaryInsuranceType === 'medicare_part_b' ? MEDICARE_MBI_PATTERN.source : undefined}
             />
           </div>
         </div>
