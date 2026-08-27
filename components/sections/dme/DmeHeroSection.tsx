@@ -27,15 +27,17 @@ export function DmeHeroSection() {
         {/* Left Column */}
         <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
           {/* Eyebrow Pill */}
-          <div className="inline-flex max-w-full items-center gap-2 bg-amber-50 border border-amber-200/80 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-amber-900 shadow-xs">
+          <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 bg-amber-50 border border-amber-200/80 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full text-[10.5px] sm:text-xs font-semibold text-amber-900 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span>Medicare Part B Covered • Physician-Prescribed Orthopedic DME</span>
+            <span className="leading-snug">Medicare Part B Covered • Physician-Prescribed Orthopedic DME</span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-4xl lg:text-[2.25rem] xl:text-[2.85rem] 2xl:text-5xl text-[#0D1B2A] leading-[1.18] tracking-tight">
+          <h1 className="font-serif-heading font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] xl:text-[2.85rem] 2xl:text-5xl text-[#0D1B2A] leading-[1.2] sm:leading-[1.18] tracking-tight">
             Physician-Prescribed{' '}
-            <span className="highlight-accent text-[#0D9488]">Durable Medical Equipment</span>{' '}
+            <span className="text-[#0D9488] underline decoration-wavy decoration-[#D97706] decoration-[2px] sm:decoration-[3px] underline-offset-[5px] sm:underline-offset-[7px]">
+              Durable Medical Equipment
+            </span>{' '}
             Delivered to Your Door.
           </h1>
 

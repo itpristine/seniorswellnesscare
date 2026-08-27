@@ -80,8 +80,8 @@ export function CoverageMatrix() {
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
+        {/* Comparison Table (Desktop: lg and above) */}
+        <div className="hidden lg:block overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
           <table className="w-full text-left border-collapse min-w-[700px]">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50/80">
@@ -130,6 +130,35 @@ export function CoverageMatrix() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile & Tablet Card View (below lg) */}
+        <div className="lg:hidden space-y-3">
+          {comparisonRows.map((row) => (
+            <div key={row.feature} className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-clinical space-y-3">
+              <h4 className="font-serif-heading font-bold text-sm text-slate-900">{row.feature}</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                <div className="rounded-xl bg-teal-50/50 border border-teal-200/60 p-3">
+                  <span className="block font-bold text-[#0D9488] mb-1">Medicare Part B</span>
+                  {row.highlight ? (
+                    <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-2.5 py-0.5 rounded-full text-xs font-bold shadow-xs">
+                      <Sparkles className="w-3 h-3" /> {row.partB}
+                    </span>
+                  ) : (
+                    <span className="text-slate-800 font-medium">{row.partB}</span>
+                  )}
+                </div>
+                <div className="rounded-xl bg-slate-50 border border-slate-200/70 p-3">
+                  <span className="block font-bold text-slate-700 mb-1">Medicare Advantage</span>
+                  <span className="text-slate-600">{row.advantage}</span>
+                </div>
+                <div className="rounded-xl bg-[#FDFCF7] border border-slate-200/70 p-3">
+                  <span className="block font-bold text-slate-700 mb-1">Commercial / Self-Pay</span>
+                  <span className="text-slate-600">{row.commercial}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Assurance Box */}

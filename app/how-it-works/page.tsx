@@ -31,12 +31,12 @@ export default function HowItWorksPage() {
     {
       num: '01',
       title: 'Check Your Benefit Eligibility (Under 2 Minutes)',
-      desc: 'Complete our simple online pre-qualification or call our patient concierge. We evaluate your Medicare Part B, Part C, or secondary insurance coverage to confirm $0 out-of-pocket eligibility across all indicated services.',
+      desc: 'Complete our simple online pre-qualification or call our patient concierge. We evaluate your Medicare Part B, Part C, or secondary insurance coverage to review available benefit coverage across all indicated services.',
       icon: <ClipboardCheck className="w-7 h-7 text-[#0D9488]" />,
       details: [
-        'Zero upfront cost, credit card, or financial commitment required',
+        'Zero upfront fee, credit card, or financial commitment required',
         'Covers genetic screening, DME medical equipment & alert systems',
-        'Instant confirmation of Medicare coverage & benefit tier',
+        'Transparent review of Medicare coverage & benefit criteria',
       ],
     },
     {

@@ -70,8 +70,8 @@ export function GlobalHeader() {
     {
       title: 'Genetic Testing & Molecular Diagnostics',
       href: '/immunodeficiency',
-      desc: 'Physician-ordered preventive genetic testing & 9 CLIA diagnostic panels covered 100% by Medicare Part B.',
-      badge: '100% Covered ($0)',
+      desc: 'Physician-ordered preventive genetic testing & 9 CLIA diagnostic panels subject to Medicare Part B coverage review.',
+      badge: 'Coverage Review',
       icon: <Dna className="w-5 h-5 text-[#0D9488]" />,
       active: pathname.startsWith('/immunodeficiency') || pathname.startsWith('/programs'),
     },
