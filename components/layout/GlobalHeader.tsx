@@ -122,10 +122,10 @@ export function GlobalHeader() {
     <>
       {/* ── TOP UTILITY STRIP ── */}
       <div className="bg-[#0D1B2A] text-slate-200 text-xs py-1.5 px-4 md:px-8 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-4">
           {/* Left Badges */}
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+          <div className="flex items-center gap-4 text-[11px] sm:text-xs w-full sm:w-auto">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-medium whitespace-nowrap">
               <Award className="w-3.5 h-3.5 shrink-0" />
               <span>CAP &amp; CLIA Accredited • Medicare Partner</span>
             </span>
@@ -138,7 +138,7 @@ export function GlobalHeader() {
           </div>
 
           {/* Right Controls */}
-          <div className="flex items-center gap-3 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-3 text-[11px] sm:text-xs w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setSearchModalOpen(true)}
@@ -151,7 +151,7 @@ export function GlobalHeader() {
               </kbd>
             </button>
 
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center justify-between gap-2 sm:gap-3 w-full sm:w-auto">
               <Link
                 href="/immunodeficiency"
                 className="flex items-center gap-1 hover:text-white transition-colors text-slate-300"
