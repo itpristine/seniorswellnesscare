@@ -69,7 +69,7 @@ export function DmeProductsSection() {
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -94,9 +94,9 @@ export function DmeProductsSection() {
               id={product.anchorId}
               className="scroll-mt-24"
             >
-              <Card className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical hover:shadow-xl transition-all duration-200 space-y-8">
+              <Card className="p-4 sm:p-6 lg:p-10 rounded-3xl bg-[#FDFCF7] border border-slate-200/90 shadow-clinical hover:shadow-xl transition-all duration-200 space-y-8">
                 {/* Header Row */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-center shrink-0 shadow-xs mt-0.5">
                       {getProductIcon(product.iconName)}
@@ -119,12 +119,12 @@ export function DmeProductsSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 self-start md:self-auto">
+                  <div className="flex items-center gap-3 self-stretch lg:self-auto">
                     <Button
                       href="/eligibility-checker?source=dme"
                       variant="primary"
                       size="md"
-                      className="text-xs sm:text-sm font-semibold rounded-full shadow-xs whitespace-nowrap"
+                      className="w-full lg:w-auto text-xs sm:text-sm font-semibold rounded-full shadow-xs whitespace-nowrap"
                     >
                       Check Eligibility &rarr;
                     </Button>
@@ -212,8 +212,8 @@ export function DmeProductsSection() {
                 </div>
 
                 {/* Bottom Action Strip */}
-                <div className="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-2 text-xs text-slate-500 text-center sm:text-left">
+                <div className="pt-6 border-t border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-4">
+                  <div className="flex items-start gap-2 text-xs text-slate-500 text-center lg:text-left">
                     <ShieldCheck className="w-4 h-4 text-[#0D9488]" />
                     <span>State-licensed physician review &amp; pre-qualification evaluation included.</span>
                   </div>
@@ -222,7 +222,7 @@ export function DmeProductsSection() {
                     href="/eligibility-checker?source=dme"
                     variant="primary"
                     size="md"
-                    className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full shadow-xs"
+                    className="w-full lg:w-auto text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-full shadow-xs"
                     icon={<ArrowRight className="w-4 h-4" />}
                   >
                     Check Eligibility for {product.name.split(' ')[1] || 'Braces'}
