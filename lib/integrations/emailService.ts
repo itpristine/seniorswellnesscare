@@ -48,23 +48,6 @@ export function generateEmailHtml(data: FormSubmissionData): string {
       { label: 'Insurance / MBI Number', value: data.primaryInsuranceNumber || 'N/A' },
     ];
 
-    if (data.gender) fields.push({ label: 'Biological Sex', value: data.gender });
-    if (data.conditions && data.conditions.length > 0) {
-      fields.push({ label: 'Reported Conditions', value: data.conditions.join(', ') });
-    }
-    if (data.dailyMedsCount) {
-      fields.push({ label: 'Daily Medications', value: data.dailyMedsCount });
-    }
-    if (data.adverseReactions !== undefined) {
-      fields.push({ label: 'Adverse Drug Reactions', value: data.adverseReactions ? 'Yes' : 'No' });
-    }
-    if (data.streetAddress) {
-      fields.push({
-        label: 'Shipping Address',
-        value: `${data.streetAddress} ${data.suite || ''}, ${data.city || ''}, ${data.state} ${data.zipCode || ''}`.trim(),
-      });
-    }
-
     consentBlock = `
       <div style="margin-top: 20px; padding: 14px; background-color: #f1f5f9; border-radius: 8px; border-left: 4px solid #0d9488;">
         <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 13px; font-weight: 700; text-transform: uppercase;">

@@ -131,58 +131,6 @@ export function formatRowForSheet(data: FormSubmissionData): {
   const ipAddress = data.meta.ipAddress;
 
   if (data.formType === 'genetic_testing') {
-    const isFullWizard = Boolean(data.streetAddress || data.conditions);
-    if (isFullWizard) {
-      return {
-        headers: [
-          'Submission Timestamp',
-          'First Name',
-          'Last Name',
-          'Email',
-          'Phone',
-          'State',
-          'Date of Birth',
-          'Insurance Type',
-          'Insurance / MBI Number',
-          'Gender',
-          'Health Conditions',
-          'Daily Meds Count',
-          'Adverse Reactions',
-          'Street Address',
-          'Suite',
-          'City',
-          'ZIP Code',
-          'Caregiver Applying',
-          'Consent Statement',
-          'Consent Status',
-          'IP Address',
-        ],
-        row: [
-          timestamp,
-          data.firstName,
-          data.lastName,
-          data.email || 'N/A',
-          data.phone,
-          data.state,
-          data.dateOfBirth,
-          data.primaryInsuranceType || 'N/A',
-          data.primaryInsuranceNumber || 'N/A',
-          data.gender || 'N/A',
-          data.conditions?.join(', ') || 'None reported',
-          data.dailyMedsCount || 'N/A',
-          data.adverseReactions ? 'Yes' : 'No',
-          data.streetAddress || 'N/A',
-          data.suite || '',
-          data.city || 'N/A',
-          data.zipCode || 'N/A',
-          data.isCaregiverApplying ? 'Yes' : 'No',
-          data.consentStatement,
-          data.consentStatus,
-          ipAddress, // Last column
-        ],
-      };
-    }
-
     return {
       headers: [
         'Submission Timestamp',
