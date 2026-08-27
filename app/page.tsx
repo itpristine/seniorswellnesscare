@@ -34,8 +34,8 @@ export default function HomePage() {
   const coreServices = [
     {
       id: 'immunodeficiency',
-      title: 'Immunodeficiency & DNA Diagnostics',
-      tagline: '100% Medicare Part B Covered ($0 Copay)',
+      title: 'Genetic Testing & Molecular Diagnostics',
+      tagline: '100% Medicare Part B Covered (Coverage Review)',
       description:
         'Comprehensive physician-ordered genomic screening across 9 clinical panels including Hereditary Cancer (CGx), Pharmacogenomics (PGx), Primary Immunodeficiency, and Neurocognitive health. Painless 5-minute at-home buccal swab processed in CAP/CLIA accredited labs.',
       href: '/immunodeficiency',
@@ -337,7 +337,7 @@ export default function HomePage() {
                   <td className="p-4 sm:p-5 font-bold text-[#0D1B2A]">
                     <div className="flex items-center gap-2">
                       <Dna className="w-4 h-4 text-[#0D9488]" />
-                      <span>Immunodeficiency &amp; DNA Diagnostics</span>
+                      <span>Genetic Testing &amp; Molecular Diagnostics</span>
                     </div>
                     <span className="text-xs text-slate-500 font-normal block mt-0.5">
                       9 CLIA diagnostic panels (CGx, PGx, Neuro, Cardio)
