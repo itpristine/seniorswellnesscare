@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     'Medicare Part B senior wellness',
   ],
   authors: [{ name: SITE_CONFIG.name }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+  },
   metadataBase: new URL('https://aegisgenomics.com'),
   openGraph: {
     type: 'website',
