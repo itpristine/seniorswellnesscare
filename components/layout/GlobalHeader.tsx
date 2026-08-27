@@ -17,8 +17,6 @@ import {
   Radio,
   ArrowRight,
   Sparkles,
-  Stethoscope,
-  UserCheck,
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 import { DIAGNOSTIC_PROGRAMS } from '@/lib/constants/programsData';
@@ -134,19 +132,27 @@ export function GlobalHeader() {
 
             <div className="flex items-center gap-2 sm:gap-3">
               <Link
-                href="/eligibility-checker"
+                href="/immunodeficiency"
                 className="flex items-center gap-1 hover:text-white transition-colors text-slate-300"
               >
-                <UserCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Patients</span>
+                <Dna className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Genetic Test</span>
               </Link>
               <span className="text-slate-700">|</span>
               <Link
-                href="/providers"
-                className="flex items-center gap-1 hover:text-white transition-colors font-medium text-amber-400"
+                href="/dme"
+                className="flex items-center gap-1 hover:text-white transition-colors text-slate-300"
               >
-                <Stethoscope className="w-3.5 h-3.5 shrink-0" />
-                <span>Providers</span>
+                <HeartPulse className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>DME</span>
+              </Link>
+              <span className="text-slate-700">|</span>
+              <Link
+                href="/medical-alert"
+                className="flex items-center gap-1 hover:text-white transition-colors text-slate-300"
+              >
+                <Radio className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>Medical Alert</span>
               </Link>
             </div>
           </div>

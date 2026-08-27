@@ -6,7 +6,6 @@ import {
   Radio,
   Phone,
   Mail,
-  MapPin,
   ShieldCheck,
   Lock,
   Award,
@@ -20,7 +19,7 @@ export function Footer() {
       {/* Top Credentials Strip (Clean White / Warm Sand surface) */}
       <div className="border-b border-[#EAE5D8] bg-white text-[#0D1B2A] py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center sm:text-left">
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
+              <div className="flex items-center gap-3 justify-center sm:justify-start">
             <div className="w-10 h-10 rounded-2xl bg-teal-50 border border-teal-200/80 flex items-center justify-center text-[#0D9488] shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -55,7 +54,7 @@ export function Footer() {
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">$0 Medicare Part B</h5>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">Medicare Part B Coverage</h5>
               <p className="text-[11px] text-slate-500">For qualifying beneficiaries</p>
             </div>
           </div>
@@ -104,10 +103,6 @@ export function Footer() {
                 <span>{SITE_CONFIG.email}</span>
               </a>
 
-              <div className="flex items-start gap-2.5 text-slate-400 text-xs">
-                <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                <span>{SITE_CONFIG.address}</span>
-              </div>
             </div>
           </div>
 
@@ -166,7 +161,7 @@ export function Footer() {
                   href="/eligibility-checker"
                   className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5"
                 >
-                  <span>Check Eligibility ($0 Cost)</span>
+                  <span>Check Eligibility</span>
                 </Link>
               </li>
               <li>
@@ -212,26 +207,26 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Providers & Corporate */}
+          {/* Col 4: More Services & Corporate */}
           <div>
             <h4 className="font-serif-heading font-bold text-sm text-white uppercase tracking-wider mb-4 border-l-2 border-amber-500 pl-2.5">
-              Providers &amp; About
+              More Services &amp; About
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/providers"
+                  href="/dme"
                   className="text-slate-300 hover:text-teal-300 transition-colors"
                 >
-                  Physician Network Portal
+                  DME Medical Equipment
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/providers/referral"
+                  href="/medical-alert"
                   className="text-slate-300 hover:text-teal-300 transition-colors"
                 >
-                  Digital Requisition Form
+                  24/7 Medical Alert
                 </Link>
               </li>
               <li>

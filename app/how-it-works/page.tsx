@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
 
   const serviceBreakdowns = [
     {
-      title: 'Immunodeficiency & DNA Testing',
+      title: 'Genetic Swab Testing Testing',
       icon: <Dna className="w-6 h-6 text-[#0D9488]" />,
       badge: '100% Medicare Part B ($0)',
       desc: 'Painless 5-minute buccal swab delivered in prepaid packaging. Processed by CLIA/CAP labs across 9 diagnostic panels.',

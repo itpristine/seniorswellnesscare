@@ -159,7 +159,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                {/* Option 1: Immunodeficiency */}
+                {/* Option 1: Genetic Swab Testing */}
                 <Link
                   href="/immunodeficiency"
                   className="flex items-start gap-3.5 p-3 rounded-2xl border border-slate-200 hover:border-[#0D9488] hover:bg-teal-50/40 transition-all group"
@@ -170,7 +170,7 @@ export default function HomePage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <h4 className="font-serif-heading font-bold text-sm text-[#0D1B2A] group-hover:text-[#0D9488] transition-colors">
-                        Immunodeficiency &amp; DNA
+                        Genetic Swab Testing
                       </h4>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                         Coverage Review
