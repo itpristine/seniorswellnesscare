@@ -42,8 +42,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#FDFCF7] text-[#0D1B2A] font-sans-body antialiased selection:bg-[#0D9488] selection:text-white">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className="min-h-screen flex flex-col bg-[#FDFCF7] text-[#0D1B2A] font-sans-body antialiased selection:bg-[#0D9488] selection:text-white"
+        suppressHydrationWarning
+      >
         <GlobalHeader />
         <SecondaryNav />
         <main className="flex-1">{children}</main>

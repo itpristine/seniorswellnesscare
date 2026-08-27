@@ -129,7 +129,7 @@ export function GlobalHeader() {
               <Award className="w-3.5 h-3.5 shrink-0" />
               <span>CAP &amp; CLIA Accredited • Medicare Partner</span>
             </span>
-            <span className="hidden md:inline-flex items-center gap-1 text-slate-300">
+            <span className="hidden lg:inline-flex items-center gap-1 text-slate-300">
               <Phone className="w-3.5 h-3.5 text-amber-500 shrink-0" />
               <span>
                 Support: <strong className="text-white font-semibold">{SITE_CONFIG.phone}</strong>
@@ -142,7 +142,7 @@ export function GlobalHeader() {
             <button
               type="button"
               onClick={() => setSearchModalOpen(true)}
-              className="hidden sm:flex items-center gap-2 bg-slate-800/90 hover:bg-slate-800 text-slate-300 px-3 py-1 rounded-full transition-colors border border-slate-700 cursor-pointer"
+              className="hidden lg:flex items-center gap-2 bg-slate-800/90 hover:bg-slate-800 text-slate-300 px-3 py-1 rounded-full transition-colors border border-slate-700 cursor-pointer"
             >
               <Search className="w-3.5 h-3.5 text-amber-400" />
               <span>Search Services &amp; Tests...</span>

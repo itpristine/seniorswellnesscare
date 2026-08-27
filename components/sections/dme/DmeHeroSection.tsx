@@ -18,12 +18,12 @@ import { Badge } from '@/components/ui/Badge';
 
 export function DmeHeroSection() {
   return (
-    <section className="relative overflow-hidden pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 lg:px-16 bg-gradient-to-b from-[#FDFCF7] via-[#F7F4E7]/60 to-[#FDFCF7] border-b border-[#EAE5D8]">
+    <section className="relative overflow-hidden pt-8 sm:pt-12 md:pt-14 lg:pt-16 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 bg-gradient-to-b from-[#FDFCF7] via-[#F7F4E7]/60 to-[#FDFCF7] border-b border-[#EAE5D8]">
       {/* Soft ambient blurs */}
       <div className="absolute top-10 right-10 w-72 h-72 sm:w-96 sm:h-96 bg-amber-100/40 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-72 h-72 sm:w-96 sm:h-96 bg-teal-100/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 xl:gap-12 items-center">
         {/* Left Column */}
         <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
           {/* Eyebrow Pill */}
@@ -33,14 +33,14 @@ export function DmeHeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
+          <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-4xl lg:text-[2.25rem] xl:text-[2.85rem] 2xl:text-5xl text-[#0D1B2A] leading-[1.18] tracking-tight">
             Physician-Prescribed{' '}
             <span className="highlight-accent text-[#0D9488]">Durable Medical Equipment</span>{' '}
             Delivered to Your Door.
           </h1>
 
           {/* Subtitle */}
-          <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
+          <p className="font-sans-body text-sm sm:text-base md:text-base lg:text-base xl:text-lg text-slate-700 leading-relaxed max-w-2xl">
             Access medically necessary orthopedic braces for the back, knees, shoulders, wrists, and elbows. Coverage may be available through insurance benefits for eligible patients, depending on coverage, medical necessity, and plan requirements.
           </p>
 
@@ -50,7 +50,7 @@ export function DmeHeroSection() {
               href="/eligibility-checker?source=dme"
               size="lg"
               variant="primary"
-              className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/20"
+              className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 sm:px-7 py-3.5 sm:py-4 rounded-full shadow-lg shadow-teal-700/20 text-center justify-center"
               icon={<ArrowRight className="w-4 h-4" />}
             >
               Check My DME Eligibility
@@ -60,23 +60,23 @@ export function DmeHeroSection() {
               href="#products"
               size="lg"
               variant="light"
-              className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-6 py-4 rounded-full"
+              className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-5 sm:px-6 py-3.5 sm:py-4 rounded-full text-center justify-center"
             >
               Browse Equipment &rarr;
             </Button>
           </div>
 
           {/* Trust Checkmarks */}
-          <div className="pt-4 flex flex-wrap items-center gap-3 sm:gap-6 text-[11px] sm:text-xs font-medium text-slate-600 border-t border-slate-200/80">
-            <span className="flex items-center gap-1.5">
+          <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-[11px] sm:text-xs font-medium text-slate-600 border-t border-slate-200/80">
+            <span className="flex items-center gap-1.5 shrink-0">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
               <span>Medicare Part B Billing Support</span>
             </span>
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 shrink-0">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
               <span>Physician Prescription Included</span>
             </span>
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 shrink-0">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
               <span>Doorstep Delivery &amp; Fit Support</span>
             </span>
@@ -84,24 +84,24 @@ export function DmeHeroSection() {
         </div>
 
         {/* Right Column: Pre-Qualification Summary Card */}
-        <div className="lg:col-span-5 flex justify-center w-full">
-          <div className="w-full max-w-md bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-xl space-y-5">
-            <div className="flex items-center justify-between">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
+          <div className="w-full max-w-md bg-white rounded-3xl p-5 sm:p-7 border border-slate-200/90 shadow-xl space-y-4 sm:space-y-5">
+            <div className="flex items-center justify-between gap-2">
               <div>
-                <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
+                <h3 className="font-serif-heading font-bold text-base sm:text-lg text-[#0D1B2A]">
                   DME Pre-Qualification
                 </h3>
-                <p className="text-xs text-slate-500 mt-0.5">
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
                   Takes under 2 minutes • Insurance review
                 </p>
               </div>
-              <Badge variant="emerald" size="sm" dot>
+              <Badge variant="emerald" size="sm" dot className="shrink-0">
                 Coverage Review
               </Badge>
             </div>
 
             {/* Visual highlights */}
-            <div className="space-y-2.5">
+            <div className="space-y-2 sm:space-y-2.5">
               {[
                 '1. Complete 2-minute online eligibility check',
                 '2. State-licensed doctor reviews medical necessity',
@@ -116,25 +116,25 @@ export function DmeHeroSection() {
 
             <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 space-y-0.5">
               <div className="flex items-center gap-1.5 font-bold text-amber-900">
-                <HeartPulse className="w-3.5 h-3.5 text-amber-600" />
+                <HeartPulse className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                 <span>Medicare Covered Orthopedic Bracing</span>
               </div>
-              <p className="text-[11px] text-slate-600">
+              <p className="text-[11px] text-slate-600 leading-snug">
                 Your insurance may cover the full cost of eligible services or products, depending on your coverage and eligibility.
               </p>
             </div>
 
             <Link
               href="/eligibility-checker?source=dme"
-              className="flex items-center justify-center gap-2 w-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full shadow-md transition-all"
+              className="flex items-center justify-center gap-2 w-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-3.5 rounded-full shadow-md transition-all text-center"
             >
-              <ShieldCheck className="w-4 h-4 text-emerald-200" />
-              Start 2-Minute DME Qualification &rarr;
+              <ShieldCheck className="w-4 h-4 text-emerald-200 shrink-0" />
+              <span>Start 2-Minute DME Qualification &rarr;</span>
             </Link>
 
-            <div className="pt-1 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <div className="pt-1 border-t border-slate-100 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500">
               <span className="flex items-center gap-1">
-                <Lock className="w-3 h-3 text-[#0D9488]" />
+                <Lock className="w-3 h-3 text-[#0D9488] shrink-0" />
                 HIPAA 256-Bit Encrypted
               </span>
               <span>100% Confidential</span>
