@@ -338,6 +338,28 @@ export async function appendToGoogleSheet(data: FormSubmissionData): Promise<{
       );
 
       const range = `${tabName}!A1`;
+
+      // Check if header row exists, if sheet is empty prepend headers
+      let rowsToInsert: string[][] = [row];
+      try {
+        const checkUrl = `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(
+          spreadsheetId
+        )}/values/${encodeURIComponent(`${tabName}!A1:Z1`)}`;
+
+        const checkRes = await fetch(checkUrl, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        });
+
+        if (checkRes.ok) {
+          const checkData = await checkRes.json();
+          if (!checkData.values || checkData.values.length === 0 || !checkData.values[0] || checkData.values[0].length === 0) {
+            rowsToInsert = [headers, row];
+          }
+        }
+      } catch {
+        // Fallback to inserting data row directly
+      }
+
       const appendUrl = `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(
         spreadsheetId
       )}/values/${encodeURIComponent(range)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
@@ -349,7 +371,7 @@ export async function appendToGoogleSheet(data: FormSubmissionData): Promise<{
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          values: [row],
+          values: rowsToInsert,
         }),
       });
 
