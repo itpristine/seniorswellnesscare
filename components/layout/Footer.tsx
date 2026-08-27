@@ -277,7 +277,7 @@ export function Footer() {
         {/* Bottom Copyright & Legal Links */}
         <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
-            &copy; {new Date().getFullYear()} {SITE_CONFIG.legalName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-slate-200 transition-colors">

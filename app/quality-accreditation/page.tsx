@@ -2,7 +2,6 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 import {
   ShieldCheck,
   Award,
@@ -10,7 +9,6 @@ import {
   FileCheck2,
   Building2,
   CheckCircle2,
-  ArrowRight,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -119,18 +117,6 @@ export default function QualityAccreditationPage() {
           ))}
         </div>
 
-        {/* Action Prompt */}
-        <div className="text-center">
-          <Button
-            href="/eligibility-checker"
-            size="lg"
-            variant="primary"
-            className="shadow-md shadow-teal-700/20 font-semibold rounded-full"
-            icon={<ArrowRight className="w-4 h-4" />}
-          >
-            Start Your Secure Pre-Qualification Check &rarr;
-          </Button>
-        </div>
       </div>
     </div>
   );

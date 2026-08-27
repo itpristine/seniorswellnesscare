@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import {
   Phone,
   Mail,
-  MapPin,
   Clock,
   Send,
   CheckCircle2,
@@ -82,13 +81,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 text-slate-700">
-                  <MapPin className="w-5 h-5 text-[#0D9488] shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs text-slate-500 block">Headquarters &amp; Laboratory Operations</span>
-                    <span className="text-[#0D1B2A]">{SITE_CONFIG.address}</span>
-                  </div>
-                </div>
               </div>
             </Card>
 

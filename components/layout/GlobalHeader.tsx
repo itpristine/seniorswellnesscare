@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 import { DIAGNOSTIC_PROGRAMS } from '@/lib/constants/programsData';
+import { DME_PRODUCTS } from '@/lib/constants/dmeData';
+import { MEDICAL_ALERT_SYSTEMS } from '@/lib/constants/medicalAlertData';
 import { cn } from '@/lib/utils/cn';
 
 export function GlobalHeader() {
@@ -66,7 +68,7 @@ export function GlobalHeader() {
 
   const coreServices = [
     {
-      title: 'Immunodeficiency',
+      title: 'Genetic Testing & Molecular Diagnostics',
       href: '/immunodeficiency',
       desc: 'Physician-ordered preventive genetic testing & 9 CLIA diagnostic panels covered 100% by Medicare Part B.',
       badge: '100% Covered ($0)',
@@ -90,6 +92,25 @@ export function GlobalHeader() {
       active: pathname.startsWith('/medical-alert'),
     },
   ];
+
+  const matchesSearch = (value: string) =>
+    !searchQuery.trim() || value.toLowerCase().includes(searchQuery.toLowerCase());
+
+  const filteredCoreServices = coreServices.filter((service) =>
+    matchesSearch(`${service.title} ${service.desc} ${service.badge}`)
+  );
+  const filteredDiagnosticPrograms = DIAGNOSTIC_PROGRAMS.slice(0, 4).filter((program) =>
+    matchesSearch(`${program.name} ${program.clinicalCode} ${program.genesAnalyzed.map((gene) => gene.symbol).join(' ')}`)
+    || matchesSearch('Genetic Testing Molecular Diagnostics')
+  );
+  const filteredDmeProducts = DME_PRODUCTS.filter((product) =>
+    matchesSearch(`${product.name} ${product.tagline} ${product.badge}`)
+    || matchesSearch('DME Durable Medical Equipment')
+  );
+  const filteredMedicalAlertSystems = MEDICAL_ALERT_SYSTEMS.filter((system) =>
+    matchesSearch(`${system.name} ${system.tagline} ${system.badge}`)
+    || matchesSearch('Medical Alert')
+  );
 
   const isCoreServiceActive =
     pathname.startsWith('/immunodeficiency') ||
@@ -311,7 +332,7 @@ export function GlobalHeader() {
                 <input
                   type="text"
                   autoFocus
-                  placeholder="Search Immunodeficiency, DME, or Medical Alert..."
+                  placeholder="Search Genetic Testing, DME, or Medical Alert..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full text-sm font-medium text-slate-900 focus:outline-none placeholder-slate-400"
@@ -330,7 +351,7 @@ export function GlobalHeader() {
               <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-1">
                 Core Services
               </div>
-              {coreServices.map((srv) => (
+              {filteredCoreServices.map((srv) => (
                 <Link
                   key={srv.title}
                   href={srv.href}
@@ -353,9 +374,9 @@ export function GlobalHeader() {
               ))}
 
               <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-1 pt-2">
-                Diagnostic Programs (Immunodeficiency)
+                Diagnostic Programs (Genetic Testing &amp; Molecular Diagnostics)
               </div>
-              {DIAGNOSTIC_PROGRAMS.slice(0, 4).map((prog) => (
+              {filteredDiagnosticPrograms.map((prog) => (
                 <Link
                   key={prog.slug}
                   href={`/programs/${prog.slug}`}
@@ -369,6 +390,46 @@ export function GlobalHeader() {
                     </span>
                   </div>
                   <span className="text-[10px] font-mono text-slate-500">{prog.clinicalCode}</span>
+                </Link>
+              ))}
+
+              <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-1 pt-2">
+                DME Equipment
+              </div>
+              {filteredDmeProducts.map((product) => (
+                <Link
+                  key={product.slug}
+                  href={`/dme#${product.anchorId}`}
+                  onClick={() => setSearchModalOpen(false)}
+                  className="flex items-center justify-between p-2.5 rounded-2xl hover:bg-[#FDFCF7] border border-transparent hover:border-slate-200 transition-all group"
+                >
+                  <div className="flex items-center gap-2">
+                    <HeartPulse className="w-4 h-4 text-amber-600" />
+                    <span className="text-xs font-semibold text-[#0D1B2A] group-hover:text-[#0D9488]">
+                      {product.name}
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-slate-500">DME</span>
+                </Link>
+              ))}
+
+              <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-1 pt-2">
+                Medical Alert Systems
+              </div>
+              {filteredMedicalAlertSystems.map((system) => (
+                <Link
+                  key={system.slug}
+                  href={`/medical-alert#${system.anchorId}`}
+                  onClick={() => setSearchModalOpen(false)}
+                  className="flex items-center justify-between p-2.5 rounded-2xl hover:bg-[#FDFCF7] border border-transparent hover:border-slate-200 transition-all group"
+                >
+                  <div className="flex items-center gap-2">
+                    <Radio className="w-4 h-4 text-rose-500" />
+                    <span className="text-xs font-semibold text-[#0D1B2A] group-hover:text-[#0D9488]">
+                      {system.name}
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-slate-500">Medical Alert</span>
                 </Link>
               ))}
             </div>
