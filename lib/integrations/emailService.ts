@@ -266,7 +266,11 @@ export async function sendSubmissionEmail(data: FormSubmissionData): Promise<{
   message?: string;
 }> {
   const routeConfig = FORM_ROUTES[data.formType];
-  const recipient = routeConfig.recipientEmail;
+  const formEnvKey = `EMAIL_TO_${data.formType.toUpperCase()}`;
+  const recipient =
+    process.env[formEnvKey] ||
+    process.env.EMAIL_TO ||
+    routeConfig.recipientEmail;
   const sender = process.env.EMAIL_FROM || `Senior Wellness Care <${routeConfig.senderEmail}>`;
 
   let subjectName = '';
