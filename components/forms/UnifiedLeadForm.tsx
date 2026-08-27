@@ -82,11 +82,14 @@ interface UnifiedLeadFormProps {
   heading?: string;
   /** Optional sub-heading override. */
   subheading?: string;
+  /** Form type routing ('genetic_testing' | 'dme'). Defaults to 'genetic_testing'. */
+  formType?: 'genetic_testing' | 'dme';
 }
 
 export function UnifiedLeadForm({
   heading = 'Check Your Genetic Testing Eligibility',
   subheading = 'Complete the form below. A licensed physician will review your profile and help assess whether insurance coverage may support appropriate testing.',
+  formType = 'genetic_testing',
 }: UnifiedLeadFormProps) {
   /* ── Field state ── */
   const [firstName, setFirstName] = useState('');
@@ -137,6 +140,7 @@ export function UnifiedLeadForm({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          formType,
           firstName,
           lastName,
           email,
@@ -144,7 +148,10 @@ export function UnifiedLeadForm({
           state: selectedState,
           dateOfBirth,
           primaryInsurance: primaryInsuranceNumber.trim(),
+          primaryInsuranceNumber: primaryInsuranceNumber.trim(),
           insuranceType: primaryInsuranceType,
+          primaryInsuranceType,
+          consent,
           smsConsent: consent,
           // Defaults expected by backend
           conditions: ['general_preventive_wellness'],

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { processFormIntegration } from '@/lib/integrations/formRouter';
 
 const MedicalAlertQuoteSchema = z.object({
   firstName: z.string().min(1, 'First Name is required.'),
@@ -20,6 +21,13 @@ export async function POST(req: NextRequest) {
 
     const confirmationCode =
       'ALR-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+
+    // Trigger Email & Google Sheets sync for Medical Alert
+    await processFormIntegration(req, {
+      ...validated,
+      formType: 'medical_alert',
+      confirmationCode,
+    });
 
     return NextResponse.json(
       {

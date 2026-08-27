@@ -53,6 +53,7 @@ export default function EligibilityCheckerPage({
             <UnifiedLeadForm
               heading={formHeading}
               subheading={formSubheading}
+              formType={isDmeFlow ? 'dme' : 'genetic_testing'}
             />
           </Card>
         </div>

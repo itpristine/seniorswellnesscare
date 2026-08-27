@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { FullEligibilitySchema } from '@/lib/validation/eligibilitySchema';
 import { EligibilityResult } from '@/types/eligibility';
+import { processFormIntegration } from '@/lib/integrations/formRouter';
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,8 +9,13 @@ export async function POST(req: NextRequest) {
     const validatedData = FullEligibilitySchema.parse(body);
 
     const isMedicarePartB = validatedData.insuranceType === 'medicare_part_b';
-    const hasFamilyHistory = validatedData.conditions.length > 0 && !validatedData.conditions.includes('general_preventive_wellness');
-    const isPolypharmacy = validatedData.dailyMedsCount === '3_5' || validatedData.dailyMedsCount === '6_plus' || validatedData.adverseReactions;
+    const hasFamilyHistory =
+      validatedData.conditions.length > 0 &&
+      !validatedData.conditions.includes('general_preventive_wellness');
+    const isPolypharmacy =
+      validatedData.dailyMedsCount === '3_5' ||
+      validatedData.dailyMedsCount === '6_plus' ||
+      validatedData.adverseReactions;
 
     const recommendedPanels = [];
 
@@ -98,6 +104,16 @@ export async function POST(req: NextRequest) {
       physicianReviewNotice: `An independent state-licensed physician is reviewing your intake submission. You will receive an SMS and email notification once your at-home collection kit is approved and dispatched.`,
       confirmationCode,
     };
+
+    // Route submission to Email & Google Sheets integration
+    const formType = (body.formType || validatedData.formType || 'genetic_testing') as 'genetic_testing' | 'dme';
+    await processFormIntegration(req, {
+      ...validatedData,
+      formType,
+      primaryInsurance: validatedData.primaryInsurance || body.primaryInsurance || body.primaryInsuranceNumber,
+      primaryInsuranceType: validatedData.insuranceType || body.primaryInsuranceType,
+      confirmationCode,
+    });
 
     return NextResponse.json(result, { status: 200 });
   } catch (error: any) {

@@ -17,15 +17,43 @@ import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [topic, setTopic] = useState('eligibility');
+  const [topic, setTopic] = useState('Medicare Eligibility & $0 Cost');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setErrorMsg('');
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          topic,
+          message: message.trim(),
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || 'Failed to send message. Please try again.');
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -179,14 +207,21 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {errorMsg && (
+                    <p className="text-xs font-semibold text-rose-600 bg-rose-50 p-3 rounded-xl border border-rose-200">
+                      {errorMsg}
+                    </p>
+                  )}
+
                   <Button
                     type="submit"
                     size="lg"
                     variant="primary"
+                    isLoading={isSubmitting}
                     className="w-full justify-center text-xs sm:text-sm font-semibold rounded-full shadow-md"
                     icon={<Send className="w-4 h-4" />}
                   >
-                    Send Secure Message &rarr;
+                    {isSubmitting ? 'Sending Message…' : 'Send Secure Message →'}
                   </Button>
                 </form>
               ) : (
