@@ -209,6 +209,18 @@ export function UnifiedLeadForm({
   const emailError = hasEditedEmail && email.length > 0 && !EMAIL_PATTERN.test(email.trim())
     ? 'Please enter a valid email address or leave this optional field blank.'
     : '';
+  const isFormValid = Boolean(
+    firstName.trim()
+    && lastName.trim()
+    && /^\d{10}$/.test(phone)
+    && (!email.trim() || EMAIL_PATTERN.test(email.trim()))
+    && selectedState
+    && dateOfBirth
+    && primaryInsuranceType
+    && primaryInsuranceNumber.trim()
+    && (primaryInsuranceType !== 'medicare_part_b' || !getMedicareMbiError(primaryInsuranceNumber))
+    && consent
+  );
 
   /* ── Form ── */
   return (
@@ -401,6 +413,7 @@ export function UnifiedLeadForm({
           size="lg"
           variant="primary"
           isLoading={isSubmitting}
+          disabled={!isFormValid}
           icon={<ShieldCheck className="w-4 h-4" />}
           iconPosition="left"
           className="w-full justify-center text-sm font-bold rounded-2xl shadow-lg shadow-teal-700/20 bg-gradient-to-r from-[#0D9488] via-[#0F9D8D] to-[#0F766E] hover:shadow-xl hover:shadow-teal-700/30 transition-all duration-200"
