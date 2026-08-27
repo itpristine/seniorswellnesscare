@@ -87,7 +87,7 @@ export function DmeMedicareBenefitsSection() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
+          <div className="hidden lg:block overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
             <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/80">
@@ -139,6 +139,34 @@ export function DmeMedicareBenefitsSection() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="lg:hidden space-y-3">
+            {DME_COVERAGE_ROWS.map((row) => (
+              <div key={row.feature} className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-clinical space-y-3">
+                <h4 className="font-semibold text-sm text-slate-900">{row.feature}</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                  <div className="rounded-xl bg-teal-50/50 border border-teal-200/60 p-3">
+                    <span className="block font-bold text-[#0D9488] mb-1">Medicare Part B</span>
+                    <span className="text-slate-700">{row.partB}</span>
+                  </div>
+                  <div className="rounded-xl bg-slate-50 border border-slate-200/70 p-3">
+                    <span className="block font-bold text-slate-700 mb-1">Medicare Advantage</span>
+                    <span className="text-slate-600">{row.advantage}</span>
+                  </div>
+                  <div className="rounded-xl bg-emerald-50/40 border border-emerald-200/60 p-3">
+                    <span className="block font-bold text-emerald-700 mb-1">Part B + Supplemental</span>
+                    {row.highlight ? (
+                      <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-xs">
+                        <Sparkles className="w-3 h-3" /> {row.supplemental}
+                      </span>
+                    ) : (
+                      <span className="font-bold text-emerald-800">{row.supplemental}</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

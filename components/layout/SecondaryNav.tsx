@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   ChevronDown,
+  Menu,
+  X,
   ShieldCheck,
   Dna,
   HeartPulse,
@@ -22,6 +24,9 @@ import { cn } from '@/lib/utils/cn';
 export function SecondaryNav() {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [dmeMobileNavOpen, setDmeMobileNavOpen] = useState(false);
+  const [medicalAlertMobileNavOpen, setMedicalAlertMobileNavOpen] = useState(false);
+  const [genomicsMobileNavOpen, setGenomicsMobileNavOpen] = useState(false);
 
   // Immunodeficiency / Genomics section
   const isImmunodeficiencySection =
@@ -44,16 +49,26 @@ export function SecondaryNav() {
   if (isMedicalAlertSection) {
     return (
       <div className="w-full bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2.5 z-40 transition-all sticky top-[64px] sm:top-[72px] shadow-xs">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-2 lg:gap-4">
           {/* Section Identifier */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center justify-between gap-2 min-w-0 w-full md:w-auto">
             <Link
               href="/medical-alert"
-              className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs hover:border-[#0D9488] transition-colors"
+              className="flex items-center gap-1.5 max-w-full text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs hover:border-[#0D9488] transition-colors"
             >
               <Radio className="w-3.5 h-3.5 text-rose-500 shrink-0" />
               <span className="hidden sm:inline">Section:</span> Medical Alert
             </Link>
+            <button
+              type="button"
+              onClick={() => setMedicalAlertMobileNavOpen((isOpen) => !isOpen)}
+              className="md:hidden inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-[#0D1B2A] shadow-xs"
+              aria-expanded={medicalAlertMobileNavOpen}
+              aria-label="Toggle Medical Alert section navigation"
+            >
+              {medicalAlertMobileNavOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              <span>Menu</span>
+            </button>
           </div>
 
           {/* Desktop Navigation Links (Suggested: Medical Alert, Home System, Mobile Systems, Smartwatch, How It Works, FAQs, Get a Quote) */}
@@ -114,44 +129,50 @@ export function SecondaryNav() {
         </div>
 
         {/* Mobile quick scroll anchors */}
-        <div className="flex md:hidden items-center gap-2 overflow-x-auto pt-2 pb-0.5 no-scrollbar text-xs font-semibold text-slate-700">
+        {medicalAlertMobileNavOpen && <nav className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-2 pb-0.5 text-xs font-semibold text-slate-700">
           <Link
             href="/medical-alert#what-is-medical-alert"
-            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
           >
             Medical Alert
           </Link>
           <Link
             href="/medical-alert#home-system"
-            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
           >
             Home System
           </Link>
           <Link
             href="/medical-alert#mobile-systems"
-            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
           >
             Mobile Systems
           </Link>
           <Link
             href="/medical-alert#smartwatch"
-            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
           >
             Smartwatch
           </Link>
           <Link
             href="/medical-alert#how-it-works"
-            className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
           >
             How It Works
           </Link>
           <Link
             href="/medical-alert/quote"
-            className="px-3 py-1 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+            onClick={() => setMedicalAlertMobileNavOpen(false)}
+            className="sm:col-span-2 px-3 py-2 rounded-xl bg-[#0D9488] text-white border border-[#0D9488] shadow-xs font-bold text-center"
           >
             Get a Quote
           </Link>
-        </div>
+        </nav>}
       </div>
     );
   }
@@ -162,11 +183,21 @@ export function SecondaryNav() {
       <div className="w-full bg-[#F7F4E7]/95 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[64px] sm:top-[72px]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Section Identifier */}
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex items-center justify-between gap-2 min-w-0 w-full lg:w-auto">
+            <span className="flex items-center justify-center gap-1.5 max-w-full text-center text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
               <HeartPulse className="w-3.5 h-3.5 text-amber-600" />
               <span className="hidden sm:inline">Section:</span> DME &amp; Orthopedic Bracing
             </span>
+            <button
+              type="button"
+              onClick={() => setDmeMobileNavOpen((isOpen) => !isOpen)}
+              className="lg:hidden inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-[#0D1B2A] shadow-xs"
+              aria-expanded={dmeMobileNavOpen}
+              aria-label="Toggle DME section navigation"
+            >
+              {dmeMobileNavOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              <span>Menu</span>
+            </button>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -276,7 +307,7 @@ export function SecondaryNav() {
           </nav>
 
           {/* Right CTA */}
-          <div className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center justify-center gap-2 w-full lg:w-auto">
             <Link
               href="/eligibility-checker?source=dme"
               className="bg-[#0D9488] hover:bg-[#0F766E] text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full transition-all shadow-xs flex items-center gap-1 whitespace-nowrap"
@@ -288,32 +319,35 @@ export function SecondaryNav() {
         </div>
 
         {/* Mobile quick scroll anchors */}
-        <div className="flex lg:hidden items-center gap-2 overflow-x-auto pt-1.5 pb-0.5 no-scrollbar text-[11px] font-semibold text-slate-700">
-          <a href="#what-is-dme" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+        {dmeMobileNavOpen && (
+          <nav className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-2 pb-0.5 text-xs font-semibold text-slate-700">
+          <a href="#what-is-dme" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             Overview
           </a>
-          <a href="#products" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+          <a href="#products" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             Products
           </a>
-          <a href="#back-braces" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+          <a href="#back-braces" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             Back
           </a>
-          <a href="#how-it-works" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+          <a href="#how-it-works" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             How It Works
           </a>
-          <a href="#medicare-coverage" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs text-[#0D9488]">
+          <a href="#medicare-coverage" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs text-[#0D9488]">
             Medicare Coverage
           </a>
-          <a href="#faq" className="px-2.5 py-0.5 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs">
+          <a href="#faq" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             FAQs
           </a>
           <Link
             href="/eligibility-checker?source=dme"
-            className="px-3 py-0.5 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+            onClick={() => setDmeMobileNavOpen(false)}
+            className="sm:col-span-2 px-3 py-2 rounded-xl bg-[#0D9488] text-white border border-[#0D9488] text-center shadow-xs font-bold"
           >
             Check Eligibility
           </Link>
-        </div>
+          </nav>
+        )}
       </div>
     );
   }
@@ -323,11 +357,21 @@ export function SecondaryNav() {
     <div className="w-full bg-[#F7F4E7]/90 border-b border-[#EAE5D8] backdrop-blur-md px-4 sm:px-6 md:px-8 py-2 z-30 transition-all sticky top-[64px] sm:top-[72px]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Section Identifier */}
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
+        <div className="flex items-center justify-between gap-2 min-w-0 w-full md:w-auto">
+          <span className="flex items-center gap-1.5 max-w-full text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
             <Dna className="w-3.5 h-3.5 text-[#0D9488]" />
             <span className="hidden sm:inline">Section:</span> Genetic Testing &amp; Molecular Diagnostics
           </span>
+          <button
+            type="button"
+            onClick={() => setGenomicsMobileNavOpen((isOpen) => !isOpen)}
+            className="md:hidden inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-[#0D1B2A] shadow-xs"
+            aria-expanded={genomicsMobileNavOpen}
+            aria-label="Toggle Genetic Testing section navigation"
+          >
+            {genomicsMobileNavOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            <span>Menu</span>
+          </button>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -442,32 +486,36 @@ export function SecondaryNav() {
       </div>
 
       {/* Mobile quick scroll anchors */}
-      <div className="flex md:hidden items-center gap-2 overflow-x-auto pt-2 pb-0.5 no-scrollbar text-xs font-semibold text-slate-700">
+      {genomicsMobileNavOpen && <nav className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-2 pb-0.5 text-xs font-semibold text-slate-700">
         <Link
           href="/programs"
-          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          onClick={() => setGenomicsMobileNavOpen(false)}
+          className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
         >
           Tests &amp; Diagnostics
         </Link>
         <Link
           href="/medicare-eligibility"
-          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          onClick={() => setGenomicsMobileNavOpen(false)}
+          className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
         >
           Insurance
         </Link>
         <Link
           href="/how-it-works"
-          className="px-2.5 py-1 rounded-full bg-white border border-slate-200 whitespace-nowrap shadow-xs"
+          onClick={() => setGenomicsMobileNavOpen(false)}
+          className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs"
         >
           For Patients
         </Link>
         <Link
           href="/eligibility-checker"
-          className="px-3 py-1 rounded-full bg-[#0D9488] text-white border border-[#0D9488] whitespace-nowrap shadow-xs font-bold"
+          onClick={() => setGenomicsMobileNavOpen(false)}
+          className="sm:col-span-2 px-3 py-2 rounded-xl bg-[#0D9488] text-white border border-[#0D9488] shadow-xs font-bold text-center"
         >
           Check Eligibility
         </Link>
-      </div>
+      </nav>}
     </div>
   );
 }
