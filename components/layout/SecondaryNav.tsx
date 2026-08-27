@@ -326,7 +326,7 @@ export function SecondaryNav() {
         <div className="flex items-center gap-2 shrink-0">
           <span className="flex items-center gap-1.5 text-xs font-bold text-[#0D1B2A] uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-xs">
             <Dna className="w-3.5 h-3.5 text-[#0D9488]" />
-            <span className="hidden sm:inline">Section:</span> Immunodeficiency &amp; Genomics
+            <span className="hidden sm:inline">Section:</span> Genetic Testing &amp; Molecular Diagnostics
           </span>
         </div>
 

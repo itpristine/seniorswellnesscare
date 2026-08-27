@@ -21,9 +21,9 @@ import {
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About AegisGenomics | Mission, Clinical Governance & Senior Care',
+  title: 'About Senior Wellness Care | Mission, Clinical Governance & Senior Care',
   description:
-    'Learn about AegisGenomics—our mission to provide proactive senior healthcare through physician-ordered preventive genomics, Medicare-covered DME, and 24/7 medical alert systems.',
+    'Learn about Senior Wellness Care—our mission to provide proactive senior healthcare through physician-ordered preventive genomics, Medicare-covered DME, and 24/7 medical alert systems.',
 };
 
 export default function AboutUsPage() {
@@ -62,7 +62,7 @@ export default function AboutUsPage() {
           </h1>
 
           <p className="font-sans-body text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl">
-            We believe comprehensive healthcare should be accessible, proactive, and coordinated from home. By integrating physician-ordered preventive diagnostics, Medicare-covered medical equipment, and 24/7 emergency safety response, AegisGenomics provides complete peace of mind for seniors and their families nationwide.
+            We believe comprehensive healthcare should be accessible, proactive, and coordinated from home. By integrating physician-ordered preventive diagnostics, Medicare-covered medical equipment, and 24/7 emergency safety response, Senior Wellness Care provides complete peace of mind for seniors and their families nationwide.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function AboutUsPage() {
               Our Three Standards of Clinical Excellence
             </h2>
             <p className="text-sm text-slate-600">
-              Every service on the AegisGenomics platform is supported by licensed clinical oversight, accredited laboratory processing, and certified emergency protocols.
+              Every service on the Senior Wellness Care platform is supported by licensed clinical oversight, accredited laboratory processing, and certified emergency protocols.
             </p>
           </div>
 

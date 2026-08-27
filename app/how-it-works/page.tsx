@@ -23,7 +23,7 @@ import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 export const metadata: Metadata = {
   title: 'How It Works | 4 Simple Steps to Senior Healthcare & Diagnostics',
   description:
-    'Learn how AegisGenomics delivers seamless senior care: from 2-minute pre-qualification and physician review to free doorstep delivery and 24/7 care monitoring.',
+    'Learn how Senior Wellness Care delivers seamless senior care: from 2-minute pre-qualification and physician review to free doorstep delivery and 24/7 care monitoring.',
 };
 
 export default function HowItWorksPage() {
@@ -104,7 +104,7 @@ export default function HowItWorksPage() {
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="teal" size="md">
-            The AegisGenomics Care Journey
+            The Senior Wellness Care Journey
           </Badge>
           <h1 className="font-serif-heading font-bold text-3xl sm:text-5xl text-[#0D1B2A] tracking-tight">
             Four Simple Steps to Comprehensive Senior Care

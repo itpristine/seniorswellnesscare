@@ -7,7 +7,7 @@ import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 export const metadata: Metadata = {
   title: 'Terms of Service | User & Clinical Agreements',
   description:
-    'Terms of service and patient agreements governing the use of Aegis Genomics website, eligibility pre-qualification tools, and diagnostic services.',
+    'Terms of service and patient agreements governing the use of Senior Wellness Care website, eligibility pre-qualification tools, and diagnostic services.',
 };
 
 export default function TermsOfServicePage() {

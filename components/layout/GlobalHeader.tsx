@@ -167,14 +167,14 @@ export function GlobalHeader() {
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#EAE5D8] overflow-hidden">
               <img
                 src="/logo.png"
-                alt="Aegis Genomics logo"
+                alt="Senior Wellness Care logo"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="flex flex-col">
               <img
                 src="/Name.png"
-                alt="Aegis Genomics name"
+                alt="Senior Wellness Care name"
                 className="h-10 sm:h-11 w-auto object-contain"
               />
             </div>
@@ -399,13 +399,13 @@ export function GlobalHeader() {
                   <div className="w-9 h-9 rounded-xl bg-[#FDFCF7] text-emerald-400 flex items-center justify-center shadow-md border border-[#EAE5D8] overflow-hidden">
                     <img
                       src="/logo.png"
-                      alt="Aegis Genomics logo"
+                      alt="Senior Wellness Care logo"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <img
                     src="/Name.png"
-                    alt="Aegis Genomics name"
+                    alt="Senior Wellness Care name"
                     className="h-8 w-auto object-contain"
                   />
                 </div>

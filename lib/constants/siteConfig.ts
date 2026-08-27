@@ -12,7 +12,7 @@ export interface NavSection {
 }
 
 export const SITE_CONFIG = {
-  name: 'Aegis Genomics',
+  name: 'Senior Wellness Care',
   legalName: 'Aegis Preventive Genomics & Wellness Network LLC',
   tagline: 'Physician-Ordered Preventive Genomics Covered by Medicare Part B',
   phone: '(800) 492-3829',
@@ -164,5 +164,5 @@ export const SITE_CONFIG = {
     ],
   },
 
-  legalDisclaimer: 'Aegis Genomics is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Aegis Genomics is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing is subject to physician evaluation, clinical necessity determination, and insurance verification. $0 out-of-pocket cost applies to qualifying Medicare Part B beneficiaries when medically appropriate as determined by an attending physician.',
+  legalDisclaimer: 'Senior Wellness Care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Senior Wellness Care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing is subject to physician evaluation, clinical necessity determination, and insurance verification. $0 out-of-pocket cost applies to qualifying Medicare Part B beneficiaries when medically appropriate as determined by an attending physician.',
 };
