@@ -37,8 +37,8 @@ export function UnifiedLeadForm({
   const [phone, setPhone] = useState('');
   const [selectedState, setSelectedState] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const [primaryInsurance, setPrimaryInsurance] = useState('');
-  const [insuranceType, setInsuranceType] = useState('');
+  const [primaryInsuranceType, setPrimaryInsuranceType] = useState('');
+  const [primaryInsuranceNumber, setPrimaryInsuranceNumber] = useState('');
   const [consent, setConsent] = useState(false);
 
   /* ── UI state ── */
@@ -57,7 +57,8 @@ export function UnifiedLeadForm({
     if (!phone.trim()) { setErrorMsg('Phone is required.'); return; }
     if (!selectedState) { setErrorMsg('Please select your state.'); return; }
     if (!dateOfBirth) { setErrorMsg('Date of Birth is required.'); return; }
-    if (!primaryInsurance) { setErrorMsg('Please select your Primary Insurance.'); return; }
+    if (!primaryInsuranceType) { setErrorMsg('Please select your Primary Insurance.'); return; }
+    if (!primaryInsuranceNumber.trim()) { setErrorMsg('Primary Insurance Number is required.'); return; }
     if (!consent) { setErrorMsg('Please provide consent by checking the consent box below.'); return; }
 
     setIsSubmitting(true);
@@ -74,8 +75,8 @@ export function UnifiedLeadForm({
           phone,
           state: selectedState,
           dateOfBirth,
-          primaryInsurance,
-          insuranceType,
+          primaryInsurance: primaryInsuranceNumber.trim(),
+          insuranceType: primaryInsuranceType,
           smsConsent: consent,
           // Defaults expected by backend
           conditions: ['general_preventive_wellness'],
@@ -155,6 +156,7 @@ export function UnifiedLeadForm({
               onChange={(e) => setFirstName(e.target.value)}
               className={inputClass}
               autoComplete="given-name"
+              required
             />
           </div>
           <div>
@@ -166,6 +168,7 @@ export function UnifiedLeadForm({
               onChange={(e) => setLastName(e.target.value)}
               className={inputClass}
               autoComplete="family-name"
+              required
             />
           </div>
         </div>
@@ -181,6 +184,7 @@ export function UnifiedLeadForm({
               onChange={(e) => setEmail(e.target.value)}
               className={inputClass}
               autoComplete="email"
+              required
             />
           </div>
           <div>
@@ -192,6 +196,7 @@ export function UnifiedLeadForm({
               onChange={(e) => setPhone(e.target.value)}
               className={inputClass}
               autoComplete="tel"
+              required
             />
           </div>
         </div>
@@ -204,6 +209,7 @@ export function UnifiedLeadForm({
               value={selectedState}
               onChange={(e) => setSelectedState(e.target.value)}
               className={inputClass}
+              required
             >
               <option value="" disabled>— Select State —</option>
               {US_STATES.map((st) => (
@@ -219,36 +225,41 @@ export function UnifiedLeadForm({
               onChange={(e) => setDateOfBirth(e.target.value)}
               className={inputClass}
               autoComplete="bday"
+              required
             />
           </div>
         </div>
 
-        {/* Row 4: Primary Insurance / Insurance Type */}
+        {/* Row 4: Primary Insurance / Primary Insurance Number */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Primary Insurance *</label>
             <select
-              value={primaryInsurance}
-              onChange={(e) => setPrimaryInsurance(e.target.value)}
+              value={primaryInsuranceType}
+              onChange={(e) => setPrimaryInsuranceType(e.target.value)}
               className={inputClass}
+              required
             >
               <option value="" disabled>— Select Insurance —</option>
-              <option value="medicare">Medicare</option>
-              <option value="medicaid">Medicaid</option>
-              <option value="other">Other</option>
+              <option value="medicare_part_b">Medicare</option>
+              <option value="medicaid_uninsured">Medicaid</option>
+              <option value="commercial_insurance">Other</option>
             </select>
           </div>
           <div>
-            <label className={labelClass}>Insurance Type</label>
-            <select
-              value={insuranceType}
-              onChange={(e) => setInsuranceType(e.target.value)}
+            <label className={labelClass}>
+              Primary {primaryInsuranceType === 'medicare_part_b' ? 'Medicare' : primaryInsuranceType === 'medicaid_uninsured' ? 'Medicaid' : 'Insurance'} Number *
+            </label>
+            <input
+              type="text"
+              placeholder={primaryInsuranceType ? `Enter your ${primaryInsuranceType === 'medicare_part_b' ? 'Medicare' : primaryInsuranceType === 'medicaid_uninsured' ? 'Medicaid' : 'insurance'} number` : 'Select insurance first'}
+              value={primaryInsuranceNumber}
+              onChange={(e) => setPrimaryInsuranceNumber(e.target.value)}
               className={inputClass}
-            >
-              <option value="">— Select Type (Optional) —</option>
-              <option value="ppo">PPO</option>
-              <option value="hmo">HMO</option>
-            </select>
+              autoComplete="off"
+              disabled={!primaryInsuranceType}
+              required
+            />
           </div>
         </div>
 
@@ -260,6 +271,7 @@ export function UnifiedLeadForm({
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
               className="mt-0.5 w-4 h-4 rounded accent-[#0D9488] shrink-0 cursor-pointer"
+              required
             />
             <span className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
               By submitting, you are giving Express Written Consent authorizing the Wellness Eligibility
