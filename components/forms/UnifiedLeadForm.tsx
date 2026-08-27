@@ -41,6 +41,7 @@ export function UnifiedLeadForm({
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [primaryInsuranceType, setPrimaryInsuranceType] = useState('');
   const [primaryInsuranceNumber, setPrimaryInsuranceNumber] = useState('');
+  const [hasEditedPrimaryInsuranceNumber, setHasEditedPrimaryInsuranceNumber] = useState(false);
   const [consent, setConsent] = useState(false);
 
   /* ── UI state ── */
@@ -138,6 +139,11 @@ export function UnifiedLeadForm({
       </div>
     );
   }
+
+  const medicareNumberError = primaryInsuranceType === 'medicare_part_b'
+    && hasEditedPrimaryInsuranceNumber
+    && primaryInsuranceNumber.length > 0
+    && !MEDICARE_MBI_PATTERN.test(primaryInsuranceNumber);
 
   /* ── Form ── */
   return (
@@ -260,7 +266,10 @@ export function UnifiedLeadForm({
               type="text"
               placeholder={primaryInsuranceType ? `Enter your ${primaryInsuranceType === 'medicare_part_b' ? 'Medicare' : primaryInsuranceType === 'medicaid_uninsured' ? 'Medicaid' : 'insurance'} number` : 'Select insurance first'}
               value={primaryInsuranceNumber}
-              onChange={(e) => setPrimaryInsuranceNumber(e.target.value)}
+              onChange={(e) => {
+                setPrimaryInsuranceNumber(e.target.value.toUpperCase());
+                setHasEditedPrimaryInsuranceNumber(true);
+              }}
               className={inputClass}
               autoComplete="off"
               disabled={!primaryInsuranceType}
@@ -268,7 +277,14 @@ export function UnifiedLeadForm({
               maxLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
               minLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
               pattern={primaryInsuranceType === 'medicare_part_b' ? MEDICARE_MBI_PATTERN.source : undefined}
+              aria-invalid={medicareNumberError}
+              aria-describedby={medicareNumberError ? 'medicare-number-error' : undefined}
             />
+            {medicareNumberError && (
+              <p id="medicare-number-error" className="mt-1.5 text-xs font-semibold text-rose-600">
+                Please enter a valid Medicare number with exactly 11 uppercase letters and numbers.
+              </p>
+            )}
           </div>
         </div>
 
