@@ -350,8 +350,6 @@ export function UnifiedLeadForm({
             >
               <option value="" disabled>— Select Insurance —</option>
               <option value="medicare_part_b">Medicare</option>
-              <option value="medicaid_uninsured">Medicaid</option>
-              <option value="commercial_insurance">Other</option>
             </select>
           </div>
           <div>
