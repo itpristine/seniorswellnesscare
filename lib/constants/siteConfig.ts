@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   tagline: 'Physician-Ordered Preventive Genomics Covered by Medicare Part B',
   phone: '(800) 492-3829',
   phoneFormatted: '+18004923829',
-  email: 'care@aegisgenomics.com',
+  email: 'contact@seniorswellnesscare.com',
   providerEmail: 'providers@aegisgenomics.com',
   address: '100 Medical Center Parkway, Suite 400, Austin, TX 78701',
   supportHours: 'Monday – Friday, 8:00 AM – 8:00 PM EST',
