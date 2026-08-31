@@ -127,7 +127,7 @@ export function GlobalHeader() {
           <div className="flex items-center gap-4 text-[11px] sm:text-xs w-full sm:w-auto">
             <span className="flex items-center gap-1.5 text-emerald-400 font-medium whitespace-nowrap">
               <Award className="w-3.5 h-3.5 shrink-0" />
-              <span>CAP &amp; CLIA Accredited • Insurance Coverage Support</span>
+              <span>Quality Services • CAP &amp; CLIA Accredited</span>
             </span>
             <span className="hidden lg:inline-flex items-center gap-1 text-slate-300">
               <Phone className="w-3.5 h-3.5 text-amber-500 shrink-0" />
