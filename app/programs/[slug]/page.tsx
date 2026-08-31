@@ -67,7 +67,7 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
             <div className="lg:col-span-8 space-y-4">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="emerald" size="sm" dot>
-                  Medicare Part B Covered ($0 Copay)
+                  {program.heroBadge}
                 </Badge>
                 <span className="text-xs font-mono font-bold text-[#0D9488]">
                   {program.clinicalCode}
@@ -108,7 +108,7 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
                     Check If You Qualify
                   </h3>
                   <p className="text-xs text-slate-500 mt-1">
-                    Takes under 2 minutes • 100% Covered under Medicare Part B
+                    Takes under 2 minutes • Quick Pre-Qualification
                   </p>
                 </div>
 
@@ -118,7 +118,7 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
                   variant="primary"
                   className="w-full justify-center text-xs sm:text-sm font-semibold rounded-full shadow-md"
                 >
-                  Verify $0 Eligibility &rarr;
+                  Check Eligibility &rarr;
                 </Button>
 
                 <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500">
@@ -241,19 +241,19 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
             </div>
           </div>
 
-          {/* Section 4: Medicare Coverage Box */}
+          {/* Section 4: Clinical Care & Laboratory Standards */}
           <div className="lg:col-span-6 space-y-4">
             <h2 className="font-serif-heading font-bold text-2xl text-[#0D1B2A]">
-              Medicare Part B Coverage Guidelines
+              Clinical Care &amp; Laboratory Standards
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Understand how federal CMS medical necessity guidelines apply to this specific diagnostic screening:
+              How our licensed physician network and accredited laboratories deliver personalized diagnostic clarity to your doorstep:
             </p>
 
             <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical space-y-4">
               <div className="flex items-center gap-2 text-[#0D9488] font-bold text-sm">
-                <ShieldCheck className="w-5 h-5" />
-                <span>Covered 100% When Medically Necessary</span>
+                <Sparkles className="w-5 h-5 text-amber-600 shrink-0" />
+                <span>100% Physician-Ordered &amp; CLIA Lab Certified</span>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -263,7 +263,7 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
               <div className="p-3.5 rounded-2xl bg-[#FDFCF7] border border-slate-200 text-xs text-slate-600 flex items-center gap-3">
                 <Stethoscope className="w-4 h-4 text-[#0D9488] shrink-0" />
                 <span>
-                  Our network of state-licensed physicians reviews your medical profile to confirm eligibility before any kit is mailed.
+                  Our network of state-licensed physicians reviews your clinical indications to confirm medical necessity and coordinate care before any kit is mailed.
                 </span>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function ProgramDetailPage({ params }: ProgramPageProps) {
         <div className="p-8 sm:p-10 rounded-3xl bg-[#0D1B2A] text-white text-center space-y-6 shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-2">
             <Badge variant="emerald" size="sm" dot>
-              $0 Out-of-Pocket for Qualifying Seniors
+              Physician-Ordered Clinical Screening
             </Badge>
             <h3 className="font-serif-heading font-bold text-2xl sm:text-3xl text-white">
               Ready to Check Your Eligibility for {program.name}?

@@ -142,7 +142,7 @@ export function Header() {
               <span>Insurance &amp; Eligibility</span>
               <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
                 <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                $0 Copay Check
+                Coverage Review
               </span>
             </Link>
 

@@ -139,7 +139,7 @@ export default function ProgramsHubPage() {
                   href={`/eligibility-checker?program=${program.slug}`}
                   className="text-xs font-semibold bg-[#0D9488] text-white px-3.5 py-1.5 rounded-full hover:bg-[#0F766E] transition-all shadow-xs"
                 >
-                  Check $0 Cost
+                  Check Eligibility
                 </Link>
               </div>
             </Card>

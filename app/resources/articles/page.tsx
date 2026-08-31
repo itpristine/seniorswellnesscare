@@ -120,7 +120,7 @@ export default function ArticlesPage() {
             </p>
           </div>
           <Button href="/eligibility-checker" size="md" variant="primary" className="shrink-0 font-semibold rounded-full shadow-md">
-            Check Eligibility ($0 Cost) &rarr;
+            Check Eligibility &rarr;
           </Button>
         </div>
       </div>

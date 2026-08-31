@@ -77,7 +77,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               onClick={onClose}
               className="flex items-center justify-between p-3 rounded-xl text-sm font-semibold text-emerald-700 bg-emerald-50/60"
             >
-              <span>Medicare Part B ($0 Cost)</span>
+              <span>Medicare Part B Coverage</span>
               <ChevronRight className="w-4 h-4 text-emerald-600" />
             </Link>
 
@@ -128,7 +128,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             className="w-full justify-center text-xs sm:text-sm font-semibold rounded-full shadow-md"
             onClick={onClose}
           >
-            Check Eligibility ($0 Cost) &rarr;
+            Check Eligibility &rarr;
           </Button>
 
           <a

@@ -47,7 +47,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Early-onset cancer diagnosis in immediate family members (<50 years of age).',
       'Multiple primary cancers diagnosed in the same individual.',
     ],
-    medicareCoverageCriteria: 'Traditional Medicare Part B covers hereditary cancer screening (CGx) with $0 out-of-pocket copay when ordered by a licensed physician for individuals meeting clinical necessity criteria (e.g., personal or multi-generational family history of covered cancers).',
+    medicareCoverageCriteria: 'Physician-ordered hereditary cancer screening evaluates high-penetrance mutations across 30+ critical tumor-suppressor genes. Processed in CAP/CLIA-accredited laboratories to deliver clear, actionable surveillance protocols for patients and their clinical providers.',
     sampleReportSummary: {
       resultStatus: 'Pathogenic Variant Identified',
       keyFinding: 'Pathogenic heterozygous variant identified in BRCA2 (c.5946delT, p.Ser1982fs).',
@@ -56,7 +56,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     keyStats: [
       { label: 'Genes Evaluated', value: '32 Genes' },
       { label: 'Analytical Accuracy', value: '99.9%' },
-      { label: 'Medicare Out-of-Pocket', value: '$0.00' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Specimen Collection', value: '5-Min Swab' },
     ],
   },
@@ -106,7 +106,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Chronic pain management requiring opioid or NSAID dose adjustments.',
       'Starting a new critical prescription regimen where precise therapeutic dosing is vital.',
     ],
-    medicareCoverageCriteria: 'Covered by Medicare Part B when ordered by an attending physician for patients on polypharmacy regimens, patients initiating high-risk therapies (e.g. clopidogrel, warfarin), or patients with documented therapeutic failure/adverse reactions.',
+    medicareCoverageCriteria: 'Physician-ordered pharmacogenomic profiling assesses liver enzyme pathways to optimize medication effectiveness and prevent adverse drug interactions across 250+ commonly prescribed medications.',
     sampleReportSummary: {
       resultStatus: 'Moderate Risk Factor',
       keyFinding: 'CYP2C19 Intermediate Metabolizer (*1/*2) and SLCO1B1 Decreased Function (*5 allele).',
@@ -116,7 +116,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       { label: 'Medications Profiled', value: '250+ Drugs' },
       { label: 'Enzymes Tested', value: '18 Biomarkers' },
       { label: 'Turnaround Time', value: '5–7 Days' },
-      { label: 'Medicare Out-of-Pocket', value: '$0.00' },
+      { label: 'Collection Method', value: 'Buccal Swab' },
     ],
   },
   {
@@ -157,7 +157,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Co-occurring cardiovascular risk factors (hypertension, high homocysteine) impacting cerebral blood flow.',
       'Patients over 65 seeking baseline neurocognitive risk assessments.',
     ],
-    medicareCoverageCriteria: 'Medicare Part B covers diagnostic neurological screening when ordered by a licensed physician in the context of cognitive evaluations, memory loss symptoms, or hereditary neurodegenerative family history.',
+    medicareCoverageCriteria: 'Physician-ordered neurocognitive genomic screening evaluates APOE allelic genotypes and key risk biomarkers to empower proactive cognitive health, lifestyle interventions, and personalized neurological surveillance.',
     sampleReportSummary: {
       resultStatus: 'Moderate Risk Factor',
       keyFinding: 'APOE Genotype: e3/e4 (Heterozygous for the e4 susceptibility allele).',
@@ -209,7 +209,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Persistent unexplained low white blood cell or immunoglobulin levels.',
       'Co-occurrence of multiple autoimmune conditions (e.g., lupus, rheumatoid arthritis, thyroiditis).',
     ],
-    medicareCoverageCriteria: 'Medicare Part B covers immunodeficiency genomic evaluations when ordered by a physician for patients presenting with recurrent severe infections or documented immune dysfunction.',
+    medicareCoverageCriteria: 'Physician-ordered immunodeficiency testing sequences 24 critical immune defense genes to diagnose underlying antibody deficiencies, recurrent infection susceptibility, and autoimmune risks.',
     sampleReportSummary: {
       resultStatus: 'Pathogenic Variant Identified',
       keyFinding: 'Variant of Clinical Significance identified in NFKB1 (p.Arg157Ter).',
@@ -218,7 +218,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     keyStats: [
       { label: 'Immune Genes', value: '24 Targets' },
       { label: 'Collection Time', value: '5 Minutes' },
-      { label: 'Medicare Out-of-Pocket', value: '$0.00' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Lab Certification', value: 'CLIA & CAP' },
     ],
   },
@@ -260,7 +260,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Personal diagnosis or family history of unexplained cardiac arrhythmia, syncope (fainting), or cardiomyopathy.',
       'Family history of aortic aneurysm or sudden unexplained cardiac death in young relatives.',
     ],
-    medicareCoverageCriteria: 'Medicare Part B covers cardiovascular genetic testing when ordered by a physician for patients with clinical indicators of familial hypercholesterolemia, inherited arrhythmias, or family history of premature heart disease.',
+    medicareCoverageCriteria: 'Physician-ordered cardiovascular genomic analysis evaluates 28 cardiac biomarkers to identify inherited risks for familial hypercholesterolemia, cardiomyopathies, and early-onset vascular events.',
     sampleReportSummary: {
       resultStatus: 'Pathogenic Variant Identified',
       keyFinding: 'Pathogenic variant detected in LDLR (c.1775G>A, p.Gly592Glu) consistent with Familial Hypercholesterolemia.',
@@ -269,7 +269,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     keyStats: [
       { label: 'Cardio Genes', value: '28 Targets' },
       { label: 'Accuracy', value: '99.9%' },
-      { label: 'Cost to Qualified', value: '$0.00' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Method', value: 'Cheek Swab' },
     ],
   },
@@ -312,7 +312,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Immediate family member diagnosed with Alpha-1 Antitrypsin Deficiency.',
       'Unexplained bronchiectasis or familial interstitial lung disease.',
     ],
-    medicareCoverageCriteria: 'Covered by Medicare Part B when ordered by a licensed physician for patients displaying symptoms of chronic obstructive pulmonary disease or family history of AATD.',
+    medicareCoverageCriteria: 'Physician-ordered respiratory genomic testing identifies hereditary Alpha-1 Antitrypsin mutations and surfactant gene variations to protect lung function and support early pulmonary management.',
     sampleReportSummary: {
       resultStatus: 'Pathogenic Variant Identified',
       keyFinding: 'SERPINA1 Genotype: PI*MZ (Carrier of the severe Z deficiency allele with moderate serum reduction).',
@@ -320,7 +320,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     },
     keyStats: [
       { label: 'Pulmonary Genes', value: '12 Targets' },
-      { label: 'Medicare Part B', value: '$0 Copay' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Lab Process', value: 'NGS Certified' },
       { label: 'At-Home Kit', value: 'Free USPS 2-Way' },
     ],
@@ -364,7 +364,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Negative pancreatic islet autoantibodies (ruling out classic Type 1 diabetes).',
       'Mild, persistent fasting elevated blood sugar that remains stable over decades.',
     ],
-    medicareCoverageCriteria: 'Medicare Part B covers monogenic diabetes genetic testing when ordered by an attending physician to clarify diagnosis and tailor pharmacological management.',
+    medicareCoverageCriteria: 'Physician-ordered metabolic genetic analysis sequences 16 pancreatic biomarkers to differentiate Monogenic Diabetes (MODY) from Type 2 diabetes and guide tailored therapy.',
     sampleReportSummary: {
       resultStatus: 'Pathogenic Variant Identified',
       keyFinding: 'Heterozygous pathogenic mutation identified in HNF1A (c.872dupC, p.Pro291fs) confirming MODY 3.',
@@ -373,7 +373,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     keyStats: [
       { label: 'Metabolic Genes', value: '16 Biomarkers' },
       { label: 'Diagnostic Impact', value: 'Medication Shift' },
-      { label: 'Medicare Out-of-Pocket', value: '$0.00' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Accuracy', value: '99.9%' },
     ],
   },
@@ -415,7 +415,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Multiple family members with refractory thyroid nodules, goiter, or autoimmune thyroid disorders.',
       'Clinical signs of Multiple Endocrine Neoplasia (hypercalcemia, pituitary tumors).',
     ],
-    medicareCoverageCriteria: 'Covered under Medicare Part B when ordered by a licensed physician for evaluation of suspected familial thyroid malignancy or complex endocrine disorders.',
+    medicareCoverageCriteria: 'Physician-ordered endocrine genomic profiling analyzes RET, MEN1, and hormone synthesis loci to evaluate thyroid nodule risks, hereditary neoplasms, and autoimmune pathways.',
     sampleReportSummary: {
       resultStatus: 'Negative / Standard Baseline',
       keyFinding: 'No pathogenic variants detected in RET, MEN1, or primary endocrine malignancy loci.',
@@ -466,7 +466,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
       'Unexplained progressive loss of night vision or peripheral visual fields.',
       'Family history of inherited retinal dystrophy or Stargardt disease.',
     ],
-    medicareCoverageCriteria: 'Medicare Part B covers ophthalmic genetic diagnostics when ordered by an attending physician or ophthalmologist for progressive visual impairment or inherited retinal dystrophies.',
+    medicareCoverageCriteria: 'Physician-ordered ophthalmic genomic testing analyzes 20 retinal and trabecular biomarkers to detect early genetic risks for macular degeneration, glaucoma, and inherited vision loss.',
     sampleReportSummary: {
       resultStatus: 'Moderate Risk Factor',
       keyFinding: 'High-risk susceptibility alleles detected in complement factor H (CFH) and ARMS2 macular risk loci.',
@@ -474,7 +474,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     },
     keyStats: [
       { label: 'Ophthalmic Genes', value: '20 Targets' },
-      { label: 'Out-of-Pocket', value: '$0.00 (Part B)' },
+      { label: 'Turnaround Time', value: '7–10 Days' },
       { label: 'Collection', value: 'Cheek Swab' },
       { label: 'Lab Certified', value: 'CLIA & CAP' },
     ],

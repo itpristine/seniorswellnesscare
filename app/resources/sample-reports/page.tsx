@@ -222,7 +222,7 @@ export default function SampleReportsPage() {
             className="shadow-md shadow-teal-700/20 font-semibold rounded-full"
             icon={<ArrowRight className="w-4 h-4" />}
           >
-            Check If You Qualify for At-Home Testing ($0 Cost) &rarr;
+            Check If You Qualify for At-Home Testing &rarr;
           </Button>
         </div>
       </div>
