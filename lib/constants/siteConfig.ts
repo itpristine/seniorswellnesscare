@@ -12,7 +12,7 @@ export interface NavSection {
 }
 
 export const SITE_CONFIG = {
-  name: 'Senior Wellness Care',
+  name: 'seniors wellness care',
   legalName: 'Aegis Preventive Genomics & Wellness Network LLC',
   tagline: 'Physician-Ordered Genetic Testing, DME Medical Equipment & 24/7 Medical Alert with Insurance Support',
   phone: '(800) 492-3829',
@@ -164,5 +164,5 @@ export const SITE_CONFIG = {
     ],
   },
 
-  legalDisclaimer: 'Senior Wellness Care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Senior Wellness Care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing and equipment are subject to physician evaluation, clinical necessity determination, and insurance verification.',
+  legalDisclaimer: 'seniors wellness care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. seniors wellness care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing and equipment are subject to physician evaluation, clinical necessity determination, and insurance verification.',
 };

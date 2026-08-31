@@ -28,7 +28,7 @@ export function TestimonialGrid() {
     {
       id: 3,
       quote:
-        'In my geriatric practice, polypharmacy is our biggest clinical hurdle. Having access to physician-ordered PGx and hereditary screening through Senior Wellness Care without billing headaches allows my team to practice true precision medicine for our senior patients.',
+        'In my geriatric practice, polypharmacy is our biggest clinical hurdle. Having access to physician-ordered PGx and hereditary screening through seniors wellness care without billing headaches allows my team to practice true precision medicine for our senior patients.',
       author: 'Dr. Robert Vance, MD',
       role: 'Board-Certified Family Medicine • Texas',
       panelUsed: 'Clinical Provider Network',

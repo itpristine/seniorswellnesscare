@@ -25,9 +25,9 @@ import { UnifiedLeadForm } from '@/components/forms/UnifiedLeadForm';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Senior Wellness Care | Genetic Testing, DME Equipment & Medical Alert Systems',
+  title: 'seniors wellness care | Genetic Testing, DME Equipment & Medical Alert Systems',
   description:
-    'Senior Wellness Care is a comprehensive healthcare platform offering physician-ordered Genetic Testing, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems with insurance coverage support.',
+    'seniors wellness care is a comprehensive healthcare platform offering physician-ordered Genetic Testing, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems with insurance coverage support.',
 };
 
 export default function HomePage() {
@@ -110,7 +110,7 @@ export default function HomePage() {
             </h1>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-              Senior Wellness Care empowers seniors and families with three essential health solutions under one roof: physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert fall protection—delivered to your doorstep with insurance benefit coordination and coverage review.
+              seniors wellness care empowers seniors and families with three essential health solutions under one roof: physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert fall protection—delivered to your doorstep with insurance benefit coordination and coverage review.
             </p>
 
             {/* CTA */}
@@ -249,7 +249,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <Badge variant="teal" size="md">
-              Senior Wellness Care Service Portfolio
+              seniors wellness care Service Portfolio
             </Badge>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
               Three Essential Healthcare Pillars for Seniors
@@ -404,7 +404,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust Senior Wellness Care for precision genetic testing, medical equipment, and 24/7 emergency response.
+            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust seniors wellness care for precision genetic testing, medical equipment, and 24/7 emergency response.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -1,5 +1,5 @@
 /**
- * Google Apps Script Webhook for Senior Wellness Care
+ * Google Apps Script Webhook for seniors wellness care
  * 
  * Instructions:
  * 1. Open your Google Sheet(s):

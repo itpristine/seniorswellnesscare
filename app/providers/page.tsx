@@ -92,7 +92,7 @@ export default function ProvidersPage() {
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h2 className="font-serif-heading font-bold text-2xl sm:text-3xl text-[#0D1B2A]">
-              Why Partner with Senior Wellness Care?
+              Why Partner with seniors wellness care?
             </h2>
             <p className="text-sm text-slate-600">
               We bridge the gap between primary care practices and high-complexity genomics laboratories.

@@ -142,7 +142,7 @@ export function generateEmailHtml(data: FormSubmissionData): string {
           <!-- Header Banner -->
           <div style="background-color: #0d1b2a; padding: 24px 30px; text-align: center;">
             <h1 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">
-              Senior Wellness Care
+              seniors wellness care
             </h1>
             <p style="margin: 4px 0 0 0; color: #0d9488; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
               ${title}
@@ -175,7 +175,7 @@ export function generateEmailHtml(data: FormSubmissionData): string {
 
             <!-- Footer Meta -->
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #64748b; text-align: center;">
-              <p style="margin: 0 0 4px 0;">This is an automated notification from the Senior Wellness Care platform.</p>
+              <p style="margin: 0 0 4px 0;">This is an automated notification from the seniors wellness care platform.</p>
               <p style="margin: 0;">Sent to: <strong>${routeConfig.recipientEmail}</strong> | Sent from: <strong>${routeConfig.senderEmail}</strong></p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export function generateEmailText(data: FormSubmissionData): string {
   const ipAddress = data.meta.ipAddress;
 
   const lines: string[] = [
-    `=== SENIOR WELLNESS CARE - ${routeConfig.subjectTitle.toUpperCase()} ===`,
+    `=== seniors wellness care - ${routeConfig.subjectTitle.toUpperCase()} ===`,
     `Timestamp: ${timestamp}`,
     `Recipient: ${routeConfig.recipientEmail}`,
     `Sender: ${routeConfig.senderEmail}`,
@@ -254,7 +254,7 @@ export async function sendSubmissionEmail(data: FormSubmissionData): Promise<{
     process.env[formEnvKey] ||
     process.env.EMAIL_TO ||
     routeConfig.recipientEmail;
-  const sender = process.env.EMAIL_FROM || `Senior Wellness Care <${routeConfig.senderEmail}>`;
+  const sender = process.env.EMAIL_FROM || `seniors wellness care <${routeConfig.senderEmail}>`;
 
   let subjectName = '';
   if (data.formType === 'contact') {

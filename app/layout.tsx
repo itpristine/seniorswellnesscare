@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description:
-    'Senior Wellness Care provides physician-ordered Genetic Testing, physician-prescribed Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems.',
+    'seniors wellness care provides physician-ordered Genetic Testing, physician-prescribed Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems.',
   keywords: [
-    'senior wellness care',
+    'seniors wellness care',
     'genetic testing',
     'Durable Medical Equipment DME',
     'Medical alert systems fall detection',

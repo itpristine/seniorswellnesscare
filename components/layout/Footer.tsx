@@ -70,13 +70,13 @@ export function Footer() {
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0D1B2A] border border-[#EAE5D8]/20 flex items-center justify-center text-teal-300 shadow-md overflow-hidden">
                 <img
                   src="/logo.png"
-                  alt="Senior Wellness Care logo"
+                  alt="seniors wellness care logo"
                   className="w-full h-full object-cover"
                 />
               </div>
               <img
                 src="/Name.png"
-                alt="Senior Wellness Care name"
+                alt="seniors wellness care name"
                 className="h-9 sm:h-10 w-auto object-contain"
               />
             </div>
@@ -242,7 +242,7 @@ export function Footer() {
                   href="/about-us"
                   className="text-slate-300 hover:text-teal-300 transition-colors"
                 >
-                  About Senior Wellness Care
+                  About seniors wellness care
                 </Link>
               </li>
               <li>
