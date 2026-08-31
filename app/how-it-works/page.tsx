@@ -31,12 +31,12 @@ export default function HowItWorksPage() {
     {
       num: '01',
       title: 'Check Your Benefit Eligibility (Under 2 Minutes)',
-      desc: 'Complete our simple online pre-qualification or call our patient concierge. We evaluate your Medicare Part B, Part C, or secondary insurance coverage to review available benefit coverage across all indicated services.',
+      desc: 'Complete our simple online pre-qualification or call our patient concierge. We evaluate your insurance coverage and available benefits across all indicated services.',
       icon: <ClipboardCheck className="w-7 h-7 text-[#0D9488]" />,
       details: [
         'Zero upfront fee, credit card, or financial commitment required',
         'Covers genetic screening, DME medical equipment & alert systems',
-        'Transparent review of Medicare coverage & benefit criteria',
+        'Transparent review of coverage and benefit criteria',
       ],
     },
     {
@@ -78,21 +78,21 @@ export default function HowItWorksPage() {
     {
       title: 'Genetic Testing & Diagnostics',
       icon: <Dna className="w-6 h-6 text-[#0D9488]" />,
-      badge: 'Insurance Covered',
+      badge: 'Coverage Support',
       desc: 'Painless 5-minute buccal swab delivered in prepaid packaging. Processed by CLIA/CAP labs across 9 diagnostic panels.',
       href: '/immunodeficiency',
     },
     {
       title: 'DME Medical Equipment',
       icon: <HeartPulse className="w-6 h-6 text-amber-600" />,
-      badge: 'Insurance Covered',
+      badge: 'Coverage Support',
       desc: 'Orthopedic braces, joint stabilizers, mobility rollators, and supportive equipment shipped directly to your home.',
       href: '/dme',
     },
     {
       title: '24/7 Medical Alert Systems',
       icon: <Radio className="w-6 h-6 text-rose-500" />,
-      badge: '24/7 US Response',
+      badge: '24/7 Care',
       desc: 'Mobile GPS pendants with built-in automatic fall detection and in-home smart hubs. Instant connection to certified dispatchers.',
       href: '/medical-alert',
     },
@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
             Four Simple Steps to Comprehensive Senior Care
           </h1>
           <p className="font-sans-body text-base sm:text-lg text-slate-600 leading-relaxed">
-            We make preventive diagnostics, Medicare-covered medical equipment, and 24/7 emergency response accessible, secure, and coordinated from the comfort of home.
+            We make preventive diagnostics, coverage-supported medical equipment, and 24/7 emergency response accessible, secure, and coordinated from the comfort of home.
           </p>
         </div>
 
@@ -174,10 +174,10 @@ export default function HowItWorksPage() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center shadow-sm">
                       {srv.icon}
                     </div>
-                    <Badge variant="teal" size="sm">
+                    <Badge variant="teal" size="sm" className="bg-[#ecfdf5] text-[#0D9488] border border-emerald-200/80">
                       {srv.badge}
                     </Badge>
                   </div>
@@ -203,15 +203,15 @@ export default function HowItWorksPage() {
         <div className="text-center space-y-4 pt-4">
           <div className="max-w-xl mx-auto p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical space-y-4">
             <h3 className="font-serif-heading font-bold text-xl text-[#0D1B2A]">
-              Have Questions About Your Medicare Coverage?
+              Need Help with Your Care Journey?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our patient concierge team is available to verify your benefits and walk you through every step.
+              Our patient concierge team is available to answer questions, guide you through each step, and help you move forward with confidence.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={`tel:${SITE_CONFIG.phoneFormatted}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full border border-slate-300 hover:bg-slate-50 text-[#0D1B2A]"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full border border-slate-300 hover:bg-slate-50 text-[#0D1B2A] bg-[#F7F4E7]/80 shadow-sm"
               >
                 <Phone className="w-4 h-4 text-amber-500" />
                 <span>Call {SITE_CONFIG.phone}</span>

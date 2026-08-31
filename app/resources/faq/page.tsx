@@ -15,7 +15,7 @@ export default function FaqPage() {
 
   const categories = [
     { id: 'all', label: 'All FAQs' },
-    { id: 'medicare_billing', label: 'Medicare & $0 Billing' },
+    { id: 'medicare_billing', label: 'Coverage & Billing' },
     { id: 'testing_process', label: 'Swab & Lab Process' },
     { id: 'clinical_science', label: 'Clinical Accuracy' },
     { id: 'physician_network', label: 'Physician Reviews' },

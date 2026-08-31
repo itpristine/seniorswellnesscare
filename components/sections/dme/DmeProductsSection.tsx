@@ -240,7 +240,7 @@ export function DmeProductsSection() {
               Need help determining which brace matches your medical condition?
             </h3>
             <p className="text-xs sm:text-sm text-slate-700">
-              Submit your information through our quick 2-minute pre-qualification form. A clinical coordinator and licensed doctor will assess your symptoms and verify Medicare coverage.
+              Submit your information through our quick 2-minute pre-qualification form. A clinical coordinator and licensed  doctor will assess your symptoms and verify coverage.
             </p>
           </div>
           <Button

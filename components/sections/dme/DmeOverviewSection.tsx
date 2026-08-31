@@ -67,7 +67,7 @@ export function DmeOverviewSection() {
                 <span>Insurance Coverage</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Eligible patients may be able to receive these medically necessary products through their <strong>Medicare benefits</strong>, subject to eligibility, documented medical necessity, and specific plan coverage requirements.
+                Eligible patients may be able to receive these medically necessary products through their insurance benefits, subject to eligibility, documented medical necessity, and specific plan coverage requirements.
               </p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export function DmeOverviewSection() {
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-[#0D9488]">
+              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-[#0D9488] bg-[#ecfdf5] rounded-full px-2.5 py-1.5 w-fit">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Coverage Based on Eligibility</span>
               </div>
