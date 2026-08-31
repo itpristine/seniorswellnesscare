@@ -101,7 +101,7 @@ export default function HomePage() {
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="inline-flex max-w-full items-center gap-2 bg-emerald-50 border border-emerald-200/80 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#0D9488] shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-              <span>Insurance-Covered Healthcare, Diagnostics &amp; Safety Platform</span>
+              <span>Expert Healthcare, Diagnostics &amp; Safety Services</span>
             </div>
 
             <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
