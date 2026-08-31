@@ -67,7 +67,7 @@ export default function AboutUsPage() {
         </div>
 
         {/* Impact Numbers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Card className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical text-center space-y-1">
             <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A]">
               12,500+
@@ -87,13 +87,6 @@ export default function AboutUsPage() {
               48 States
             </span>
             <p className="text-xs text-slate-500 font-semibold">Physician Network</p>
-          </Card>
-
-          <Card className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical text-center space-y-1">
-            <span className="font-serif-heading font-bold text-3xl sm:text-4xl text-emerald-600">
-              $0.00
-            </span>
-            <p className="text-xs text-slate-500 font-semibold">Medicare Part B Copay Tier</p>
           </Card>
         </div>
 
