@@ -230,4 +230,18 @@ export const MEDICAL_ALERT_FAQS = [
       'Getting a quote is simple and fast. Click any "Get a Quote" button on this page, fill in your basic contact details in our secure 7-field form, and one of our dedicated senior safety specialists will reach out with customized options and pricing information tailored to your exact needs.',
     badge: 'Getting Started',
   },
+  {
+    id: 'alert-faq-8',
+    question: 'What happens if a senior falls alone at home?',
+    answer:
+      'When a senior falls alone without a medical alert, getting up or reaching a telephone can be impossible, leading to dangerous long-lie complications. With Seniors Wellness Care medical alert systems featuring automatic fall detection, the wearable device senses the sudden impact and automatically calls our 24/7 US monitoring center. Operators speak directly to the senior, notify family caregivers, and dispatch emergency medical services to the precise GPS or home location.',
+    badge: 'Fall Safety for Seniors',
+  },
+  {
+    id: 'alert-faq-9',
+    question: 'How do I keep elderly parents safe living alone at home?',
+    answer:
+      'Equipping elderly parents with a medical alert wearable or in-home emergency response button ensures continuous 24/7 protection. Combined with automatic fall detection, waterproof shower buttons, and family mobile notifications, seniors can maintain their independent lifestyle with complete safety and family peace of mind.',
+    badge: 'Elderly Home Safety',
+  },
 ];

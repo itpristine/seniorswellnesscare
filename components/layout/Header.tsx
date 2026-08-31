@@ -57,16 +57,11 @@ export function Header() {
         <div className="bg-[#FDFCF7]/95 backdrop-blur-md border-b border-[#EAE5D8] px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 flex items-center justify-between shadow-xs relative z-50">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#0D1B2A] to-[#1A2E40] text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-emerald-500/30">
-              <Dna className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
+            <div className="w-10 h-10 rounded-xl bg-[#FDFCF7] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#EAE5D8] overflow-hidden">
+              <img src="/logo.png" alt="Seniors Wellness Care logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif-heading font-bold text-lg sm:text-xl text-[#0D1B2A] tracking-tight flex items-center gap-1">
-                Aegis<span className="text-[#0D9488] font-sans font-extrabold text-xs sm:text-sm uppercase tracking-wider">Genomics</span>
-              </span>
-              <span className="text-[9px] sm:text-[10px] text-slate-500 font-medium tracking-wide -mt-1 hidden xs:block">
-                Genomic Medicine &amp; Diagnostics
-              </span>
+              <img src="/Name.png" alt="Seniors Wellness Care" className="h-9 w-auto object-contain" />
             </div>
           </Link>
 

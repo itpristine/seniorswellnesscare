@@ -12,13 +12,13 @@ export interface NavSection {
 }
 
 export const SITE_CONFIG = {
-  name: 'seniors wellness care',
-  legalName: 'Aegis Preventive Genomics & Wellness Network LLC',
-  tagline: 'Physician-Ordered Genetic Testing, DME Medical Equipment & 24/7 Medical Alert with Insurance Support',
+  name: 'Seniors Wellness Care',
+  legalName: 'Seniors Wellness Care LLC',
+  tagline: 'Physician-Ordered Genetic Testing, DME Medical Equipment & 24/7 Medical Alert with Medicare & Insurance Support',
   phone: '(800) 492-3829',
   phoneFormatted: '+18004923829',
   email: 'contact@seniorswellnesscare.com',
-  providerEmail: 'providers@aegisgenomics.com',
+  providerEmail: 'providers@seniorswellnesscare.com',
   address: '100 Medical Center Parkway, Suite 400, Austin, TX 78701',
   supportHours: 'Monday – Friday, 8:00 AM – 8:00 PM EST',
   
@@ -164,5 +164,5 @@ export const SITE_CONFIG = {
     ],
   },
 
-  legalDisclaimer: 'seniors wellness care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. seniors wellness care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing and equipment are subject to physician evaluation, clinical necessity determination, and insurance verification.',
+  legalDisclaimer: 'Seniors Wellness Care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Seniors Wellness Care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing and equipment are subject to physician evaluation, clinical necessity determination, and insurance verification.',
 };

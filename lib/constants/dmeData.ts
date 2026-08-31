@@ -341,4 +341,11 @@ export const DME_FAQS = [
       'Submitting the form takes under 2 minutes. Our clinical intake team verifies your Medicare and insurance coverage, coordinates the physician review for medical necessity, and contacts you to confirm your details. Once approved, your customized brace is packaged and dispatched directly to your home via priority mail with tracking.',
     badge: 'Next Steps',
   },
+  {
+    id: 'dme-faq-8',
+    question: 'What medical equipment is covered by Medicare for seniors at home?',
+    answer:
+      'Medicare Part B covers a broad range of Durable Medical Equipment (DME) prescribed for use in the home, including orthopedic braces (knee, lumbar-sacral back, shoulder, wrist, elbow), mobility equipment, diabetic supplies, and patient recovery aids. Seniors Wellness Care coordinates directly with Medicare approved DME suppliers and licensed physicians to confirm benefit coverage.',
+    badge: 'Medicare DME Coverage',
+  },
 ];

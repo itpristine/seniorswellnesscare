@@ -7,9 +7,9 @@ import { Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Check Your Genetic Testing Eligibility',
+  title: 'Check Eligibility for Genetic Testing & DME | Seniors Wellness Care',
   description:
-    'Complete our quick pre-qualification form to review your insurance coverage and see whether physician-ordered at-home genetic screening may be appropriate for your situation.',
+    'Complete our 2-minute pre-qualification form to verify Medicare and insurance coverage for physician-ordered Genetic Testing and Durable Medical Equipment (DME).',
 };
 
 export default function EligibilityCheckerPage({

@@ -17,9 +17,28 @@ import { Button } from '@/components/ui/Button';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Medicare Part B Genetic Testing Coverage & $0 Cost Guide',
+  title: 'Medicare Benefits & Coverage for Seniors | Preventive Health & $0 Cost Guide',
   description:
-    'Learn how Medicare Part B covers physician-ordered preventive genetic testing at $0 out-of-pocket for qualifying beneficiaries. No hidden fees or surprise bills.',
+    'Complete guide to Medicare benefits for seniors: learn what Medicare covers for genetic testing, DME medical equipment, and preventive services with $0 out-of-pocket copay.',
+  keywords: [
+    'Medicare services for seniors',
+    'Medicare wellness services',
+    'Medicare health services',
+    'Medicare benefits for seniors',
+    'Medicare services for elderly',
+    'Medicare healthcare services',
+    'Medicare wellness programs',
+    'Medicare preventive services',
+    'Medicare senior benefits',
+    'Medicare resources for seniors',
+    'what does Medicare cover for seniors',
+    'Medicare benefits for older adults',
+    'Medicare preventive services for seniors',
+    'Medicare covered genetic testing',
+    'Medicare DME coverage',
+    'Medicare medical equipment',
+    'Medicare medical alert coverage',
+  ],
 };
 
 export default function MedicareEligibilityPage() {

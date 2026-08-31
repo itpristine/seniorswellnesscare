@@ -8,9 +8,9 @@ import { Phone, ShieldCheck, CheckCircle2, Radio, Lock } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Get a Medical Alert Quote | 24/7 Senior Emergency Systems',
+  title: 'Get a Medical Alert Quote | Seniors Wellness Care',
   description:
-    'Request a free, customized Medical Alert quote. Compare In-Home, Mobile GPS, and Smartwatch emergency safety solutions with no obligation.',
+    'Request a free, customized Medical Alert quote from Seniors Wellness Care. Compare in-home, mobile GPS, and smartwatch emergency safety systems with no obligation.',
 };
 
 export default function MedicalAlertQuotePage() {

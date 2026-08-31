@@ -7,9 +7,23 @@ import { Button } from '@/components/ui/Button';
 import { Clock, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Genomics & Preventive Health Articles | Educational Resource Hub',
+  title: 'Senior Health & Wellness Articles | Seniors Wellness Care Knowledge Hub',
   description:
-    'Evidence-based articles and clinical guides exploring pharmacogenomics, hereditary cancer prevention, Medicare Part B wellness benefits, and precision medicine.',
+    'Evidence-based articles on senior wellness services, pharmacogenomics, hereditary cancer screening, Medicare benefits, and healthy aging for seniors.',
+  keywords: [
+    'senior wellness',
+    'senior health and wellness',
+    'senior wellness services',
+    'wellness services for seniors',
+    'senior healthcare services',
+    'senior health services',
+    'elderly wellness services',
+    'healthy aging for seniors',
+    'senior wellness programs',
+    'preventive health for seniors',
+    'senior health screening',
+    'senior health resources',
+  ],
 };
 
 export default function ArticlesPage() {

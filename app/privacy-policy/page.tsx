@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
               1. Our Uncompromising Commitment to Patient Privacy
             </h2>
             <p>
-              {SITE_CONFIG.legalName} (&quot;seniors wellness care&quot;, &quot;we&quot;, &quot;us&quot;) is dedicated to safeguarding your personal health information (PHI) and genomic data. We operate in strict compliance with the Health Insurance Portability and Accountability Act of 1996 (HIPAA), the Health Information Technology for Economic and Clinical Health Act (HITECH), and the Genetic Information Nondiscrimination Act of 2008 (GINA).
+              {SITE_CONFIG.legalName} (&quot;Seniors Wellness Care&quot;, &quot;we&quot;, &quot;us&quot;) is dedicated to safeguarding your personal health information (PHI) and genomic data. We operate in strict compliance with the Health Insurance Portability and Accountability Act of 1996 (HIPAA), the Health Information Technology for Economic and Clinical Health Act (HITECH), and the Genetic Information Nondiscrimination Act of 2008 (GINA).
             </p>
           </section>
 

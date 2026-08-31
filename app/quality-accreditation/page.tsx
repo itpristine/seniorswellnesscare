@@ -12,9 +12,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Quality, Accreditation & Compliance Standards | CLIA, CAP & HIPAA',
+  title: 'Quality, Accreditation & Compliance Standards | Seniors Wellness Care',
   description:
-    'Detailed overview of our clinical quality benchmarks, federal CLIA certifications, CAP peer accreditation, HIPAA 256-bit encryption, and GINA anti-discrimination protections.',
+    'Seniors Wellness Care clinical quality standards: federal CLIA lab certifications, CAP peer accreditation, HIPAA 256-bit encryption, and GINA protections.',
 };
 
 export default function QualityAccreditationPage() {

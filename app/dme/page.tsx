@@ -10,9 +10,30 @@ import { DmeFaqSection } from '@/components/sections/dme/DmeFaqSection';
 import { DmeConversionCTA } from '@/components/sections/dme/DmeConversionCTA';
 
 export const metadata: Metadata = {
-  title: 'Durable Medical Equipment (DME) & Orthopedic Braces | Insurance Coverage Support',
+  title: 'Durable Medical Equipment (DME) for Seniors | Medicare Covered Medical Equipment',
   description:
-    'Physician-prescribed orthopedic braces for back, knee, shoulder, wrist, and elbow. Coverage is available through insurance plans subject to clinical eligibility and plan guidelines.',
+    'Physician-prescribed Durable Medical Equipment (DME) for seniors: Medicare covered orthopedic knee, back LSO, shoulder, wrist, and elbow braces with zero hassle home delivery.',
+  keywords: [
+    'durable medical equipment',
+    'DME for seniors',
+    'durable medical equipment for seniors',
+    'Medicare DME',
+    'Medicare durable medical equipment',
+    'DME supplies for seniors',
+    'medical equipment for elderly',
+    'senior medical equipment',
+    'Medicare covered medical equipment',
+    'Medicare DME suppliers',
+    'durable medical equipment Medicare coverage',
+    'medical equipment covered by Medicare',
+    'DME for Medicare beneficiaries',
+    'Medicare approved DME',
+    'home medical equipment for seniors',
+    'mobility equipment for seniors',
+    'senior mobility aids',
+    'home medical equipment',
+    'Medicare DME coverage',
+  ],
 };
 
 export default function DMEPage() {

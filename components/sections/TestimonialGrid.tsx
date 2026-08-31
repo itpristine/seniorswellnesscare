@@ -18,7 +18,7 @@ export function TestimonialGrid() {
     {
       id: 2,
       quote:
-        'My mother has a history of breast cancer on her maternal side, and we were worried about my sister and me. Aegis made the swab kit process completely stress-free. The swab arrived in two days, took 5 minutes at our kitchen table, and the physician walk-through of the results was clear and reassuring.',
+        'My mother has a history of breast cancer on her maternal side, and we were worried about my sister and me. Seniors Wellness Care made the swab kit process completely stress-free. The swab arrived in two days, took 5 minutes at our kitchen table, and the physician walk-through of the results was clear and reassuring.',
       author: 'Sarah Jenkins, 44',
       role: 'Family Caregiver • Florida',
       panelUsed: 'Hereditary Cancer (CGx)',
@@ -28,7 +28,7 @@ export function TestimonialGrid() {
     {
       id: 3,
       quote:
-        'In my geriatric practice, polypharmacy is our biggest clinical hurdle. Having access to physician-ordered PGx and hereditary screening through seniors wellness care without billing headaches allows my team to practice true precision medicine for our senior patients.',
+        'In my geriatric practice, polypharmacy is our biggest clinical hurdle. Having access to physician-ordered PGx and hereditary screening through Seniors Wellness Care without billing headaches allows my team to practice true precision medicine for our senior patients.',
       author: 'Dr. Robert Vance, MD',
       role: 'Board-Certified Family Medicine • Texas',
       panelUsed: 'Clinical Provider Network',

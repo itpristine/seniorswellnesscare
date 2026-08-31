@@ -34,11 +34,18 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: ProgramPageProps): Metadata {
   const program = DIAGNOSTIC_PROGRAMS.find((p) => p.slug === params.slug);
-  if (!program) return { title: 'Program Not Found' };
+  if (!program) return { title: 'Program Not Found | Seniors Wellness Care' };
 
   return {
-    title: `${program.name} | Physician-Ordered Genetic Screening`,
-    description: program.shortDescription,
+    title: `${program.name} | Seniors Wellness Care Genetic Testing`,
+    description: `${program.name}: Physician-ordered genetic testing for seniors and Medicare patients. ${program.shortDescription}`,
+    keywords: [
+      `${program.name} genetic testing`,
+      'genetic testing for seniors',
+      'Medicare genetic testing',
+      'genetic health testing for seniors',
+      'Seniors Wellness Care genetic testing',
+    ],
   };
 }
 

@@ -28,12 +28,10 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           {/* Header in Drawer */}
           <div className="flex items-center justify-between border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-teal-50 text-[#0D9488] flex items-center justify-center">
-                <Dna className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-xl bg-[#FDFCF7] flex items-center justify-center border border-[#EAE5D8] overflow-hidden">
+                <img src="/logo.png" alt="Seniors Wellness Care logo" className="w-full h-full object-cover" />
               </div>
-              <span className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
-                Aegis<span className="text-[#0D9488]">Genomics</span>
-              </span>
+              <img src="/Name.png" alt="Seniors Wellness Care" className="h-7 w-auto object-contain" />
             </div>
             <button
               onClick={onClose}

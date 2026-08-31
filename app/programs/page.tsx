@@ -20,9 +20,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Clinical Diagnostic Programs & Panels | 9 Disease Screenings',
+  title: 'Genetic Testing Programs & Clinical Panels | Seniors Wellness Care',
   description:
-    'Explore 9 physician-ordered genomic screening panels covering Hereditary Cancer (CGx), Pharmacogenomics (PGx), Neurocognitive/Dementia, Immunodeficiency, Cardiovascular, and more.',
+    'Explore 9 physician-ordered genetic testing panels for seniors: Hereditary Cancer (CGx), Pharmacogenomics (PGx), Cardiovascular, and Neurocognitive panels covered through insurance.',
 };
 
 const getIcon = (iconName: string) => {

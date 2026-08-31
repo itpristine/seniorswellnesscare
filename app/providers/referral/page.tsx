@@ -7,9 +7,9 @@ import { Stethoscope, Phone } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Patient Referral & Order Requisition | Provider Portal',
+  title: 'Patient Referral & Order Requisition | Seniors Wellness Care Provider Portal',
   description:
-    'Licensed healthcare providers can submit patient orders for CLIA/CAP laboratory genomic screening covered under Medicare Part B.',
+    'Licensed healthcare providers can submit patient orders for CLIA/CAP laboratory genomic screening and DME covered under Medicare Part B.',
 };
 
 export default function ProviderReferralPage() {

@@ -18,9 +18,9 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Healthcare Providers & Clinical Network | Digital Genetic Requisitions',
+  title: 'Healthcare Providers & Clinical Network | Seniors Wellness Care',
   description:
-    'Empower your clinical practice with physician-ordered preventive genomics (CGx & PGx). Zero administrative overhead, CLIA-certified labs, and direct Medicare Part B billing.',
+    'Partner with Seniors Wellness Care: order physician-ordered preventive genomics (CGx & PGx) and DME for senior patients with zero overhead and Medicare Part B coverage.',
 };
 
 export default function ProvidersPage() {
@@ -92,7 +92,7 @@ export default function ProvidersPage() {
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h2 className="font-serif-heading font-bold text-2xl sm:text-3xl text-[#0D1B2A]">
-              Why Partner with seniors wellness care?
+              Why Partner with Seniors Wellness Care?
             </h2>
             <p className="text-sm text-slate-600">
               We bridge the gap between primary care practices and high-complexity genomics laboratories.

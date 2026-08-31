@@ -23,6 +23,20 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Yes. Commercial insurance plans (Blue Cross, Aetna, UnitedHealthcare, Cigna, etc.) frequently cover preventive genetic panels. We also offer transparent, all-inclusive flat-rate self-pay options for individuals who do not have Medicare or commercial coverage.',
     badge: 'Commercial & Self-Pay',
   },
+  {
+    id: 'faq-med-5',
+    category: 'medicare_billing',
+    question: 'What does Medicare cover for seniors through Seniors Wellness Care?',
+    answer: 'Medicare Part B covers qualifying preventive health services for seniors, including medically necessary clinical genetic testing (such as Hereditary Cancer CGx and Pharmacogenomics PGx) and physician-prescribed Durable Medical Equipment (DME) like knee, back, and joint braces. Seniors Wellness Care verifies your Medicare benefits upfront to maximize your coverage.',
+    badge: 'Medicare Benefits',
+  },
+  {
+    id: 'faq-med-6',
+    category: 'medicare_billing',
+    question: 'What services does Seniors Wellness Care provide across the USA?',
+    answer: 'Seniors Wellness Care provides three integrated senior healthcare solutions: (1) Physician-ordered Genetic Testing & Molecular Diagnostics, (2) Physician-prescribed Durable Medical Equipment (DME) and orthopedic braces, and (3) 24/7 Medical Alert emergency response systems with automatic fall detection and mobile GPS.',
+    badge: 'Seniors Wellness Care Services',
+  },
 
   // Testing Process
   {
