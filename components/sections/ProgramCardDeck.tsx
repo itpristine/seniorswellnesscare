@@ -71,13 +71,13 @@ export function ProgramCardDeck() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="teal" size="md">
-            Clinical Diagnostic Panels
+            Genetic Testing Panels
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            Featured Diagnostic &amp; Sequencing Panels
+            Comprehensive Genetic Testing &amp; Sequencing Panels
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600">
-            Each diagnostic program is reviewed and ordered by a licensed physician, processed by CLIA/CAP certified laboratories, and covered by Medicare Part B when medically appropriate.
+            Each genetic testing panel is reviewed and ordered by a licensed physician, processed by CLIA/CAP certified laboratories, and covered by insurance when medically appropriate.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export function ProgramCardDeck() {
                     {getProgramIcon(program.iconName)}
                   </div>
                   <Badge variant="emerald" size="sm">
-                    Coverage Review
+                    Insurance Covered
                   </Badge>
                 </div>
 

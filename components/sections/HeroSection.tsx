@@ -26,19 +26,19 @@ export function HeroSection() {
           {/* Eyebrow Pill */}
           <div className="inline-flex max-w-full items-center gap-2 bg-emerald-50 border border-emerald-200/80 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-[#0D9488] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span>Medicare Part B Covered • Physician-Ordered Genomic Screening</span>
+            <span>Insurance-Covered • Physician-Ordered Genetic Testing</span>
           </div>
 
           {/* Headline */}
           <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
-            Unlock Your DNA Blueprint for{' '}
-            <span className="highlight-accent text-[#0D9488]">Proactive Health</span>{' '}
-            &amp; Disease Prevention.
+            Comprehensive{' '}
+            <span className="highlight-accent text-[#0D9488]">Genetic Testing</span>{' '}
+            for Proactive Health &amp; Prevention.
           </h1>
 
           {/* Subtitle */}
           <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-            Access comprehensive, physician-ordered genetic testing from the comfort of home. Coverage may be available through insurance benefits for eligible individuals, depending on plan rules, medical necessity, and personal eligibility requirements.
+            Access comprehensive, physician-ordered genetic testing from the comfort of home. Coverage is widely available through insurance plans for eligible individuals based on clinical indications and medical necessity.
           </p>
 
           {/* Buttons */}
@@ -71,7 +71,7 @@ export function HeroSection() {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
-              <span>Insurance Coverage Review</span>
+              <span>Medicare &amp; Insurance Support</span>
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
@@ -86,14 +86,14 @@ export function HeroSection() {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-serif-heading font-bold text-lg text-[#0D1B2A]">
-                  Check Medicare Coverage
+                  Check Genetic Testing Eligibility
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Takes under 2 minutes • Coverage review
+                  Takes under 2 minutes • Insurance review
                 </p>
               </div>
               <Badge variant="emerald" size="sm" dot>
-                Coverage Review
+                Insurance Covered
               </Badge>
             </div>
 
@@ -102,7 +102,7 @@ export function HeroSection() {
               {[
                 'First & Last Name, Email, Phone',
                 'State of Residence & Date of Birth',
-                'Medicare / Medicaid / Other Insurance',
+                'Medicare & Primary Insurance Details',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
@@ -117,7 +117,7 @@ export function HeroSection() {
                 <span>Insurance Coverage May Apply</span>
               </div>
               <p className="text-[11px] text-slate-600">
-                Your insurance may cover the full cost of eligible services or products, depending on your coverage and eligibility.
+                Your insurance may cover the full cost of eligible genetic screening, depending on your coverage and eligibility.
               </p>
             </div>
 

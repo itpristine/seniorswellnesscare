@@ -35,7 +35,7 @@ export default function EligibilityCheckerPage({
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <Badge variant="emerald" size="md" dot>
-            Medicare Part B Pre-Qualification
+            Insurance &amp; Medicare Pre-Qualification
           </Badge>
           <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
             {formHeading}

@@ -183,7 +183,7 @@ export function CoverageMatrix() {
             size="md"
             className="shrink-0 text-xs font-semibold rounded-full"
           >
-            Read Complete Medicare Guide &rarr;
+            Read Complete Coverage Guide &rarr;
           </Button>
         </div>
       </div>

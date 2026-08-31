@@ -37,7 +37,7 @@ export function DmeProcessSection() {
             Simple 4-Step Process
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            How to Get Your Medicare-Covered DME
+            How to Get Your DME
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
             From submitting your 2-minute pre-qualification check to doorstep delivery—our clinical care team coordinates the entire process for you.

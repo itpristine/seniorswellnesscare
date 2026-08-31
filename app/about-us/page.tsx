@@ -29,16 +29,16 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   const platformPillars = [
     {
-      title: 'Precision Genomics & Diagnostics',
+      title: 'Precision Genomics & Genetic Testing',
       icon: <Dna className="w-6 h-6 text-[#0D9488]" />,
       badge: 'CLIA & CAP Accredited',
-      desc: 'Partnering with certified high-complexity laboratory networks and genetic specialists to deliver accurate, non-invasive biomarker sequencing covered 100% by Medicare Part B.',
+      desc: 'Partnering with certified high-complexity laboratory networks and genetic specialists to deliver accurate, non-invasive biomarker sequencing covered through insurance and Medicare benefits.',
     },
     {
       title: 'Durable Medical Equipment (DME)',
       icon: <HeartPulse className="w-6 h-6 text-amber-600" />,
       badge: 'Physician-Prescribed',
-      desc: 'Working directly with licensed orthotists, mobility manufacturers, and Medicare Part B billing coordinators to deliver essential assistive supplies straight to seniors’ homes.',
+      desc: 'Working directly with licensed orthotists, mobility manufacturers, and insurance and Medicare billing coordinators to deliver essential assistive supplies straight to seniors’ homes.',
     },
     {
       title: '24/7 Senior Emergency Response',

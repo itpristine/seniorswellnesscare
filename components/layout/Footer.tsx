@@ -54,8 +54,8 @@ export function Footer() {
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">Medicare Part B Coverage</h5>
-              <p className="text-[11px] text-slate-500">For qualifying beneficiaries</p>
+              <h5 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A]">Insurance Coverage Support</h5>
+              <p className="text-[11px] text-slate-500">Supporting Medicare &amp; Commercial Plans</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export function Footer() {
             </div>
 
             <p className="font-sans-body text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
-              Empowering seniors, families, and healthcare providers with physician-ordered preventive genomics, Medicare-covered Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response.
+              Empowering seniors, families, and healthcare providers with physician-ordered Genetic Testing, Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-slate-300">
@@ -118,7 +118,7 @@ export function Footer() {
                   className="text-slate-300 hover:text-teal-300 transition-colors flex items-center gap-2"
                 >
                   <Dna className="w-3.5 h-3.5 text-[#0D9488]" />
-                  <span>Immunodeficiency Test</span>
+                  <span>Genetic Testing &amp; Diagnostics</span>
                 </Link>
               </li>
               <li>
@@ -177,7 +177,7 @@ export function Footer() {
                   href="/medicare-eligibility"
                   className="text-slate-300 hover:text-teal-300 transition-colors"
                 >
-                  Medicare Part B Guidelines
+                  Insurance &amp; Coverage Guidelines
                 </Link>
               </li>
               <li>

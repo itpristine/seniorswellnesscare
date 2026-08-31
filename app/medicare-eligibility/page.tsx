@@ -14,7 +14,6 @@ import {
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { CoverageMatrix } from '@/components/sections/CoverageMatrix';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
@@ -94,9 +93,6 @@ export default function MedicareEligibilityPage() {
             </p>
           </Card>
         </div>
-
-        {/* Coverage Comparison Table */}
-        <CoverageMatrix />
 
         {/* CMS Guidelines Detail Card */}
         <Card className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 shadow-xl space-y-6">

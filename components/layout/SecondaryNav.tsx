@@ -285,12 +285,12 @@ export function SecondaryNav() {
               How It Works
             </a>
 
-            {/* Medicare Coverage */}
+            {/* Insurance Coverage */}
             <a
               href="#medicare-coverage"
               className="flex items-center gap-1.5 py-1 hover:text-[#0D9488] transition-colors"
             >
-              <span>Medicare Coverage</span>
+              <span>Insurance Coverage</span>
               <span className="bg-amber-100 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
                 <Sparkles className="w-2.5 h-2.5 text-amber-600" />
                 Coverage Review
@@ -334,7 +334,7 @@ export function SecondaryNav() {
             How It Works
           </a>
           <a href="#medicare-coverage" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs text-[#0D9488]">
-            Medicare Coverage
+            Insurance Coverage
           </a>
           <a href="#faq" onClick={() => setDmeMobileNavOpen(false)} className="px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs">
             FAQs

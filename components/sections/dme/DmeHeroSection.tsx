@@ -29,7 +29,7 @@ export function DmeHeroSection() {
           {/* Eyebrow Pill */}
           <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 bg-amber-50 border border-amber-200/80 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full text-[10.5px] sm:text-xs font-semibold text-amber-900 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span className="leading-snug">Medicare Part B Covered • Physician-Prescribed Orthopedic DME</span>
+            <span className="leading-snug">Insurance-Covered • Physician-Prescribed Orthopedic DME Equipment</span>
           </div>
 
           {/* Headline */}
@@ -43,7 +43,7 @@ export function DmeHeroSection() {
 
           {/* Subtitle */}
           <p className="font-sans-body text-sm sm:text-base md:text-base lg:text-base xl:text-lg text-slate-700 leading-relaxed max-w-2xl">
-            Access medically necessary orthopedic braces for the back, knees, shoulders, wrists, and elbows. Coverage may be available through insurance benefits for eligible patients, depending on coverage, medical necessity, and plan requirements.
+            Access medically necessary orthopedic braces for the back, knees, shoulders, wrists, and elbows. Coverage is available through major insurance plans for eligible patients based on clinical necessity and plan guidelines.
           </p>
 
           {/* Buttons */}
@@ -72,7 +72,7 @@ export function DmeHeroSection() {
           <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-[11px] sm:text-xs font-medium text-slate-600 border-t border-slate-200/80">
             <span className="flex items-center gap-1.5 shrink-0">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
-              <span>Medicare Part B Billing Support</span>
+              <span>Insurance Billing Support</span>
             </span>
             <span className="flex items-center gap-1.5 shrink-0">
               <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
@@ -98,7 +98,7 @@ export function DmeHeroSection() {
                 </p>
               </div>
               <Badge variant="emerald" size="sm" dot className="shrink-0">
-                Coverage Review
+                Insurance Covered
               </Badge>
             </div>
 
@@ -119,10 +119,10 @@ export function DmeHeroSection() {
             <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 space-y-0.5">
               <div className="flex items-center gap-1.5 font-bold text-amber-900">
                 <HeartPulse className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                <span>Medicare Covered Orthopedic Bracing</span>
+                <span>Insurance Covered Orthopedic Bracing</span>
               </div>
               <p className="text-[11px] text-slate-600 leading-snug">
-                Your insurance may cover the full cost of eligible services or products, depending on your coverage and eligibility.
+                Your insurance may cover the full cost of eligible DME equipment, depending on your coverage and clinical eligibility.
               </p>
             </div>
 

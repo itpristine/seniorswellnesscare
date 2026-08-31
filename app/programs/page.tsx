@@ -57,10 +57,10 @@ export default function ProgramsHubPage() {
         {/* Hub Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="teal" size="md">
-            Clinical Diagnostic Catalog
+            Genetic Diagnostic Catalog
           </Badge>
           <h1 className="font-serif-heading font-bold text-3xl sm:text-5xl text-[#0D1B2A] tracking-tight">
-            Our 9 Physician-Ordered Diagnostic Panels
+            Our 9 Physician-Ordered Genetic Testing Panels
           </h1>
           <p className="font-sans-body text-base sm:text-lg text-slate-600 leading-relaxed">
             All tests are evaluated by board-certified physicians, collected with a painless 5-minute buccal swab, and processed by federally certified CLIA/CAP laboratories.
@@ -80,7 +80,7 @@ export default function ProgramsHubPage() {
                     {getIcon(program.iconName)}
                   </div>
                   <Badge variant="emerald" size="sm">
-                    $0 Part B Eligible
+                    Insurance Covered
                   </Badge>
                 </div>
 

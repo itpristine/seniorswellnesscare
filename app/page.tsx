@@ -25,9 +25,9 @@ import { UnifiedLeadForm } from '@/components/forms/UnifiedLeadForm';
 import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'senior wellness care | Precision Healthcare, DME Equipment & Medical Alert Systems',
+  title: 'Senior Wellness Care | Genetic Testing, DME Equipment & Medical Alert Systems',
   description:
-    'senior wellness care is an all-in-one senior healthcare platform offering Medicare-covered Immunodeficiency DNA screening, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems.',
+    'Senior Wellness Care is a comprehensive healthcare platform offering physician-ordered Genetic Testing, Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems with insurance coverage support.',
 };
 
 export default function HomePage() {
@@ -40,7 +40,7 @@ export default function HomePage() {
         'Comprehensive physician-ordered genomic screening across 9 clinical panels including Hereditary Cancer (CGx), Pharmacogenomics (PGx), Primary Immunodeficiency, and Neurocognitive health. Painless 5-minute at-home buccal swab processed in CAP/CLIA accredited labs.',
       href: '/immunodeficiency',
       icon: <Dna className="w-8 h-8 text-[#0D9488]" />,
-      badge: 'Coverage Review',
+      badge: 'Insurance Covered',
       badgeVariant: 'emerald' as const,
       features: [
         '9 Specialized Clinical DNA Panels',
@@ -48,22 +48,22 @@ export default function HomePage() {
         'Next-Gen DNA Sequencing (NGS) in CLIA Labs',
         'State-Licensed Physician Review & Consult',
       ],
-      ctaText: 'Explore Immunodeficiency Testing',
+      ctaText: 'Explore Genetic Testing',
     },
     {
       id: 'dme',
       title: 'Durable Medical Equipment (DME)',
       tagline: 'Physician-Prescribed Medical Equipment',
       description:
-        'Physician-prescribed orthopedic braces (back, knee, shoulder), assistive mobility devices (rollators, wheelchairs), respiratory care (CPAP/BiPAP), and Continuous Glucose Monitors (CGM) delivered directly to your home with insurance benefit review and coordination.',
+        'Physician-prescribed orthopedic braces (back, knee, shoulder, wrist, elbow), assistive mobility devices, and supportive equipment delivered directly to your home with insurance benefit review and coordination.',
       href: '/dme',
       icon: <HeartPulse className="w-8 h-8 text-amber-600" />,
-      badge: 'Medicare Part B',
+      badge: 'Insurance Covered',
       badgeVariant: 'amber' as const,
       features: [
         'Orthopedic Bracing (Spinal LSO & Knee Unloaders)',
-        'Mobility Aids (Upright Rollators & Wheelchairs)',
-        'Continuous Glucose Monitors (CGM Sensors)',
+        'Joint Stabilizers (Shoulder, Wrist & Elbow)',
+        'Assisted Mobility Guidance & Direct Delivery',
         'Free White-Glove Home Delivery & Fit Support',
       ],
       ctaText: 'Explore DME Medical Equipment',
@@ -76,7 +76,7 @@ export default function HomePage() {
         'Life-saving emergency response devices equipped with automatic fall detection, nationwide 4G LTE GPS tracking, and instant two-way voice communication with certified US emergency dispatchers. No landline telephone required.',
       href: '/medical-alert',
       icon: <Radio className="w-8 h-8 text-rose-500" />,
-      badge: '24/7 US Monitoring',
+      badge: '24/7 US Response',
       badgeVariant: 'rose' as const,
       features: [
         'Automatic Built-In Fall Detection Accelerometer',
@@ -101,16 +101,16 @@ export default function HomePage() {
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="inline-flex max-w-full items-center gap-2 bg-emerald-50 border border-emerald-200/80 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#0D9488] shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-              <span>Medicare-Covered Senior Healthcare, Diagnostics &amp; Safety Platform</span>
+              <span>Insurance-Covered Healthcare, Diagnostics &amp; Safety Platform</span>
             </div>
 
             <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
-              All-in-One Healthcare for Seniors:{' '}
-              <span className="highlight-accent text-[#0D9488]">Diagnostics</span>, Medical Supplies &amp; 24/7 Safety.
+              All-in-One Healthcare:{' '}
+              <span className="highlight-accent text-[#0D9488]">Genetic Testing</span>, Medical Supplies &amp; 24/7 Safety.
             </h1>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-              senior wellness care empowers seniors and families with three essential health solutions under one roof: physician-ordered immunodeficiency DNA screening, Medicare-covered durable medical equipment (DME), and 24/7 medical alert fall protection—delivered to your doorstep with insurance benefit coordination and coverage review.
+              Senior Wellness Care empowers seniors and families with three essential health solutions under one roof: physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert fall protection—delivered to your doorstep with insurance benefit coordination and coverage review.
             </p>
 
             {/* CTA */}
@@ -130,7 +130,7 @@ export default function HomePage() {
             <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-medium text-slate-600 border-t border-slate-200/80">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
-                <span>Medicare Part B &amp; Part C Partner</span>
+                <span>Medicare &amp; Commercial Insurance Support</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#0D9488] shrink-0" />
@@ -161,7 +161,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-3">
-                {/* Option 1: Genetic Swab Testing */}
+                {/* Option 1: Genetic Testing */}
                 <Link
                   href="/immunodeficiency"
                   className="flex items-start gap-3 p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-[#0D9488] hover:bg-teal-50/30 transition-all group shadow-xs"
@@ -172,10 +172,10 @@ export default function HomePage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-1.5 mb-0.5">
                       <h4 className="font-serif-heading font-bold text-xs sm:text-sm text-[#0D1B2A] group-hover:text-[#0D9488] transition-colors leading-tight">
-                        Genetic Swab Testing
+                        Genetic Testing
                       </h4>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
-                        Coverage Review
+                        Insurance Covered
                       </span>
                     </div>
                     <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">
@@ -198,7 +198,7 @@ export default function HomePage() {
                         DME Medical Equipment
                       </h4>
                       <span className="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
-                        Medicare Part B
+                        Insurance Covered
                       </span>
                     </div>
                     <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">
@@ -249,13 +249,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <Badge variant="teal" size="md">
-              senior wellness care Service Portfolio
+              Senior Wellness Care Service Portfolio
             </Badge>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
               Three Essential Healthcare Pillars for Seniors
             </h2>
             <p className="font-sans-body text-sm sm:text-base text-slate-600">
-              Each service is fully integrated with licensed physician networks, accredited laboratory sequencing, and Medicare benefit verification.
+              Each service is fully integrated with licensed physician networks, accredited laboratory sequencing, and insurance benefit verification.
             </p>
           </div>
 
@@ -316,223 +316,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MEDICARE & INSURANCE MATRIX ── */}
-      <section className="py-16 sm:py-20 bg-[#FDFCF7] border-b border-[#EAE5D8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <Badge variant="emerald" size="md" dot>
-              Medicare Coverage Matrix
-            </Badge>
-            <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-              Understand Your Medicare &amp; Insurance Benefits
-            </h2>
-            <p className="font-sans-body text-sm sm:text-base text-slate-600">
-              Senior Wellness Care verifies your benefits upfront with zero surprise billing.
-            </p>
-          </div>
-
-          {/* Desktop Table View (lg and above) */}
-          <div className="hidden lg:block overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
-            <table className="w-full text-left border-collapse text-sm">
-              <thead>
-                <tr className="bg-slate-50 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
-                  <th className="p-5 w-2/5">Service Category</th>
-                  <th className="p-5 bg-teal-50/50 text-[#0D9488] border-x border-teal-200/50 w-1/5 text-center">
-                    Medicare Part B (Original)
-                  </th>
-                  <th className="p-5 text-slate-700 w-1/5 text-center">
-                    Medicare Advantage (Part C)
-                  </th>
-                  <th className="p-5 bg-emerald-50/40 text-emerald-800 w-1/5 text-center">
-                    Supplemental / Medigap
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                <tr className="hover:bg-slate-50/50">
-                  <td className="p-5 font-bold text-[#0D1B2A]">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200/80 flex items-center justify-center shrink-0 text-[#0D9488]">
-                        <Dna className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-serif-heading font-bold text-sm block text-[#0D1B2A]">
-                          Genetic Testing &amp; Molecular Diagnostics
-                        </span>
-                        <span className="text-xs text-slate-500 font-normal block mt-0.5">
-                          9 CLIA diagnostic panels (CGx, PGx, Neuro, Cardio)
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="p-5 font-bold text-[#0D9488] bg-teal-50/20 border-x border-teal-200/40 text-center text-xs sm:text-sm">
-                    <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-3 py-1 rounded-full text-xs font-bold shadow-xs">
-                      <Sparkles className="w-3 h-3" /> Coverage May Apply for Eligible Patients
-                    </span>
-                  </td>
-                  <td className="p-5 text-slate-600 text-center text-xs sm:text-sm">
-                    Covered benefit with pre-authorization
-                  </td>
-                  <td className="p-5 text-slate-600 text-center text-xs sm:text-sm">
-                    Secondary coinsurance coordination may apply
-                  </td>
-                </tr>
-
-                <tr className="hover:bg-slate-50/50">
-                  <td className="p-5 font-bold text-[#0D1B2A]">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center shrink-0 text-amber-600">
-                        <HeartPulse className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-serif-heading font-bold text-sm block text-[#0D1B2A]">
-                          DME (Durable Medical Equipment)
-                        </span>
-                        <span className="text-xs text-slate-500 font-normal block mt-0.5">
-                          Bracing, mobility rollators, respiratory, CGMs
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="p-5 font-bold text-[#0D9488] bg-teal-50/20 border-x border-teal-200/40 text-center text-xs sm:text-sm">
-                    Coverage subject to medical necessity
-                  </td>
-                  <td className="p-5 text-slate-600 text-center text-xs sm:text-sm">
-                    Subject to in-network plan guidelines
-                  </td>
-                  <td className="p-5 font-bold text-emerald-800 bg-emerald-50/20 text-center text-xs sm:text-sm">
-                    <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-3 py-1 rounded-full text-xs font-bold shadow-xs">
-                      <Sparkles className="w-3 h-3" /> Secondary coverage may coordinate benefits
-                    </span>
-                  </td>
-                </tr>
-
-                <tr className="hover:bg-slate-50/50">
-                  <td className="p-5 font-bold text-[#0D1B2A]">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200/80 flex items-center justify-center shrink-0 text-rose-500">
-                        <Radio className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-serif-heading font-bold text-sm block text-[#0D1B2A]">
-                          24/7 Medical Alert Systems
-                        </span>
-                        <span className="text-xs text-slate-500 font-normal block mt-0.5">
-                          GPS emergency mobile pendants &amp; fall detection
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="p-5 font-bold text-[#0D9488] bg-teal-50/20 border-x border-teal-200/40 text-center text-xs sm:text-sm">
-                    HSA/FSA Eligible • Advantage Reimbursement
-                  </td>
-                  <td className="p-5 text-slate-600 text-center text-xs sm:text-sm">
-                    Select Advantage plans offer safety allowances
-                  </td>
-                  <td className="p-5 text-slate-700 text-center text-xs sm:text-sm">
-                    Direct discounts &amp; monthly subsidies may apply
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile & Tablet Card View (below lg: 360px - 1023px) */}
-          <div className="lg:hidden space-y-4">
-            {[
-              {
-                id: 'genomics',
-                title: 'Genetic Testing & Molecular Diagnostics',
-                description: '9 CLIA diagnostic panels (CGx, PGx, Neuro, Cardio)',
-                icon: <Dna className="w-5 h-5 text-[#0D9488]" />,
-                iconBg: 'bg-teal-50',
-                iconBorder: 'border-teal-200/80',
-                partB: 'Coverage May Apply for Eligible Patients',
-                advantage: 'Covered benefit with pre-authorization',
-                supplemental: 'Secondary coinsurance coordination may apply',
-                partBHighlight: true,
-              },
-              {
-                id: 'dme',
-                title: 'DME (Durable Medical Equipment)',
-                description: 'Bracing, mobility rollators, respiratory, CGMs',
-                icon: <HeartPulse className="w-5 h-5 text-amber-600" />,
-                iconBg: 'bg-amber-50',
-                iconBorder: 'border-amber-200/80',
-                partB: 'Coverage subject to medical necessity',
-                advantage: 'Subject to in-network plan guidelines',
-                supplemental: 'Secondary coverage may coordinate benefits',
-                supplementalHighlight: true,
-              },
-              {
-                id: 'alert',
-                title: '24/7 Medical Alert Systems',
-                description: 'GPS emergency mobile pendants & fall detection',
-                icon: <Radio className="w-5 h-5 text-rose-500" />,
-                iconBg: 'bg-rose-50',
-                iconBorder: 'border-rose-200/80',
-                partB: 'HSA/FSA Eligible • Advantage Reimbursement',
-                advantage: 'Select Advantage plans offer safety allowances',
-                supplemental: 'Direct discounts & monthly subsidies may apply',
-              },
-            ].map((srv) => (
-              <Card
-                key={srv.id}
-                className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-clinical space-y-3.5"
-              >
-                {/* Service Header */}
-                <div className="flex items-start gap-3 pb-3 border-b border-slate-100">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 border shadow-xs ${srv.iconBg} ${srv.iconBorder}`}>
-                    {srv.icon}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="font-serif-heading font-bold text-sm sm:text-base text-[#0D1B2A] leading-snug">
-                      {srv.title}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 font-sans-body">
-                      {srv.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* 3 Insurance Breakdown Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-                  {/* Medicare Part B */}
-                  <div className="p-3 sm:p-3.5 rounded-2xl bg-teal-50/60 border border-teal-200/80 space-y-1">
-                    <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-[#0D9488] block">
-                      Medicare Part B
-                    </span>
-                    <p className="text-xs font-bold text-teal-950 leading-snug">
-                      {srv.partB}
-                    </p>
-                  </div>
-
-                  {/* Medicare Advantage */}
-                  <div className="p-3 sm:p-3.5 rounded-2xl bg-[#FDFCF7] border border-slate-200/80 space-y-1">
-                    <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-slate-500 block">
-                      Medicare Advantage (Part C)
-                    </span>
-                    <p className="text-xs font-medium text-slate-700 leading-snug">
-                      {srv.advantage}
-                    </p>
-                  </div>
-
-                  {/* Supplemental */}
-                  <div className="p-3 sm:p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-200/80 space-y-1">
-                    <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-emerald-800 block">
-                      Supplemental / Medigap
-                    </span>
-                    <p className="text-xs font-bold text-emerald-950 leading-snug">
-                      {srv.supplemental}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── 4-STEP HEALTHCARE JOURNEY & CARE MODEL ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#EAE5D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
@@ -541,7 +324,7 @@ export default function HomePage() {
               Simple 4-Step Care Journey
             </Badge>
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-              How We Delivers Seamless Senior Care
+              How We Deliver Seamless Care
             </h2>
             <p className="font-sans-body text-sm sm:text-base text-slate-600">
               From benefit verification to doorstep delivery and ongoing monitoring, our clinical team manages every detail.
@@ -553,7 +336,7 @@ export default function HomePage() {
               {
                 step: '01',
                 title: 'Quick Benefit Check',
-                desc: 'Answer a few quick questions online or over the phone to verify your Medicare Part B and supplemental insurance coverage options with zero obligation.',
+                desc: 'Answer a few quick questions online or over the phone to verify your Medicare, Medicare Advantage, or commercial insurance coverage options with zero obligation.',
                 icon: <ShieldCheck className="w-6 h-6 text-[#0D9488]" />,
               },
               {
@@ -613,15 +396,15 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-[#0D1B2A] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <Badge variant="emerald" size="md" dot>
-            Proactive Senior Healthcare
+            Comprehensive Senior Healthcare
           </Badge>
 
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight max-w-3xl mx-auto">
-            Ready to Experience Comprehensive Senior Care &amp; Safety?
+            Ready to Experience Comprehensive Healthcare &amp; Safety?
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust senior wellness care for precision diagnostics, medical equipment, and 24/7 emergency response.
+            Join thousands of seniors, caregivers, and primary care physicians across the United States who trust Senior Wellness Care for precision genetic testing, medical equipment, and 24/7 emergency response.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

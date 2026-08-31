@@ -10,13 +10,6 @@ export const FAQ_DATA: FaqItem[] = [
     badge: 'Medicare Part B',
   },
   {
-    id: 'faq-med-2',
-    category: 'medicare_billing',
-    question: 'What happens if I have Medicare Advantage (Part C) instead of Traditional Medicare?',
-    answer: 'Medicare Advantage plans also cover medically appropriate genetic testing as mandated by federal equivalency standards. Prior to shipping your kit, our billing concierge team verifies your specific plan rules. If a copayment or prior-authorization is required, we notify you in advance—no charges are ever incurred without your explicit authorization.',
-    badge: 'Medicare Advantage',
-  },
-  {
     id: 'faq-med-3',
     category: 'medicare_billing',
     question: 'Will I ever receive a surprise medical bill?',

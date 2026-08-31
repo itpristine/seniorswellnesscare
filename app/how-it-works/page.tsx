@@ -76,23 +76,23 @@ export default function HowItWorksPage() {
 
   const serviceBreakdowns = [
     {
-      title: 'Genetic Swab Testing Testing',
+      title: 'Genetic Testing & Diagnostics',
       icon: <Dna className="w-6 h-6 text-[#0D9488]" />,
-      badge: '100% Medicare Part B ($0)',
+      badge: 'Insurance Covered',
       desc: 'Painless 5-minute buccal swab delivered in prepaid packaging. Processed by CLIA/CAP labs across 9 diagnostic panels.',
       href: '/immunodeficiency',
     },
     {
       title: 'DME Medical Equipment',
       icon: <HeartPulse className="w-6 h-6 text-amber-600" />,
-      badge: 'Medicare Part B Approved',
-      desc: 'Orthopedic braces, mobility rollators, respiratory CPAP supplies, and continuous glucose monitors shipped directly to your home.',
+      badge: 'Insurance Covered',
+      desc: 'Orthopedic braces, joint stabilizers, mobility rollators, and supportive equipment shipped directly to your home.',
       href: '/dme',
     },
     {
       title: '24/7 Medical Alert Systems',
       icon: <Radio className="w-6 h-6 text-rose-500" />,
-      badge: '24/7 US Emergency Response',
+      badge: '24/7 US Response',
       desc: 'Mobile GPS pendants with built-in automatic fall detection and in-home smart hubs. Instant connection to certified dispatchers.',
       href: '/medical-alert',
     },

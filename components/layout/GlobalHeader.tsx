@@ -70,21 +70,21 @@ export function GlobalHeader() {
     {
       title: 'Genetic Testing & Molecular Diagnostics',
       href: '/immunodeficiency',
-      desc: 'Physician-ordered preventive genetic testing & 9 CLIA diagnostic panels subject to Medicare Part B coverage review.',
-      badge: 'Coverage Review',
+      desc: 'Physician-ordered preventive genetic testing & 9 CLIA diagnostic panels with insurance coverage review.',
+      badge: 'Insurance Covered',
       icon: <Dna className="w-5 h-5 text-[#0D9488]" />,
       active: pathname.startsWith('/immunodeficiency') || pathname.startsWith('/programs'),
     },
     {
-      title: 'DME',
+      title: 'Durable Medical Equipment (DME)',
       href: '/dme',
-      desc: 'Medicare-approved durable medical equipment, orthopedic bracing, mobility aids & continuous glucose monitors.',
-      badge: 'Medicare Part B',
+      desc: 'Physician-prescribed durable medical equipment, orthopedic bracing, mobility aids & continuous glucose monitors.',
+      badge: 'Insurance Covered',
       icon: <HeartPulse className="w-5 h-5 text-amber-600" />,
       active: pathname.startsWith('/dme'),
     },
     {
-      title: 'Medical Alert',
+      title: '24/7 Medical Alert',
       href: '/medical-alert',
       desc: '24/7 senior emergency response, automatic fall detection & nationwide GPS mobile safety pendants.',
       badge: '24/7 US Response',
@@ -127,7 +127,7 @@ export function GlobalHeader() {
           <div className="flex items-center gap-4 text-[11px] sm:text-xs w-full sm:w-auto">
             <span className="flex items-center gap-1.5 text-emerald-400 font-medium whitespace-nowrap">
               <Award className="w-3.5 h-3.5 shrink-0" />
-              <span>CAP &amp; CLIA Accredited • Medicare Partner</span>
+              <span>CAP &amp; CLIA Accredited • Insurance Coverage Support</span>
             </span>
             <span className="hidden lg:inline-flex items-center gap-1 text-slate-300">
               <Phone className="w-3.5 h-3.5 text-amber-500 shrink-0" />
@@ -157,7 +157,7 @@ export function GlobalHeader() {
                 className="flex items-center gap-1 hover:text-white transition-colors text-slate-300"
               >
                 <Dna className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Genetic Test</span>
+                <span>Genetic Testing</span>
               </Link>
               <span className="text-slate-700">|</span>
               <Link
@@ -230,7 +230,7 @@ export function GlobalHeader() {
                       Core Services
                     </span>
                     <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                      Medicare Covered
+                      Insurance Supported
                     </span>
                   </div>
 
@@ -438,7 +438,7 @@ export function GlobalHeader() {
               <span>
                 Press <kbd className="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-slate-600">ESC</kbd> to close
               </span>
-              <span>All Services Covered by Medicare</span>
+              <span>Services Covered by Qualifying Insurance &amp; Medicare Plans</span>
             </div>
           </div>
         </div>
@@ -490,7 +490,7 @@ export function GlobalHeader() {
                 >
                   <span className="flex items-center gap-2">
                     <Dna className="w-4 h-4 text-[#0D9488]" />
-                    Immunodeficiency
+                    Genetic Testing
                   </span>
                 </Link>
 

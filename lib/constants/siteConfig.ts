@@ -14,7 +14,7 @@ export interface NavSection {
 export const SITE_CONFIG = {
   name: 'Senior Wellness Care',
   legalName: 'Aegis Preventive Genomics & Wellness Network LLC',
-  tagline: 'Physician-Ordered Preventive Genomics Covered by Medicare Part B',
+  tagline: 'Physician-Ordered Genetic Testing, DME Medical Equipment & 24/7 Medical Alert with Insurance Support',
   phone: '(800) 492-3829',
   phoneFormatted: '+18004923829',
   email: 'contact@seniorswellnesscare.com',
@@ -27,7 +27,7 @@ export const SITE_CONFIG = {
     physicianNetwork: '100% Licensed',
     labPartners: '190+ CLIA & CAP',
     statesActive: '48 States',
-    outOfPocketCost: '$0.00 for Qualifying Part B',
+    outOfPocketCost: '$0 Copay for Qualifying Insurance',
   },
 
   megaMenu: {
@@ -100,17 +100,17 @@ export const SITE_CONFIG = {
       {
         title: 'How It Works',
         href: '/how-it-works',
-        description: 'Our painless 4-step process from eligibility check to results.',
+        description: 'Our seamless 4-step process from eligibility check to delivery and care.',
       },
       {
-        title: 'Medicare & Insurance Coverage',
+        title: 'Insurance & Coverage Guidelines',
         href: '/medicare-eligibility',
-        description: 'Detailed explanation of $0 out-of-pocket Medicare Part B benefits.',
+        description: 'Detailed explanation of insurance benefits across Medicare and commercial plans.',
       },
       {
-        title: 'Check Eligibility ($0 Cost)',
+        title: 'Check Eligibility ($0 Copay)',
         href: '/eligibility-checker',
-        description: '2-minute interactive qualification wizard for at-home swab kits.',
+        description: '2-minute interactive qualification wizard for testing and medical equipment.',
       },
       {
         title: 'Track Swab Kit & Lab Status',
@@ -144,7 +144,7 @@ export const SITE_CONFIG = {
       {
         title: 'Searchable FAQ Center',
         href: '/resources/faq',
-        description: 'Answers to questions about Medicare, swab kits, and privacy.',
+        description: 'Answers to questions about insurance coverage, products, and privacy.',
       },
       {
         title: 'Educational Articles',
@@ -164,5 +164,5 @@ export const SITE_CONFIG = {
     ],
   },
 
-  legalDisclaimer: 'Senior Wellness Care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Senior Wellness Care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing is subject to physician evaluation, clinical necessity determination, and insurance verification.',
+  legalDisclaimer: 'Senior Wellness Care is an independent digital health platform connecting eligible Medicare and commercially insured individuals with licensed physician networks and CLIA-certified partner laboratories. Senior Wellness Care is not affiliated with, endorsed by, or operated by CMS, Medicare, or any federal government agency. All diagnostic testing and equipment are subject to physician evaluation, clinical necessity determination, and insurance verification.',
 };

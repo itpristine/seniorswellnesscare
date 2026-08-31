@@ -64,7 +64,7 @@ export function DmeProductsSection() {
             DME Products We Provide
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            Engineered to restore mobility, alleviate severe joint pain, and provide stabilization. Prescribed by state-licensed physicians and covered under Medicare Part B when medically necessary.
+            Engineered to restore mobility, alleviate severe joint pain, and provide stabilization. Prescribed by state-licensed physicians and covered under Insurance when medically necessary.
           </p>
         </div>
 

@@ -42,7 +42,7 @@ export function DmeOverviewSection() {
             What is Durable Medical Equipment (DME)?
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            Understanding how physician-prescribed supportive equipment restores everyday comfort, stabilizes joints, and is covered under your Medicare benefits.
+            Understanding how physician-prescribed supportive equipment restores everyday comfort, stabilizes joints, and is covered under your Insurance benefits.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export function DmeOverviewSection() {
             <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2">
               <div className="flex items-center gap-2 text-xs font-bold text-[#0D9488] uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-[#0D9488]" />
-                <span>Medicare Benefit Coverage</span>
+                <span>Insurance Coverage</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Eligible patients may be able to receive these medically necessary products through their <strong>Medicare benefits</strong>, subject to eligibility, documented medical necessity, and specific plan coverage requirements.
@@ -145,7 +145,7 @@ export function DmeOverviewSection() {
 
               <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-[#0D9488]">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Medicare Indicated</span>
+                <span>Coverage Based on Eligibility</span>
               </div>
             </Card>
           ))}

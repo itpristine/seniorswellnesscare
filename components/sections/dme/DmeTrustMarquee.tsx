@@ -10,7 +10,7 @@ export function DmeTrustMarquee() {
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-[#0D9488]" />,
-      title: 'Medicare Part B Partner',
+      title: 'Insurance Partner',
       subtitle: 'Direct billing with insurer coordination',
     },
     {

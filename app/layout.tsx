@@ -7,21 +7,21 @@ import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_CONFIG.name} | Precision Health, DME Equipment & Medical Alert Systems`,
+    default: `${SITE_CONFIG.name} | Genetic Testing, DME Equipment & Medical Alert Systems`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description:
-    'senior wellness care provides physician-ordered preventive genetic testing, Medicare-covered Durable Medical Equipment (DME), and 24/7 Medical Alert senior emergency response systems.',
+    'Senior Wellness Care provides physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems.',
   keywords: [
     'senior wellness care',
-    'Medicare genetic testing',
-    'Immunodeficiency test',
+    'genetic testing',
     'Durable Medical Equipment DME',
     'Medical alert systems fall detection',
     'preventive genomics',
     'pharmacogenomics PGx',
     'hereditary cancer screening CGx',
-    'Medicare Part B senior wellness',
+    'insurance covered medical equipment',
+    'Medicare and commercial insurance healthcare',
   ],
   authors: [{ name: SITE_CONFIG.name }],
   icons: {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://aegisgenomics.com',
     siteName: SITE_CONFIG.name,
-    title: `${SITE_CONFIG.name} | Precision Health, DME Equipment & Medical Alert Systems`,
+    title: `${SITE_CONFIG.name} | Genetic Testing, DME Equipment & Medical Alert Systems`,
     description:
-      'Check eligibility for $0 out-of-pocket preventive genetic screening, DME medical supplies, and 24/7 medical alert systems covered by Medicare.',
+      'Check eligibility for insurance-covered genetic testing, DME medical supplies, and 24/7 medical alert emergency response systems.',
   },
 };
 

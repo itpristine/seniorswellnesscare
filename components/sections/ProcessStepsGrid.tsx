@@ -11,7 +11,7 @@ export function ProcessStepsGrid() {
       title: 'Check Eligibility (2 Mins)',
       subtitle: 'Fast Online Pre-Qualification',
       description:
-        'Answer simple questions about your Medicare Part B coverage and personal or family health history. Our smart system reviews your eligibility and coverage details for possible insurance benefits.',
+        'Answer simple questions about your insurance coverage and personal or family health history. Our system reviews your eligibility and coverage details for possible insurance benefits.',
       icon: <ClipboardCheck className="w-6 h-6 text-[#0D9488]" />,
       badge: 'Step 1 • Instant',
     },
@@ -35,7 +35,7 @@ export function ProcessStepsGrid() {
     },
     {
       number: '04',
-      title: 'CLIA Lab Results & Guidance',
+      title: 'Genetic Results & Guidance',
       subtitle: 'Personalized Clinical Action Plan',
       description:
         'Our CLIA-certified partner laboratory analyzes your DNA. Your physician reviews the findings with you and provides actionable insights to share with your primary care doctor.',
@@ -53,7 +53,7 @@ export function ProcessStepsGrid() {
             Simple 4-Step Process
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            How Your Diagnostic Testing Journey Works
+            How Your Genetic Testing Journey Works
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600">
             From online eligibility check to personalized clinical results—the entire experience is guided, secure, and completed from the comfort of home.
@@ -114,7 +114,7 @@ export function ProcessStepsGrid() {
             className="shadow-md shadow-teal-700/20 text-xs sm:text-sm font-semibold px-7 py-4 rounded-full"
             icon={<ArrowRight className="w-4 h-4" />}
           >
-            Check If You Qualify Under Medicare Part B
+            Check If You Are Qualify
           </Button>
         </div>
       </div>

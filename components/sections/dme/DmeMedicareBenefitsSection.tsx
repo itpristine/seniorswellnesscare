@@ -2,16 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import {
   ShieldAlert,
-  Sparkles,
   CheckCircle2,
-  HelpCircle,
   ShieldCheck,
-  FileCheck2,
   HeartHandshake,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { DME_COVERAGE_ROWS } from '@/lib/constants/dmeData';
 
 export function DmeMedicareBenefitsSection() {
   return (
@@ -20,13 +16,13 @@ export function DmeMedicareBenefitsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="emerald" size="md" dot>
-            Medicare &amp; Insurance Coverage
+            DME Insurance Coverage
           </Badge>
           <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl text-[#0D1B2A] tracking-tight">
-            Medicare &amp; Patient Benefits Explained
+            DME Insurance &amp; Coverage Benefits Explained
           </h2>
           <p className="font-sans-body text-sm sm:text-base text-slate-600 leading-relaxed">
-            Understand how Medicare Part B and supplemental insurance can cover your medically necessary durable medical equipment.
+            Understand how Advantage,  and supplemental insurance can cover your medically necessary durable medical equipment.
           </p>
         </div>
 
@@ -44,10 +40,10 @@ export function DmeMedicareBenefitsSection() {
                 Why Are We Providing These DME Products?
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-sans-body">
-                Our primary goal is to help eligible patients gain seamless access to medically necessary durable medical equipment through their available insurance and Medicare benefits. Navigating healthcare supplies, medical necessity documentation, and doctor prescriptions can be overwhelming for seniors and caregivers. We bridge that gap by handling benefit verification and clinical coordination on your behalf.
+                Our primary goal is to help eligible patients gain seamless access to medically necessary durable medical equipment through their available insurance benefits. Navigating healthcare supplies, medical necessity documentation, and doctor prescriptions can be overwhelming for seniors and caregivers. We bridge that gap by handling benefit verification and clinical coordination on your behalf.
               </p>
               <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-sans-body">
-                When a patient qualifies and the equipment is eligible under their insurance or Medicare plan, the patient may have access to the appropriate DME through coverage that depends on their specific eligibility, benefits, and plan requirements.
+                When a patient qualifies and the equipment is eligible under their insurance plan, the patient may have access to the appropriate DME through coverage that depends on their specific eligibility, benefits, and plan requirements.
               </p>
             </div>
           </div>
@@ -70,103 +66,9 @@ export function DmeMedicareBenefitsSection() {
                 <span>We’ll Help Determine Whether You May Qualify</span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Coverage depends on eligibility, medical necessity, and your specific Medicare or Medicare Advantage plan rules.
+                Coverage depends on eligibility, medical necessity, and your specific Advantage plan rules.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Coverage Comparison Table */}
-        <div className="space-y-4">
-          <div className="text-center sm:text-left space-y-1">
-            <h3 className="font-serif-heading font-bold text-xl text-[#0D1B2A]">
-              Coverage Comparison Matrix
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-500">
-              How traditional Medicare, Medicare Advantage, and Supplemental coverage apply to DME.
-            </p>
-          </div>
-
-          <div className="hidden lg:block overflow-x-auto rounded-3xl border border-slate-200/90 bg-white shadow-xl">
-            <table className="w-full text-left border-collapse min-w-[700px]">
-              <thead>
-                <tr className="border-b border-slate-200 bg-slate-50/80">
-                  <th className="p-5 text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider w-2/5">
-                    DME Equipment Features &amp; Billing
-                  </th>
-                  <th className="p-5 text-xs sm:text-sm font-extrabold text-[#0D9488] bg-teal-50/50 border-x border-teal-200/60 w-1/5 text-center">
-                    <span className="block text-[11px] font-bold text-[#0D9488] uppercase tracking-wider">
-                      Standard
-                    </span>
-                    Medicare Part B
-                  </th>
-                  <th className="p-5 text-xs sm:text-sm font-bold text-[#0D1B2A] text-center w-1/5">
-                    Medicare Advantage (Part C)
-                  </th>
-                  <th className="p-5 text-xs sm:text-sm font-extrabold text-emerald-800 bg-emerald-50/40 text-center w-1/5">
-                    <span className="block text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-                      Ideal Coverage
-                    </span>
-                    Part B + Supplemental
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
-                {DME_COVERAGE_ROWS.map((row, idx) => (
-                  <tr
-                    key={row.feature}
-                    className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'}
-                  >
-                    <td className="p-5 font-semibold text-slate-900">
-                      {row.feature}
-                    </td>
-                    <td className="p-5 font-medium text-slate-700 bg-teal-50/20 border-x border-teal-200/40 text-center">
-                      {row.partB}
-                    </td>
-                    <td className="p-5 text-slate-600 text-center">
-                      {row.advantage}
-                    </td>
-                    <td className="p-5 font-bold text-emerald-800 bg-emerald-50/30 text-center">
-                      {row.highlight ? (
-                        <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-3 py-1 rounded-full text-xs font-bold shadow-xs">
-                          <Sparkles className="w-3 h-3" /> {row.supplemental}
-                        </span>
-                      ) : (
-                        row.supplemental
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="lg:hidden space-y-3">
-            {DME_COVERAGE_ROWS.map((row) => (
-              <div key={row.feature} className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-clinical space-y-3">
-                <h4 className="font-semibold text-sm text-slate-900">{row.feature}</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                  <div className="rounded-xl bg-teal-50/50 border border-teal-200/60 p-3">
-                    <span className="block font-bold text-[#0D9488] mb-1">Medicare Part B</span>
-                    <span className="text-slate-700">{row.partB}</span>
-                  </div>
-                  <div className="rounded-xl bg-slate-50 border border-slate-200/70 p-3">
-                    <span className="block font-bold text-slate-700 mb-1">Medicare Advantage</span>
-                    <span className="text-slate-600">{row.advantage}</span>
-                  </div>
-                  <div className="rounded-xl bg-emerald-50/40 border border-emerald-200/60 p-3">
-                    <span className="block font-bold text-emerald-700 mb-1">Part B + Supplemental</span>
-                    {row.highlight ? (
-                      <span className="inline-flex items-center gap-1 bg-[#0D9488] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-xs">
-                        <Sparkles className="w-3 h-3" /> {row.supplemental}
-                      </span>
-                    ) : (
-                      <span className="font-bold text-emerald-800">{row.supplemental}</span>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 

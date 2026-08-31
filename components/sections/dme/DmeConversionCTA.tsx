@@ -15,7 +15,7 @@ export function DmeConversionCTA() {
           <div className="max-w-3xl mx-auto space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 px-4 py-1.5 rounded-full text-amber-300 text-xs sm:text-sm font-semibold">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>Medicare Part B Durable Medical Equipment Program</span>
+              <span>Insurance Durable Medical Equipment Program</span>
             </div>
 
             <h2 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
@@ -23,7 +23,7 @@ export function DmeConversionCTA() {
             </h2>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              Find out if your joint pain, spinal discomfort, or rehabilitation needs qualify you for physician-prescribed orthopedic braces covered under your Medicare benefits.
+              Find out if your joint pain, spinal discomfort, or rehabilitation needs qualify you for physician-prescribed orthopedic braces covered under your insurance benefits.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2">
@@ -34,7 +34,7 @@ export function DmeConversionCTA() {
                 className="w-full sm:w-auto text-xs sm:text-sm font-semibold px-7 py-4 rounded-full shadow-lg shadow-teal-700/30"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
-                Check My DME Eligibility &rarr;
+                Check My DME Eligibility
               </Button>
 
               <a
@@ -58,7 +58,7 @@ export function DmeConversionCTA() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
-                No Credit Card Required
+                Insurance Coverage Support
               </span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />

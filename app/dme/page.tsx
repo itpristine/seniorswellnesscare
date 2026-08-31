@@ -10,9 +10,9 @@ import { DmeFaqSection } from '@/components/sections/dme/DmeFaqSection';
 import { DmeConversionCTA } from '@/components/sections/dme/DmeConversionCTA';
 
 export const metadata: Metadata = {
-  title: 'Durable Medical Equipment (DME) & Orthopedic Braces | Insurance Coverage Review',
+  title: 'Durable Medical Equipment (DME) & Orthopedic Braces | Insurance Coverage Support',
   description:
-    'Physician-prescribed orthopedic braces for back, knee, shoulder, wrist, and elbow. Coverage may be available through insurance benefits, subject to eligibility and plan requirements.',
+    'Physician-prescribed orthopedic braces for back, knee, shoulder, wrist, and elbow. Coverage is available through insurance plans subject to clinical eligibility and plan guidelines.',
 };
 
 export default function DMEPage() {
