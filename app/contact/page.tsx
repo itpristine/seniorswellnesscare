@@ -99,16 +99,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 text-slate-700">
-                  <Stethoscope className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs text-slate-500 block">Physician &amp; Provider Desk</span>
-                    <a href={`mailto:${SITE_CONFIG.providerEmail}`} className="text-[#0D1B2A] font-semibold hover:underline">
-                      {SITE_CONFIG.providerEmail}
-                    </a>
-                  </div>
-                </div>
-
               </div>
             </Card>
 
