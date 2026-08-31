@@ -80,7 +80,7 @@ export default function ProgramsHubPage() {
                     {getIcon(program.iconName)}
                   </div>
                   <Badge variant="emerald" size="sm">
-                    Insurance Covered
+                    CLIA Certified
                   </Badge>
                 </div>
 

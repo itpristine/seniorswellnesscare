@@ -29,7 +29,7 @@ export function DmeHeroSection() {
           {/* Eyebrow Pill */}
           <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 bg-amber-50 border border-amber-200/80 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full text-[10.5px] sm:text-xs font-semibold text-amber-900 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span className="leading-snug">Insurance-Covered • Physician-Prescribed Orthopedic DME Equipment</span>
+            <span className="leading-snug">Physician-Prescribed Medical Bracing • Durable Medical Equipment (DME)</span>
           </div>
 
           {/* Headline */}
@@ -97,8 +97,8 @@ export function DmeHeroSection() {
                   Takes under 2 minutes • Insurance review
                 </p>
               </div>
-              <Badge variant="emerald" size="sm" dot className="shrink-0">
-                Insurance Covered
+              <Badge variant="amber" size="sm" dot className="shrink-0">
+                Physician-Prescribed
               </Badge>
             </div>
 
@@ -119,10 +119,10 @@ export function DmeHeroSection() {
             <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 space-y-0.5">
               <div className="flex items-center gap-1.5 font-bold text-amber-900">
                 <HeartPulse className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                <span>Insurance Covered Orthopedic Bracing</span>
+                <span>Custom-Fit Orthopedic DME Bracing</span>
               </div>
               <p className="text-[11px] text-slate-600 leading-snug">
-                Your insurance may cover the full cost of eligible DME equipment, depending on your coverage and clinical eligibility.
+                Medical-grade joint and spinal supports prescribed by licensed physicians to reduce pain and restore daily mobility.
               </p>
             </div>
 

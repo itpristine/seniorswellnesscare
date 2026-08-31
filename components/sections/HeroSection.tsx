@@ -26,7 +26,7 @@ export function HeroSection() {
           {/* Eyebrow Pill */}
           <div className="inline-flex max-w-full items-center gap-2 bg-emerald-50 border border-emerald-200/80 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-[#0D9488] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span>Insurance-Covered • Physician-Ordered Genetic Testing</span>
+            <span>Physician-Ordered Clinical Genomic Screening • 9 Diagnostic Panels</span>
           </div>
 
           {/* Headline */}
@@ -93,7 +93,7 @@ export function HeroSection() {
                 </p>
               </div>
               <Badge variant="emerald" size="sm" dot>
-                Insurance Covered
+                Physician-Ordered
               </Badge>
             </div>
 
@@ -114,10 +114,10 @@ export function HeroSection() {
             <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/80 text-xs text-slate-700 space-y-0.5">
               <div className="flex items-center gap-1.5 font-bold text-[#0D9488]">
                 <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                <span>Insurance Coverage May Apply</span>
+                <span>Personalized Genomic Precision Care</span>
               </div>
               <p className="text-[11px] text-slate-600">
-                Your insurance may cover the full cost of eligible genetic screening, depending on your coverage and eligibility.
+                Identify hereditary risks and optimize wellness with painless at-home cheek swab testing and physician consultation.
               </p>
             </div>
 

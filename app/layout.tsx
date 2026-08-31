@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description:
-    'Senior Wellness Care provides physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems.',
+    'Senior Wellness Care provides physician-ordered Genetic Testing, physician-prescribed Durable Medical Equipment (DME), and 24/7 Medical Alert emergency response systems.',
   keywords: [
     'senior wellness care',
     'genetic testing',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'preventive genomics',
     'pharmacogenomics PGx',
     'hereditary cancer screening CGx',
-    'insurance covered medical equipment',
+    'orthopedic medical equipment',
     'Medicare and commercial insurance healthcare',
   ],
   authors: [{ name: SITE_CONFIG.name }],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     title: `${SITE_CONFIG.name} | Genetic Testing, DME Equipment & Medical Alert Systems`,
     description:
-      'Check eligibility for insurance-covered genetic testing, DME medical supplies, and 24/7 medical alert emergency response systems.',
+      'Access physician-ordered clinical genetic testing, orthopedic DME medical supplies, and 24/7 medical alert emergency response systems.',
   },
 };
 

@@ -7,7 +7,7 @@ export const DIAGNOSTIC_PROGRAMS: DiagnosticProgram[] = [
     name: 'Hereditary Cancer Risk Screening (CGx)',
     clinicalCode: 'PANEL-CGX-32',
     category: 'oncology',
-    heroBadge: 'Physician-Ordered • Medicare Part B Covered',
+    heroBadge: 'Hereditary Cancer Risk • Comprehensive 32-Gene Panel',
     shortDescription: 'Comprehensive genomic analysis assessing hereditary predisposition to breast, ovarian, colorectal, prostate, pancreatic, and gastric cancers.',
     fullOverview: 'The Hereditary Cancer Screening Panel evaluates high-penetrance and moderate-risk genetic variants associated with inherited cancer syndromes. By analyzing 30+ critical tumor-suppressor genes and DNA mismatch repair pathways, this panel enables proactive surveillance, early-stage detection, and personalized prophylactic strategies for patients and their families.',
     iconName: 'ShieldAlert',

@@ -40,7 +40,7 @@ export default function HomePage() {
         'Comprehensive physician-ordered genomic screening across 9 clinical panels including Hereditary Cancer (CGx), Pharmacogenomics (PGx), Primary Immunodeficiency, and Neurocognitive health. Painless 5-minute at-home buccal swab processed in CAP/CLIA accredited labs.',
       href: '/immunodeficiency',
       icon: <Dna className="w-8 h-8 text-[#0D9488]" />,
-      badge: 'Insurance Covered',
+      badge: '9 Clinical Panels',
       badgeVariant: 'emerald' as const,
       features: [
         '9 Specialized Clinical DNA Panels',
@@ -58,7 +58,7 @@ export default function HomePage() {
         'Physician-prescribed orthopedic braces (back, knee, shoulder, wrist, elbow), assistive mobility devices, and supportive equipment delivered directly to your home with insurance benefit review and coordination.',
       href: '/dme',
       icon: <HeartPulse className="w-8 h-8 text-amber-600" />,
-      badge: 'Insurance Covered',
+      badge: 'Physician Prescribed',
       badgeVariant: 'amber' as const,
       features: [
         'Orthopedic Bracing (Spinal LSO & Knee Unloaders)',
@@ -175,7 +175,7 @@ export default function HomePage() {
                         Genetic Testing
                       </h4>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
-                        Insurance Covered
+                        9 Clinical Panels
                       </span>
                     </div>
                     <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">
@@ -198,7 +198,7 @@ export default function HomePage() {
                         DME Medical Equipment
                       </h4>
                       <span className="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap">
-                        Insurance Covered
+                        Physician Prescribed
                       </span>
                     </div>
                     <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">

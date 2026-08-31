@@ -113,7 +113,7 @@ export function ProgramCardDeck() {
                     {getProgramIcon(program.iconName)}
                   </div>
                   <Badge variant="emerald" size="sm">
-                    Insurance Covered
+                    CLIA Certified
                   </Badge>
                 </div>
 
