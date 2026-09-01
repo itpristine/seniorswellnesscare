@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
   name: 'Seniors Wellness Care',
   legalName: 'Seniors Wellness Care LLC',
   tagline: 'Physician-Ordered Genetic Testing, DME Medical Equipment & 24/7 Medical Alert with Medicare & Insurance Support',
-  phone: '(800) 492-3829',
+  phone: '(866) 971-7353',
   phoneFormatted: '+18004923829',
   email: 'contact@seniorswellnesscare.com',
   providerEmail: 'providers@seniorswellnesscare.com',
