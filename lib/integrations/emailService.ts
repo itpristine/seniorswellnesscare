@@ -2,6 +2,32 @@ import nodemailer from 'nodemailer';
 import { FormSubmissionData, FORM_ROUTES } from './types';
 
 /**
+ * Masks an Insurance / MBI number for email notifications to protect privacy and security.
+ * Only the first two digits/characters and last two digits/characters remain visible.
+ * All characters in between are masked with asterisks.
+ * Example: 12********78
+ * The complete number is never exposed in the email.
+ */
+export function maskInsuranceNumberForEmail(val?: string | null): string {
+  if (!val) return 'N/A';
+  const trimmed = val.trim();
+  if (!trimmed || trimmed.toUpperCase() === 'N/A') return 'N/A';
+
+  if (trimmed.length <= 4) {
+    if (trimmed.length <= 2) {
+      return '**';
+    }
+    return `${trimmed[0]}${'*'.repeat(trimmed.length - 2)}${trimmed[trimmed.length - 1]}`;
+  }
+
+  const firstTwo = trimmed.slice(0, 2);
+  const lastTwo = trimmed.slice(-2);
+  const maskedMiddle = '*'.repeat(trimmed.length - 4);
+
+  return `${firstTwo}${maskedMiddle}${lastTwo}`;
+}
+
+/**
  * Builds HTML table rows for key-value pairs.
  */
 function buildHtmlRows(fields: { label: string; value: string | undefined | null }[]): string {
@@ -36,7 +62,7 @@ export function generateEmailHtml(data: FormSubmissionData): string {
   if (data.formType === 'genetic_testing') {
     title = 'Genetic Testing & Preventive Genomics Intake';
     fields = [
-      { label: 'Form Category', value: 'Genetic Testing (Genomics / CGx / PGx)' },
+      { label: 'Form Category', value: 'Genetic Testing (CGx / PGx / NDGx / PIAx / CVMCGx / PRGx / MDGx / TEGx / OVGx)' },
       { label: 'First Name', value: data.firstName },
       { label: 'Last Name', value: data.lastName },
       { label: 'Full Name', value: `${data.firstName} ${data.lastName}` },
@@ -45,7 +71,7 @@ export function generateEmailHtml(data: FormSubmissionData): string {
       { label: 'State of Residence', value: data.state },
       { label: 'Date of Birth', value: data.dateOfBirth },
       { label: 'Primary Insurance Type', value: data.primaryInsuranceType || 'N/A' },
-      { label: 'Insurance / MBI Number', value: data.primaryInsuranceNumber || 'N/A' },
+      { label: 'Insurance / MBI Number', value: maskInsuranceNumberForEmail(data.primaryInsuranceNumber) },
     ];
 
     consentBlock = `
@@ -73,7 +99,7 @@ export function generateEmailHtml(data: FormSubmissionData): string {
       { label: 'State of Residence', value: data.state },
       { label: 'Date of Birth', value: data.dateOfBirth },
       { label: 'Primary Insurance Type', value: data.primaryInsuranceType || 'N/A' },
-      { label: 'Insurance / MBI Number', value: data.primaryInsuranceNumber || 'N/A' },
+      { label: 'Insurance / MBI Number', value: maskInsuranceNumberForEmail(data.primaryInsuranceNumber) },
     ];
 
     consentBlock = `
@@ -210,7 +236,7 @@ export function generateEmailText(data: FormSubmissionData): string {
     lines.push(`State: ${data.state}`);
     lines.push(`Date of Birth: ${data.dateOfBirth}`);
     lines.push(`Insurance Type: ${data.primaryInsuranceType || 'N/A'}`);
-    lines.push(`Insurance / MBI Number: ${data.primaryInsuranceNumber || 'N/A'}`);
+    lines.push(`Insurance / MBI Number: ${maskInsuranceNumberForEmail(data.primaryInsuranceNumber)}`);
     lines.push(``);
     lines.push(`Consent Statement: ${data.consentStatement}`);
     lines.push(`Consent Status: ${data.consentStatus}`);

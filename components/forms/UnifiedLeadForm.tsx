@@ -122,8 +122,7 @@ export function UnifiedLeadForm({
     if (!selectedState) { setErrorMsg('Please select your state.'); return; }
     if (!dateOfBirth) { setErrorMsg('Date of Birth is required.'); return; }
     if (!primaryInsuranceType) { setErrorMsg('Please select your Primary Insurance.'); return; }
-    if (!primaryInsuranceNumber.trim()) { setErrorMsg('Primary Insurance Number is required.'); return; }
-    const medicareMbiError = primaryInsuranceType === 'medicare_part_b'
+    const medicareMbiError = primaryInsuranceType === 'medicare_part_b' && primaryInsuranceNumber.trim()
       ? getMedicareMbiError(primaryInsuranceNumber)
       : '';
     if (medicareMbiError) {
@@ -213,7 +212,7 @@ export function UnifiedLeadForm({
     && primaryInsuranceNumber.length > 0
     ? getMedicareMbiError(primaryInsuranceNumber)
     : '';
-  const emailError = hasEditedEmail && email.length > 0 && !EMAIL_PATTERN.test(email.trim())
+  const emailError = hasEditedEmail && email.trim().length > 0 && !EMAIL_PATTERN.test(email.trim())
     ? 'Please enter a valid email address or leave this optional field blank.'
     : '';
   const isFormValid = Boolean(
@@ -224,8 +223,7 @@ export function UnifiedLeadForm({
     && selectedState
     && dateOfBirth
     && primaryInsuranceType
-    && primaryInsuranceNumber.trim()
-    && (primaryInsuranceType !== 'medicare_part_b' || !getMedicareMbiError(primaryInsuranceNumber))
+    && (!primaryInsuranceNumber.trim() || primaryInsuranceType !== 'medicare_part_b' || !getMedicareMbiError(primaryInsuranceNumber))
     && consent
   );
 
@@ -272,10 +270,12 @@ export function UnifiedLeadForm({
         {/* Row 2: Email / Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className={labelClass}>Email (Optional)</label>
+            <label className={labelClass}>
+              Email <span className="font-normal normal-case text-slate-400">(Optional)</span>
+            </label>
             <input
               type="email"
-              placeholder="harold@example.com"
+              placeholder="harold@example.com (optional)"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -354,7 +354,8 @@ export function UnifiedLeadForm({
           </div>
           <div>
             <label className={labelClass}>
-              Primary {primaryInsuranceType === 'medicare_part_b' ? 'Medicare' : primaryInsuranceType === 'medicaid_uninsured' ? 'Medicaid' : 'Insurance'} Number *
+              Primary {primaryInsuranceType === 'medicare_part_b' ? 'Medicare' : primaryInsuranceType === 'medicaid_uninsured' ? 'Medicaid' : 'Insurance'} Number{' '}
+              <span className="font-normal normal-case text-slate-400">(Optional)</span>
             </label>
             <input
               type="text"
@@ -367,10 +368,9 @@ export function UnifiedLeadForm({
               className={inputClass}
               autoComplete="off"
               disabled={!primaryInsuranceType}
-              required
               maxLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
-              minLength={primaryInsuranceType === 'medicare_part_b' ? 11 : undefined}
-              pattern={primaryInsuranceType === 'medicare_part_b' ? MEDICARE_MBI_PATTERN.source : undefined}
+              minLength={primaryInsuranceType === 'medicare_part_b' && primaryInsuranceNumber.length > 0 ? 11 : undefined}
+              pattern={primaryInsuranceType === 'medicare_part_b' && primaryInsuranceNumber.length > 0 ? MEDICARE_MBI_PATTERN.source : undefined}
               aria-invalid={Boolean(medicareNumberError)}
               aria-describedby={medicareNumberError ? 'medicare-number-error' : undefined}
             />

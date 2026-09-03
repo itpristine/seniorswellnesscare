@@ -111,8 +111,12 @@ export function WizardContainer() {
     }
 
     if (step === 5) {
-      if (!firstName || !lastName || !email || !phone || !streetAddress || !city || !zipCode) {
+      if (!firstName || !lastName || !phone || !streetAddress || !city || !zipCode) {
         setErrorMsg('Please fill in all required shipping and contact details.');
+        return;
+      }
+      if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        setErrorMsg('Please enter a valid email address or leave the email field blank.');
         return;
       }
       if (!smsConsent) {
@@ -610,11 +614,11 @@ export function WizardContainer() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    Email Address *
+                    Email Address <span className="font-normal normal-case text-slate-400">(Optional)</span>
                   </label>
                   <input
                     type="email"
-                    placeholder="harold@example.com"
+                    placeholder="harold@example.com (optional)"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-[#0D9488] bg-[#FDFCF7]"
