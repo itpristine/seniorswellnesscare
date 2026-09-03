@@ -105,8 +105,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="font-serif-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0D1B2A] leading-[1.15] tracking-tight">
-              All-in-One Healthcare:{' '}
-              <span className="highlight-accent text-[#0D9488]">Genetic Testing</span>, Medical Supplies &amp; 24/7 Safety.
+              All-in-One Healthcare: Genetic Testing, Medical Supplies &amp; 24/7 Safety.
             </h1>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
