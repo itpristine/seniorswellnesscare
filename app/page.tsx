@@ -27,7 +27,7 @@ import { SITE_CONFIG } from '@/lib/constants/siteConfig';
 export const metadata: Metadata = {
   title: 'Seniors Wellness Care | Medicare Genetic Testing, DME & Medical Alert Systems USA',
   description:
-    'Seniors Wellness Care is a comprehensive healthcare platform offering physician-ordered Genetic Testing, Medicare-covered Durable Medical Equipment (DME), and 24/7 Medical Alert safety systems with insurance coverage support across the USA.',
+    'Seniors Wellness Care connects seniors and families with physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and independent 24/7 Medical Alert safety systems across the USA.',
 };
 
 export default function HomePage() {
@@ -110,7 +110,7 @@ export default function HomePage() {
             </h1>
 
             <p className="font-sans-body text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed max-w-2xl">
-              Seniors Wellness Care empowers seniors and families with three essential health solutions under one roof: physician-ordered Genetic Testing, insurance-covered Durable Medical Equipment (DME), and 24/7 Medical Alert fall protection—delivered to your doorstep with insurance benefit coordination and coverage review.
+              Seniors Wellness Care helps seniors and families support better health, mobility, and independence with physician-ordered Genetic Testing, physician-prescribed DME such as orthopedic braces and mobility supports, and 24/7 Medical Alert systems with fall detection, GPS, and emergency response. Insurance benefit reviews are available for qualifying Genetic Testing and DME.
             </p>
 
             {/* CTA */}
