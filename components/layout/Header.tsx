@@ -61,7 +61,7 @@ export function Header() {
               <img src="/logo.png" alt="Seniors Wellness Care logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <img src="/Name.png" alt="Seniors Wellness Care" className="h-9 w-auto object-contain" />
+              <img src="/NameNew.png" alt="Seniors Wellness Care" className="h-9 w-auto object-contain" />
             </div>
           </Link>
 

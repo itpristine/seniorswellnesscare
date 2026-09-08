@@ -31,7 +31,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <div className="w-8 h-8 rounded-xl bg-[#FDFCF7] flex items-center justify-center border border-[#EAE5D8] overflow-hidden">
                 <img src="/logo.png" alt="Seniors Wellness Care logo" className="w-full h-full object-cover" />
               </div>
-              <img src="/Name.png" alt="Seniors Wellness Care" className="h-7 w-auto object-contain" />
+              <img src="/NameNew.png" alt="Seniors Wellness Care" className="h-7 w-auto object-contain" />
             </div>
             <button
               onClick={onClose}

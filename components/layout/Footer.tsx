@@ -75,7 +75,7 @@ export function Footer() {
                 />
               </div>
               <img
-                src="/Name.png"
+                src="/NameNew.png"
                 alt="seniors wellness care name"
                 className="h-9 sm:h-10 w-auto object-contain"
               />

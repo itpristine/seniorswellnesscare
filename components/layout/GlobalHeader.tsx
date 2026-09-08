@@ -194,7 +194,7 @@ export function GlobalHeader() {
             </div>
             <div className="flex flex-col">
               <img
-                src="/Name.png"
+                src="/NameNew.png"
                 alt="seniors wellness care name"
                 className="h-10 sm:h-11 w-auto object-contain"
               />
@@ -465,7 +465,7 @@ export function GlobalHeader() {
                     />
                   </div>
                   <img
-                    src="/Name.png"
+                    src="/NameNew.png"
                     alt="seniors wellness care name"
                     className="h-8 w-auto object-contain"
                   />
