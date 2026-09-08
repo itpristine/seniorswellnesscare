@@ -148,7 +148,7 @@ export default function HomePage() {
               <div className="border-b border-slate-100 pb-3.5 flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <h3 className="font-serif-heading font-bold text-base sm:text-lg text-[#0D1B2A] leading-snug">
-                    Senior Wellness Services
+                    Seniors Wellness Care Services
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">
                     Select a core service to get started

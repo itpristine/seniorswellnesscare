@@ -9,11 +9,11 @@ import { Clock, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Senior Health & Wellness Articles | Seniors Wellness Care Knowledge Hub',
   description:
-    'Evidence-based articles on senior wellness services, pharmacogenomics, hereditary cancer screening, Medicare benefits, and healthy aging for seniors.',
+    'Evidence-based articles on Seniors Wellness Care Services, pharmacogenomics, hereditary cancer screening, Medicare benefits, and healthy aging for seniors.',
   keywords: [
     'senior wellness',
     'senior health and wellness',
-    'senior wellness services',
+    'Seniors Wellness Care Services',
     'wellness services for seniors',
     'senior healthcare services',
     'senior health services',
