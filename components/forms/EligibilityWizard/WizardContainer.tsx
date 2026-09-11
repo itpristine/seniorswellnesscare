@@ -26,15 +26,8 @@ import { Badge } from '@/components/ui/Badge';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Card } from '@/components/ui/Card';
 import { GoogleCaptcha } from '@/components/forms/GoogleCaptcha';
+import { StateSelect, US_STATES } from '@/components/forms/StateSelect';
 import { EligibilityResult, InsuranceType, ConditionKey } from '@/types/eligibility';
-
-const US_STATES = [
-  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
-  'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
-  'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
-  'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
-  'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
-];
 
 export function WizardContainer() {
   const searchParams = useSearchParams();
@@ -344,17 +337,11 @@ export function WizardContainer() {
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                     State of Residence *
                   </label>
-                  <select
+                  <StateSelect
                     value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0D9488] text-slate-900 text-sm font-medium bg-[#FDFCF7]"
-                  >
-                    {US_STATES.map((st) => (
-                      <option key={st} value={st}>
-                        {st}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setState}
+                    required
+                  />
                 </div>
               </div>
             </div>

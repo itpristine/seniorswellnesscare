@@ -5,14 +5,7 @@ import { Lock, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { GoogleCaptcha } from '@/components/forms/GoogleCaptcha';
-
-const US_STATES = [
-  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
-  'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
-  'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
-  'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
-  'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
-];
+import { StateSelect, US_STATES } from '@/components/forms/StateSelect';
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl border border-slate-300 text-sm font-medium text-[#0D1B2A] bg-[#FDFCF7] focus:outline-none focus:ring-2 focus:ring-[#0D9488] focus:border-transparent placeholder-slate-400 transition';
@@ -318,17 +311,11 @@ export function UnifiedLeadForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Select Your State *</label>
-            <select
+            <StateSelect
               value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
-              className={inputClass}
+              onChange={setSelectedState}
               required
-            >
-              <option value="" disabled>— Select State —</option>
-              {US_STATES.map((st) => (
-                <option key={st} value={st}>{st}</option>
-              ))}
-            </select>
+            />
           </div>
           <div>
             <label className={labelClass}>Date of Birth *</label>
