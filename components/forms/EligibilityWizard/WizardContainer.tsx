@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Card } from '@/components/ui/Card';
+import { GoogleCaptcha } from '@/components/forms/GoogleCaptcha';
 import { EligibilityResult, InsuranceType, ConditionKey } from '@/types/eligibility';
 
 const US_STATES = [
@@ -64,6 +65,7 @@ export function WizardContainer() {
   const [zipCode, setZipCode] = useState(initialZip || '33101');
   const [isCaregiverApplying, setIsCaregiverApplying] = useState(false);
   const [smsConsent, setSmsConsent] = useState(true);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
 
   const triggerConfetti = () => {
@@ -123,6 +125,10 @@ export function WizardContainer() {
         setErrorMsg('Please check the consent box to receive tracking updates.');
         return;
       }
+      if (!captchaToken) {
+        setErrorMsg('Please verify that you are not a robot.');
+        return;
+      }
       handleSubmit();
       return;
     }
@@ -158,6 +164,7 @@ export function WizardContainer() {
         zipCode,
         isCaregiverApplying,
         smsConsent,
+        captchaToken,
       };
 
       const res = await fetch('/api/eligibility/evaluate', {
@@ -351,6 +358,8 @@ export function WizardContainer() {
                 </div>
               </div>
             </div>
+
+            <GoogleCaptcha onChange={setCaptchaToken} />
 
             {errorMsg && (
               <p className="text-xs font-semibold text-rose-600 bg-rose-50 p-3 rounded-xl border border-rose-200">

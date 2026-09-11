@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { FullEligibilitySchema } from '@/lib/validation/eligibilitySchema';
 import { EligibilityResult } from '@/types/eligibility';
 import { processFormIntegration } from '@/lib/integrations/formRouter';
+import { verifyRecaptcha } from '@/lib/integrations/recaptcha';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    if (!(await verifyRecaptcha(req, body.captchaToken))) {
+      return NextResponse.json({ message: 'CAPTCHA verification failed.' }, { status: 403 });
+    }
     const validatedData = FullEligibilitySchema.parse(body);
 
     const isMedicarePartB = validatedData.insuranceType === 'medicare_part_b';

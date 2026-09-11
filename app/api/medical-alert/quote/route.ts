@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { processFormIntegration } from '@/lib/integrations/formRouter';
+import { verifyRecaptcha } from '@/lib/integrations/recaptcha';
 
 const MedicalAlertQuoteSchema = z.object({
   firstName: z.string().min(1, 'First Name is required.'),
@@ -17,6 +18,9 @@ const MedicalAlertQuoteSchema = z.object({
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    if (!(await verifyRecaptcha(req, body.captchaToken))) {
+      return NextResponse.json({ message: 'CAPTCHA verification failed.' }, { status: 403 });
+    }
     const validated = MedicalAlertQuoteSchema.parse(body);
 
     const confirmationCode =

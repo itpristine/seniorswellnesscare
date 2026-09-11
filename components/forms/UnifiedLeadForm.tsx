@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Lock, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { GoogleCaptcha } from '@/components/forms/GoogleCaptcha';
 
 const US_STATES = [
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
@@ -103,6 +104,7 @@ export function UnifiedLeadForm({
   const [hasEditedPrimaryInsuranceNumber, setHasEditedPrimaryInsuranceNumber] = useState(false);
   const [hasEditedEmail, setHasEditedEmail] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   /* ── UI state ── */
   const [errorMsg, setErrorMsg] = useState('');
@@ -130,6 +132,7 @@ export function UnifiedLeadForm({
       return;
     }
     if (!consent) { setErrorMsg('Please provide consent by checking the consent box below.'); return; }
+    if (!captchaToken) { setErrorMsg('Please verify that you are not a robot.'); return; }
 
     setIsSubmitting(true);
 
@@ -152,6 +155,7 @@ export function UnifiedLeadForm({
           primaryInsuranceType,
           consent,
           smsConsent: consent,
+          captchaToken,
           // Defaults expected by backend
           conditions: ['general_preventive_wellness'],
           dailyMedsCount: '3_5',
@@ -225,6 +229,7 @@ export function UnifiedLeadForm({
     && primaryInsuranceType
     && (!primaryInsuranceNumber.trim() || primaryInsuranceType !== 'medicare_part_b' || !getMedicareMbiError(primaryInsuranceNumber))
     && consent
+    && Boolean(captchaToken)
   );
 
   /* ── Form ── */
@@ -404,6 +409,8 @@ export function UnifiedLeadForm({
             </span>
           </label>
         </div>
+
+        <GoogleCaptcha onChange={setCaptchaToken} />
 
         {/* Error Message */}
         {errorMsg && (

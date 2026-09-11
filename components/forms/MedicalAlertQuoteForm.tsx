@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Lock, ShieldCheck, CheckCircle2, Radio } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { GoogleCaptcha } from '@/components/forms/GoogleCaptcha';
 
 const US_STATES = [
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
@@ -38,6 +39,7 @@ export function MedicalAlertQuoteForm({
   const [selectedState, setSelectedState] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [consent, setConsent] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   /* ── UI state ── */
   const [errorMsg, setErrorMsg] = useState('');
@@ -78,6 +80,10 @@ export function MedicalAlertQuoteForm({
       setErrorMsg('Please provide consent by checking the consent box below.');
       return;
     }
+    if (!captchaToken) {
+      setErrorMsg('Please verify that you are not a robot.');
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -93,6 +99,7 @@ export function MedicalAlertQuoteForm({
           state: selectedState,
           dateOfBirth,
           consent,
+          captchaToken,
         }),
       });
 
@@ -262,6 +269,8 @@ export function MedicalAlertQuoteForm({
             </span>
           </label>
         </div>
+
+        <GoogleCaptcha onChange={setCaptchaToken} />
 
         {/* Error Message */}
         {errorMsg && (
