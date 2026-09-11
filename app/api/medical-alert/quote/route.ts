@@ -18,7 +18,9 @@ const MedicalAlertQuoteSchema = z.object({
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    if (!(await verifyRecaptcha(req, body.captchaToken))) {
+    const captcha = await verifyRecaptcha(req, body.captchaToken);
+    if (!captcha.success) {
+      console.error('reCAPTCHA verification failed:', captcha.errorCodes || ['unknown-error']);
       return NextResponse.json({ message: 'CAPTCHA verification failed.' }, { status: 403 });
     }
     const validated = MedicalAlertQuoteSchema.parse(body);
