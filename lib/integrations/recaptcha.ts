@@ -6,7 +6,7 @@ interface RecaptchaVerificationResult {
 }
 
 export async function verifyRecaptcha(req: NextRequest, token: unknown): Promise<RecaptchaVerificationResult> {
-  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  const secret = process.env.RECAPTCHA_SECRET_KEY?.trim();
 
   if (!secret || typeof token !== 'string' || !token) {
     return { success: false, errorCodes: ['missing-input'] };
@@ -19,7 +19,6 @@ export async function verifyRecaptcha(req: NextRequest, token: unknown): Promise
       body: new URLSearchParams({
         secret,
         response: token,
-        remoteip: req.headers.get('x-forwarded-for')?.split(',')[0].trim() || '',
       }),
       cache: 'no-store',
     });

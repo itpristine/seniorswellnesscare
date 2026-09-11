@@ -10,7 +10,10 @@ export async function POST(req: NextRequest) {
     const captcha = await verifyRecaptcha(req, body.captchaToken);
     if (!captcha.success) {
       console.error('reCAPTCHA verification failed:', captcha.errorCodes || ['unknown-error']);
-      return NextResponse.json({ message: 'CAPTCHA verification failed.' }, { status: 403 });
+      return NextResponse.json(
+        { message: 'CAPTCHA verification failed.', code: captcha.errorCodes?.[0] || 'unknown-error' },
+        { status: 403 }
+      );
     }
     const validatedData = FullEligibilitySchema.parse(body);
 
