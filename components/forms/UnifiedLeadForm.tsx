@@ -212,6 +212,9 @@ export function UnifiedLeadForm({
   const emailError = hasEditedEmail && email.trim().length > 0 && !EMAIL_PATTERN.test(email.trim())
     ? 'Please enter a valid email address or leave this optional field blank.'
     : '';
+  const phoneError = phone.length > 0 && phone.length !== 10
+    ? 'Phone must contain exactly 10 digits.'
+    : '';
   const isFormValid = Boolean(
     firstName.trim()
     && lastName.trim()
@@ -303,7 +306,14 @@ export function UnifiedLeadForm({
               inputMode="numeric"
               maxLength={10}
               pattern="[0-9]{10}"
+              aria-invalid={Boolean(phoneError)}
+              aria-describedby={phoneError ? 'phone-error' : undefined}
             />
+            {phoneError && (
+              <p id="phone-error" className="mt-1.5 text-xs font-semibold text-rose-600">
+                {phoneError}
+              </p>
+            )}
           </div>
         </div>
 
