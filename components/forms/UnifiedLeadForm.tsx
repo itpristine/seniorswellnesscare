@@ -136,12 +136,12 @@ export function UnifiedLeadForm({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           formType,
-          firstName,
-          lastName,
-          email,
-          phone,
-          state: selectedState,
-          dateOfBirth,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          state: selectedState.trim(),
+          dateOfBirth: dateOfBirth.trim(),
           primaryInsurance: primaryInsuranceNumber.trim(),
           primaryInsuranceNumber: primaryInsuranceNumber.trim(),
           insuranceType: primaryInsuranceType,
@@ -164,7 +164,13 @@ export function UnifiedLeadForm({
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error((err as any).message || 'Submission failed. Please try again.');
+        const specificError =
+          Array.isArray(err?.errors) && err.errors[0]?.message
+            ? err.errors[0].message
+            : typeof err?.errors === 'string'
+            ? err.errors
+            : (err as any)?.message || 'Submission failed. Please check your entries.';
+        throw new Error(specificError);
       }
 
       setSubmitted(true);

@@ -22,16 +22,31 @@ export const ConditionEnum = z.enum([
 ]);
 
 export const Step1Schema = z.object({
-  insuranceType: InsuranceEnum,
+  insuranceType: z.preprocess(
+    (val) => (val === 'medicare' ? 'medicare_part_b' : val),
+    InsuranceEnum
+  ),
   formType: z.enum(['genetic_testing', 'dme']).optional().default('genetic_testing'),
-  primaryInsurance: z.string().optional(),
-  primaryInsuranceNumber: z.string().optional(),
+  primaryInsurance: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
+  primaryInsuranceNumber: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
 });
 
 export const Step2Schema = z.object({
-  dateOfBirth: z.string().min(1, 'Date of birth is required'),
+  dateOfBirth: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().min(1, 'Date of birth is required')
+  ),
   gender: z.enum(['male', 'female', 'other']).optional().default('female'),
-  state: z.string().min(2, 'Please select your state of residence'),
+  state: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim().toUpperCase() : val),
+    z.string().min(2, 'Please select your state of residence')
+  ),
 });
 
 export const Step3Schema = z.object({
@@ -47,18 +62,43 @@ export const Step4Schema = z.object({
 });
 
 export const Step5Schema = z.object({
-  firstName: z.string().min(1, 'First name is required'),
-  lastName: z.string().min(1, 'Last name is required'),
-  email: z
-    .string()
-    .email('Please enter a valid email address')
-    .or(z.literal(''))
-    .optional(),
-  phone: z.string().min(7, 'Please enter a valid phone number'),
-  streetAddress: z.string().optional().default(''),
-  suite: z.string().optional().default(''),
-  city: z.string().optional().default(''),
-  zipCode: z.string().optional().default(''),
+  firstName: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().min(1, 'First name is required')
+  ),
+  lastName: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().min(1, 'Last name is required')
+  ),
+  email: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z
+      .string()
+      .email('Please enter a valid email address')
+      .or(z.literal(''))
+      .nullable()
+      .optional()
+  ),
+  phone: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().min(7, 'Please enter a valid phone number')
+  ),
+  streetAddress: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
+  suite: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
+  city: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
+  zipCode: z.preprocess(
+    (val) => (typeof val === 'string' ? val.trim() : val),
+    z.string().optional().default('')
+  ),
   isCaregiverApplying: z.boolean().default(false),
   smsConsent: z.boolean().optional().default(true),
   consent: z.boolean().optional(),

@@ -6,8 +6,8 @@ import { verifyRecaptcha } from '@/lib/integrations/recaptcha';
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const captcha = await verifyRecaptcha(req, body.captchaToken);
+    const rawBody = await req.json();
+    const captcha = await verifyRecaptcha(req, rawBody.captchaToken);
     if (!captcha.success) {
       console.error('reCAPTCHA verification failed:', captcha.errorCodes || ['unknown-error']);
       return NextResponse.json(
@@ -15,6 +15,10 @@ export async function POST(req: NextRequest) {
         { status: 403 }
       );
     }
+    const body = {
+      ...rawBody,
+      insuranceType: rawBody.insuranceType || rawBody.primaryInsuranceType,
+    };
     const validatedData = FullEligibilitySchema.parse(body);
 
     const isMedicarePartB = validatedData.insuranceType === 'medicare_part_b';
@@ -126,6 +130,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(result, { status: 200 });
   } catch (error: any) {
+    console.error('[Eligibility Evaluate Validation Error]:', error?.errors || error?.message || error);
     return NextResponse.json(
       { message: 'Validation failed', errors: error.errors || error.message },
       { status: 400 }

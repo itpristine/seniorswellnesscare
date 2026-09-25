@@ -141,20 +141,20 @@ export function WizardContainer() {
     try {
       const payload = {
         insuranceType,
-        dateOfBirth,
+        dateOfBirth: dateOfBirth.trim(),
         gender,
-        state,
+        state: state.trim(),
         conditions,
         dailyMedsCount,
         adverseReactions,
-        firstName,
-        lastName,
-        email,
-        phone,
-        streetAddress,
-        suite,
-        city,
-        zipCode,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        streetAddress: streetAddress.trim(),
+        suite: suite.trim(),
+        city: city.trim(),
+        zipCode: zipCode.trim(),
         isCaregiverApplying,
         smsConsent,
         captchaToken,
@@ -167,8 +167,14 @@ export function WizardContainer() {
       });
 
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.message || 'Error evaluating eligibility');
+        const errData = await res.json().catch(() => ({}));
+        const specificError =
+          Array.isArray(errData?.errors) && errData.errors[0]?.message
+            ? errData.errors[0].message
+            : typeof errData?.errors === 'string'
+            ? errData.errors
+            : errData?.message || 'Error evaluating eligibility';
+        throw new Error(specificError);
       }
 
       const data: EligibilityResult = await res.json();
